@@ -15,10 +15,10 @@ int main(){
        char x = '0';      
        do{
               printf("BEM VINDO Á NUVIDA!\n");
-              printf("Digite (1) para login ou (2) para se cadastrar como paciente: \n");
-              printf("Digite (3) para marcar um agendamento ou (4) para cancelar uma consulta: \n");
-              printf("Digite (5) para se cadastrar como médico ou (6) para se cadastrar como funcionário:  \n");
-              printf("Digite (7) para fazer uma reclamação ou elogio: \n");
+              printf("Digite (1) para login ou (2) para se cadastrar como paciente \n");
+              printf("Digite (3) para marcar um agendamento ou (4) para cancelar uma consulta \n");
+              printf("Digite (5) para se cadastrar como médico ou (6) para se cadastrar como funcionário  \n");
+              printf("Digite (7) para fazer um elogio ou (8) para fazer uma reclamação \n");
               scanf("\n%c", &x);
        switch (x){
               case '1':login();
@@ -33,7 +33,9 @@ int main(){
                 break;
               case '6':cadastro_funcionario();
                 break;
-              case '7':reclame_elogie();
+              case '7':elogie();
+                break;
+              case '8':reclame();
                 break;
          }
        }while(x > 0 & x < 8 );
@@ -61,6 +63,7 @@ void cadastro_paciente(void){
         scanf("%s", email);
         printf("Senha: \n");
         scanf("%id", senha);
+        printf("Você foi cadastro com sucesso!/n");
 }
 void cadastro_agendamento(void){
        printf("E-mail: \n");
@@ -70,6 +73,7 @@ void cadastro_agendamento(void){
        printf("AGENDE ABAIXO\n");
        printf("Data : \n");
        scanf("%id", agendamento);
+       printf("Sua consulta foi marcada para: %id \n", agendamento);
 }
 void cadastro_medico(void){
       printf("Nome: \n");
@@ -86,6 +90,7 @@ void cadastro_medico(void){
       scanf("%s", email);
       printf("Senha: \n");
       scanf("%id", senha);
+      printf("Você foi cadastro com sucesso!/n");
 }
 void cadastro_funcionario(void){
       printf("Nome: \n");
@@ -102,6 +107,7 @@ void cadastro_funcionario(void){
       scanf("%s", email);
       printf("Senha: \n");
       scanf("%id", senha);
+      printf("Você foi cadastro com sucesso!/n");
 }
 void cancelamento_de_consultas(void){
        printf("E-mail: \n");
@@ -112,8 +118,14 @@ void cancelamento_de_consultas(void){
        scanf("%id", agendamento);
        printf("Você tem certeza?");
 }
-void reclame_elogie(void){
-       printf("Deixe seu elogio ou reclamação abaixo: \n");
+void elogie(void){
+       printf("Deixe seu elogio abaixo: \n");
        scanf("%s");
-       printf("Nós da NuVida te agradecemos por isso! \n");
+       printf("Seu elogio foi enviado. Nós da NuVida te agradecemos por isso! \n");
 }
+void reclame(void){
+       printf("Deixe sua reclamação abaixo: \n");
+       scanf("%s");
+       printf("Sua reclamação foi enviada. Nós da NuVida te agradecemos por isso! \n");
+}
+
