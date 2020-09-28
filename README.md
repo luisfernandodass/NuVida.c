@@ -1,2 +1,2 @@
 # Faculdade
-Cadastros e login em C
+Clínica médica - PIM II - Cadastros e login em C
