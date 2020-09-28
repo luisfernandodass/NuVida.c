@@ -67,7 +67,7 @@ void cadastro_agendamento(void){
        scanf("%s", email);
        printf("CPF: \n");
        scanf("%id", cpf);
-       printf("AGENDE ABAIXO");
+       printf("AGENDE ABAIXO\n");
        printf("Data : \n");
        scanf("%id", agendamento);
 }
