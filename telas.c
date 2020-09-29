@@ -10,16 +10,20 @@ char nascimento[10];
 char telefone [14];
 char endereco[60];
 char agendamento[10];
- 
+
 int main(){
        char x = '0';      
        do{
               printf("BEM VINDO Á NUVIDA!\n");
-              printf("Digite (1) para login ou (2) para se cadastrar como paciente \n");
-              printf("Digite (3) para marcar um agendamento ou (4) para cancelar uma consulta \n");
-              printf("Digite (5) para se cadastrar como médico ou (6) para se cadastrar como funcionário  \n");
-              printf("Digite (7) para fazer um elogio ou (8) para fazer uma reclamação \n");
-              scanf("\n%c", &x);
+              printf("Digite (1) para login\n");
+              printf("Digite (2) para se cadastrar como paciente\n");
+              printf("Digite (3) para marcar um agendamento\n");
+              printf("Digite (4) para cancelar uma consulta\n");
+              printf("Digite (5) para se cadastrar como médico\n");
+              printf("Digite (6) para se cadastrar como funcionário\n");
+              printf("Digite (7) para fazer um elogio\n");
+              printf("Digite (8) para fazer uma reclamação\n");
+              scanf("\n%c",&x);
        switch (x){
               case '1':login();
                 break;
@@ -38,94 +42,95 @@ int main(){
               case '8':reclame();
                 break;
          }
-       }while(x > 0 & x < 8 );
-             return 0;
+       } while(x > 0 & x < 8 );           
 }
 void login(void){
-       printf("E-mail: \n");
-       scanf("%s", email);
-       printf("Senha: \n");
-       scanf("%id", senha);
+       printf("E-mail:\n");
+       scanf("%s",email);
+       printf("Senha:\n");
+       scanf("%id",senha);
        printf("Usuário: %s - Seja bem vindo à NuVida!\n",email); 
 }
 void cadastro_paciente(void){
-        printf("Nome: \n");
-        scanf("%s", nome);
-        printf("CPF: \n");
-        scanf("%id", cpf);
+        printf("Nome:\n");
+        scanf("%s",nome);
+        printf("CPF:\n");
+        scanf("%id",cpf);
         printf("Data de nascimento: \n");
-        scanf("%id", nascimento);
-        printf("Telefone: \n");
-        scanf("%id", telefone);
-        printf("Endereço: \n");
-        scanf("%id", endereco);
-        printf("E-mail: \n");
-        scanf("%s", email);
-        printf("Senha: \n");
-        scanf("%id", senha);
-        printf("Você foi cadastro com sucesso!/n");
+        scanf("%id",nascimento);
+        printf("Telefone:\n");
+        scanf("%id",telefone);
+        printf("Endereço:\n");
+        scanf("%id",endereco);
+        printf("E-mail:\n");
+        scanf("%s",email);
+        printf("Senha:\n");
+        scanf("%id",senha);
+        printf("Você foi cadastro com sucesso!\n");
 }
 void cadastro_agendamento(void){
-       printf("E-mail: \n");
-       scanf("%s", email);
-       printf("CPF: \n");
-       scanf("%id", cpf);
+       printf("E-mail:\n");
+       scanf("%s",email);
+       printf("CPF:\n");
+       scanf("%id",cpf);
        printf("AGENDE ABAIXO\n");
-       printf("Data : \n");
-       scanf("%id", agendamento);
+       printf("Data:\n");
+       scanf("%id",agendamento);
        printf("Sua consulta foi marcada para: %id \n", agendamento);
 }
 void cadastro_medico(void){
-      printf("Nome: \n");
-      scanf("%s", nome);
-      printf("CPF: \n");
-      scanf("%id", cpf);
-      printf("Data de nascimento: \n");
-      scanf("%id", nascimento);
-      printf("Telefone: \n");
-      scanf("%id", telefone);
-      printf("Endereço: \n");
-      scanf("%id", endereco);
-      printf("E-mail: \n");
-      scanf("%s", email);
-      printf("Senha: \n");
-      scanf("%id", senha);
-      printf("Você foi cadastro com sucesso!/n");
+      printf("Nome:\n");
+      scanf("%s",nome);
+      printf("CPF:\n");
+      scanf("%id",cpf);
+      printf("Data de nascimento:\n");
+      scanf("%id",nascimento);
+      printf("Telefone:\n");
+      scanf("%id",telefone);
+      printf("Endereço:\n");
+      scanf("%id",endereco);
+      printf("E-mail:\n");
+      scanf("%s",email);
+      printf("Senha:\n");
+      scanf("%id",senha);
+      printf("Você foi cadastro com sucesso!\n");
 }
 void cadastro_funcionario(void){
-      printf("Nome: \n");
-      scanf("%s", nome);
-      printf("CPF: \n");
-      scanf("%id", cpf);
-      printf("Data de nascimento: \n");
-      scanf("%id", nascimento);
-      printf("Telefone: \n");
-      scanf("%id", telefone);
-      printf("Endereço: \n");
-      scanf("%id", endereco);
-      printf("E-mail: \n");
-      scanf("%s", email);
-      printf("Senha: \n");
-      scanf("%id", senha);
-      printf("Você foi cadastro com sucesso!/n");
+      printf("Nome:\n");
+      scanf("%s",nome);
+      printf("CPF:\n");
+      scanf("%id",cpf);
+      printf("Data de nascimento:\n");
+      scanf("%id",nascimento);
+      printf("Telefone:\n");
+      scanf("%id",telefone);
+      printf("Endereço:\n");
+      scanf("%id",endereco);
+      printf("E-mail:\n");
+      scanf("%s",email);
+      printf("Senha:\n");
+      scanf("%id",senha);
+      printf("Você foi cadastro com sucesso!\n");
 }
 void cancelamento_de_consultas(void){
-       printf("E-mail: \n");
-       scanf("%s", email);
-       printf("Senha: \n");
-       scanf("%id", senha);
-       printf("Digite a data da consulta a ser cancelada: ");
-       scanf("%id", agendamento);
+       printf("E-mail:\n");
+       scanf("%s",email);
+       printf("Senha:\n");
+       scanf("%id",senha);
+       printf("Digite a data da consulta a ser cancelada:");
+       scanf("%id",agendamento);
        printf("Você tem certeza?");
 }
 void elogie(void){
-       printf("Deixe seu elogio abaixo: \n");
+       printf("Deixe seu elogio abaixo:\n");
        scanf("%s");
-       printf("Seu elogio foi enviado. Nós da NuVida te agradecemos por isso! \n");
+       printf("Sua reclamação foi enviada.\n");
+       printf("Nós da NuVida te agradecemos por isso!\n");
 }
 void reclame(void){
-       printf("Deixe sua reclamação abaixo: \n");
+       printf("Deixe sua reclamação abaixo:\n");
        scanf("%s");
-       printf("Sua reclamação foi enviada. Nós da NuVida te agradecemos por isso! \n");
+       printf("Sua reclamação foi enviada.\n");
+       printf("Nós da NuVida te agradecemos por isso!\n");
 }
 
