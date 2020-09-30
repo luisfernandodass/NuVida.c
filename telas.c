@@ -28,7 +28,7 @@ int main(){
               scanf("\n%c",&x);
       do{
          switch (x){
-              case '1':login();
+              case '1':paciente();
                 break;
               case '2':cadastro_paciente();
                 break;
@@ -49,21 +49,35 @@ int main(){
          }
        } while(x > 0 & x < 8 );           
 }
-void login(void){
-       int a = '0';
-       printf("E-mail:\n");
-       scanf("%s",email);
-       printf("Senha:\n");
-       scanf("%id",senha);
-       printf("Usuário: %s - Seja bem vindo à NuVida!\n",email); 
-       printf("Digite (1) para gerar atestado médico\n");
-       scanf("\n%c",&a);
-       do{
-         switch (a){
-          case '1':atestado();
-           break;
-         }
-       }while(a > 0 & a <3);
+void paciente(void){
+          int p ='0';
+          printf("Digite (1) para login\n");
+          printf("Digite (2) para se cadastrar\n");
+          scanf("\n%c",&p);
+          if(p==1){
+             int a = '0';
+             printf("E-mail:\n");
+             scanf("%s",email);
+             printf("Senha:\n");
+             scanf("%id",senha);
+             printf("Usuário: %s - Seja bem vindo à NuVida!\n",email); 
+             printf("Digite (1) para gerar atestado médico\n");
+             scanf("\n%c",&a);
+            
+               switch (a){
+                case '1':atestado();
+                 break;
+              }
+          
+}
+}
+void medico(void){
+         printf("Digite (1) para login\n");
+         printf("Digite (2) para login\n");
+         printf("Digite (3) para login\n");
+}
+void funcionario(void){
+
 }
 void cadastro_paciente(void){
         printf("Nome:\n");
