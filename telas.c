@@ -23,6 +23,7 @@ int main(){
               printf("Digite (6) para se cadastrar como funcionário\n");
               printf("Digite (7) para fazer um elogio\n");
               printf("Digite (8) para fazer uma reclamação\n");
+              printf("Digite (9) para acessar a área de relatórios\n");
               scanf("\n%c",&x);
        switch (x){
               case '1':login();
@@ -40,6 +41,8 @@ int main(){
               case '7':elogie();
                 break;
               case '8':reclame();
+                break;
+              case '9':relatorio();
                 break;
          }
        } while(x > 0 & x < 8 );           
@@ -133,4 +136,40 @@ void reclame(void){
        printf("Sua reclamação foi enviada.\n");
        printf("Nós da NuVida te agradecemos por isso!\n");
 }
-
+void paraisopolis(void){
+      printf("Relatórios da Unidade Paraisopólis\n");
+      printf("Digite (1) para totalização do faturamento diário\n");
+      printf("Digite (2) para totalização do faturamento mensal\n");
+      printf("Digite (3) para ver o número de pacientes dessa unidade\n");
+}
+}
+void morumbi(void){
+       printf("Relatórios da Unidade Morumbi\n");
+       printf("Digite (1) para totalização do faturamento diário\n");
+       printf("Digite (2) para totalização do faturamento mensal\n");
+       printf("Digite (3) para ver o número de pacientes dessa unidade\n");
+}
+void vila(void){
+      printf("Relatórios da Unidade Vila\n");
+       printf("Digite (1) para totalização do faturamento diário\n");
+       printf("Digite (2) para totalização do faturamento mensal\n");
+       printf("Digite (3) para ver o número de pacientes dessa unidade\n");
+}
+int relatorio(){
+  char y = '0';
+      do{
+        printf("Você está na área de relatórios agora\n");
+        printf("Digite (1) para Unidade Paraisopólis\n");
+        printf("Digite (2) para Unidade Morumbi\n");
+        printf("Digite (3) para Unidade Vila\n");
+        scanf("\n%c",&y);
+      switch (y){
+         case '1':paraisopolis();
+           break;
+         case '2':morumbi();
+           break;
+         case '3':vila();
+           break;
+     } 
+} while(y > 0 & y < 3);
+}
