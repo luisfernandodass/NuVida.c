@@ -10,10 +10,11 @@ char nascimento[10];
 char telefone [14];
 char endereco[60];
 char agendamento[10];
+char data[10];
 
 int main(){
        char x = '0';      
-       do{
+      
               printf("BEM VINDO Á NUVIDA!\n");
               printf("Digite (1) para login\n");
               printf("Digite (2) para se cadastrar como paciente\n");
@@ -25,7 +26,8 @@ int main(){
               printf("Digite (8) para fazer uma reclamação\n");
               printf("Digite (9) para acessar a área de relatórios\n");
               scanf("\n%c",&x);
-       switch (x){
+      do{
+         switch (x){
               case '1':login();
                 break;
               case '2':cadastro_paciente();
@@ -48,11 +50,20 @@ int main(){
        } while(x > 0 & x < 8 );           
 }
 void login(void){
+       int a = '0';
        printf("E-mail:\n");
        scanf("%s",email);
        printf("Senha:\n");
        scanf("%id",senha);
        printf("Usuário: %s - Seja bem vindo à NuVida!\n",email); 
+       printf("Digite (1) para gerar atestado médico\n");
+       scanf("\n%c",&a);
+       do{
+         switch (a){
+          case '1':atestado();
+           break;
+         }
+       }while(a > 0 & a <3);
 }
 void cadastro_paciente(void){
         printf("Nome:\n");
@@ -136,12 +147,17 @@ void reclame(void){
        printf("Sua reclamação foi enviada.\n");
        printf("Nós da NuVida te agradecemos por isso!\n");
 }
+void atestado(void){
+  printf("Digite a data da sua consulta:\n");
+  scanf("%id",data);
+  printf("Paciente: %s  seu atestado foi gerado\n",email);
+  printf("Por favor, acesse o link a seguir e o imprima: \n");
+}
 void paraisopolis(void){
       printf("Relatórios da Unidade Paraisopólis\n");
       printf("Digite (1) para totalização do faturamento diário\n");
       printf("Digite (2) para totalização do faturamento mensal\n");
       printf("Digite (3) para ver o número de pacientes dessa unidade\n");
-}
 }
 void morumbi(void){
        printf("Relatórios da Unidade Morumbi\n");
