@@ -332,5 +332,5 @@ void faturamento_mensal(void){
    printf("Faturamento mensal da unidade: R$%1.f\n", ex*50 + dent*60 + vac*100 + cirur*5000);
 }
 void numero_pacientes(void){
-  printf("Digite o número\n");
+  printf("Parte sendo construída...\n");
 }
