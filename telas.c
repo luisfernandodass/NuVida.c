@@ -9,7 +9,6 @@ char cpf [12];
 char nascimento[10];
 char telefone [14];
 char endereco[60];
-char agendamento[10];
 char data[10];
 char horario[6];
 
@@ -53,6 +52,7 @@ void login_paciente(void){
      printf("Digite (1) para gerar atestado médico\n");
      printf("Digite (2) para marcar uma consulta\n");
      printf("Digite (3) para cancelar uma consulta\n");
+     printf("Digite (4) para deixar um elogio ou reclamação\n");
      scanf("\n%c",&a);            
      switch (a){
          case '1':atestado();
@@ -60,6 +60,8 @@ void login_paciente(void){
          case'2':agendar();
            break;
          case'3':cancelamento_de_consultas();
+           break;
+         case'4':reclamacao_elogio();
            break;
 }     
 }
@@ -168,24 +170,6 @@ void login_funcionario(void){
               break;
         }
 } 
-void internacao(void){
-       printf("Nome do paciente:\n");
-       scanf("%s");
-       printf("Data da internação:\n");
-       scanf("%id");
-       printf("Motivo:");
-       scanf("%s");
-}                              
-void agendar(void){
-       printf("E-mail:\n");
-       scanf("%s",email);
-       printf("CPF:\n");
-       scanf("%id",cpf);
-       printf("AGENDE ABAIXO\n");
-       printf("Data:\n");
-       scanf("%id",agendamento);
-       printf("Sua consulta foi marcada para: %id \n", agendamento);
-}
 void cadastro_funcionario(void){
       printf("Nome:\n");
       scanf("%s",nome);
@@ -203,25 +187,39 @@ void cadastro_funcionario(void){
       scanf("%id",senha);
       printf("Você foi cadastro com sucesso!\n");
 }
+void internacao(void){
+       printf("Nome do paciente:\n");
+       scanf("%s");
+       printf("Data da internação:\n");
+       scanf("%id");
+       printf("Motivo:");
+       scanf("%s");
+}                              
+void agendar(void){
+       printf("E-mail:\n");
+       scanf("%s",email);
+       printf("CPF:\n");
+       scanf("%id",cpf);
+       printf("AGENDE ABAIXO\n");
+       printf("Data:");
+       scanf("%s",data);
+       printf("Horário:");
+       scanf("%s",horario);
+       printf("Sua consulta foi marcada para o dia: %s às %s\n",data,horario);
+}
 void cancelamento_de_consultas(void){
        printf("E-mail:\n");
        scanf("%s",email);
        printf("Senha:\n");
        scanf("%id",senha);
        printf("Digite a data da consulta a ser cancelada:");
-       scanf("%id",agendamento);
+       scanf("%id",data);
        printf("Você tem certeza?");
 }
-void elogie(void){
-       printf("Deixe seu elogio abaixo:\n");
+void reclamacao_elogio(void){
+       printf("Deixe seu mensagem abaixo:\n");
        scanf("%s");
-       printf("Sua reclamação foi enviada.\n");
-       printf("Nós da NuVida te agradecemos por isso!\n");
-}
-void reclame(void){
-       printf("Deixe sua reclamação abaixo:\n");
-       scanf("%s");
-       printf("Sua reclamação foi enviada.\n");
+       printf("Sua mensagem foi enviada.\n");
        printf("Nós da NuVida te agradecemos por isso!\n");
 }
 void atestado(void){
@@ -248,7 +246,7 @@ void relatorio(void){
          case '3':vila();
            break;
      } 
-} while(y > 0 & y < 3);
+      } while(y > 0 & y < 3);
 }
 void paraisopolis(void){
       int a ='0';
@@ -261,6 +259,8 @@ void paraisopolis(void){
            case'1':faturamento_diario();
                  break;
             case'2':faturamento_mensal();
+                 break;
+            case'3':numero_pacientes();
                  break;
           }
 }
@@ -276,6 +276,8 @@ void morumbi(void){
                   break;
              case'2':faturamento_mensal();
                   break;
+             case'3':numero_pacientes();
+                  break;
            }
 }
 void vila(void){
@@ -290,37 +292,45 @@ void vila(void){
                   break;
              case'2':faturamento_mensal();
                   break;
+             case'3':numero_pacientes();
+                  break;
      }
 }
 void faturamento_diario(void){
   int ex, dent, vac, cirur;
   printf("Digite o número de exames feitos hoje: ");
-  scanf("%i",&ex);
+  scanf("%f",&ex);
   printf("Digite o número de consultas odontológicas feitas hoje: ");
-  scanf("%i",&dent);
+  scanf("%f",&dent);
   printf("Digite o número de vacinas vendidas hoje: ");
-  scanf("%i",&vac);
+  scanf("%f",&vac);
   printf("Digite o número de cirurgias feitas hoje: ");
-  scanf("%i",&cirur);
+  scanf("%f",&cirur);
   printf("Calculando...\n");
-  printf("Faturamento total de exames: %i\n",ex * 50);
-  printf("Faturamento total de odontologia: %i\n",dent * 60);
-  printf("Faturamento total de vacinas: %i\n",vac * 100);
-  printf("Faturamento total de cirurgias: %i\n",cirur * 5000);
-  printf("Faturamento diário da unidade: %i\n", ex*50 + dent*60 + vac*100 + cirur*5000);
-  return 0;
+  printf("Faturamento diário de exames: R$%1.f\n",ex * 50);
+  printf("Faturamento diário de odontologia: R$%1.f\n",dent * 60);
+  printf("Faturamento diário de vacinas: R$%1.f\n",vac * 100);
+  printf("Faturamento diário de cirurgias: R$%1.f\n",cirur * 5000);
+  printf("Faturamento diário da unidade: R$%1.f\n", ex*50 + dent*60 + vac*100 + cirur*5000);
 }
 void faturamento_mensal(void){
-   int ex, dent, vac, cirur;
+   float ex, dent, vac, cirur;
    printf("Abaixo, digite a quantidade de serviços prestados no mês\n");
    printf("Digite o número de exames mensais realizados: ");
-   scanf("%i",&ex);
-   printf("Digite o número de consultas odontológicas mensais reaizadas: ");
-   scanf("%i",&dent);
+   scanf("%f",&ex);
+   printf("Digite o número de consultas odontológicas mensais realizadas: ");
+   scanf("%f",&dent);
    printf("Digite o número de vacinas mensais vendidas: ");
-   scanf("%i",&vac);
+   scanf("%f",&vac);
    printf("Digite o número de cirurgias mensais realizadas: ");
-   scanf("%i",&cirur);
+   scanf("%f",&cirur);
    printf("Calculando...\n");
-   return 0;
+   printf("Faturamento mensal de exames: R$%1.f\n",ex * 50);
+   printf("Faturamento mensal de odontologia: R$%1.f\n",dent * 60);
+   printf("Faturamento mensal de vacinas: R$%1.f\n",vac * 100);
+   printf("Faturamento mensal de cirurgias: R$%1.f\n",cirur * 5000);
+   printf("Faturamento mensal da unidade: R$%1.f\n", ex*50 + dent*60 + vac*100 + cirur*5000);
+}
+void numero_pacientes(void){
+  printf("Digite o número\n");
 }
