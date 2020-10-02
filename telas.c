@@ -11,6 +11,11 @@ char telefone [14];
 char endereco[60];
 char data[10];
 char horario[6];
+float ex, dent, vac, cirur;
+float valEx = 50;
+float valDent = 60;
+float valVac = 100;
+float valCirur = 5000;
 
 int main(){
        int x = '0';      
@@ -297,7 +302,7 @@ void vila(void){
      }
 }
 void faturamento_diario(void){
-  int ex, dent, vac, cirur;
+
   printf("Digite o número de exames feitos hoje: ");
   scanf("%f",&ex);
   printf("Digite o número de consultas odontológicas feitas hoje: ");
@@ -307,14 +312,14 @@ void faturamento_diario(void){
   printf("Digite o número de cirurgias feitas hoje: ");
   scanf("%f",&cirur);
   printf("Calculando...\n");
-  printf("Faturamento diário de exames: R$%1.f\n",ex * 50);
-  printf("Faturamento diário de odontologia: R$%1.f\n",dent * 60);
-  printf("Faturamento diário de vacinas: R$%1.f\n",vac * 100);
-  printf("Faturamento diário de cirurgias: R$%1.f\n",cirur * 5000);
-  printf("Faturamento diário da unidade: R$%1.f\n", ex*50 + dent*60 + vac*100 + cirur*5000);
+  printf("Faturamento diário de exames: R$%1.f\n",ex*valEx);
+  printf("Faturamento diário de odontologia: R$%1.f\n",dent*valDent);
+  printf("Faturamento diário de vacinas: R$%1.f\n",vac*valVac);
+  printf("Faturamento diário de cirurgias: R$%1.f\n",cirur*valCirur);
+  printf("Faturamento diário da unidade: R$%1.f\n", ex*valEx + dent*valDent + vac*valVac + cirur*valCirur);
 }
 void faturamento_mensal(void){
-   float ex, dent, vac, cirur;
+
    printf("Abaixo, digite a quantidade de serviços prestados no mês\n");
    printf("Digite o número de exames mensais realizados: ");
    scanf("%f",&ex);
@@ -325,11 +330,11 @@ void faturamento_mensal(void){
    printf("Digite o número de cirurgias mensais realizadas: ");
    scanf("%f",&cirur);
    printf("Calculando...\n");
-   printf("Faturamento mensal de exames: R$%1.f\n",ex * 50);
-   printf("Faturamento mensal de odontologia: R$%1.f\n",dent * 60);
-   printf("Faturamento mensal de vacinas: R$%1.f\n",vac * 100);
-   printf("Faturamento mensal de cirurgias: R$%1.f\n",cirur * 5000);
-   printf("Faturamento mensal da unidade: R$%1.f\n", ex*50 + dent*60 + vac*100 + cirur*5000);
+   printf("Faturamento mensal de exames: R$%1.f\n",ex*valEx);
+   printf("Faturamento mensal de odontologia: R$%1.f\n",dent*valDent);
+   printf("Faturamento mensal de vacinas: R$%1.f\n",vac*valVac);
+   printf("Faturamento mensal de cirurgias: R$%1.f\n",cirur*valCirur);
+   printf("Faturamento mensal da unidade: R$%1.f\n", ex*valEx + dent*valDent + vac*valVac + cirur*valCirur);
 }
 void numero_pacientes(void){
   printf("Parte sendo construída...\n");
