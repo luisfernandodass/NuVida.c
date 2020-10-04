@@ -2,7 +2,7 @@
 #include <string.h>
 #include <stdlib.h>
 
-int main(void){   
+   
       char email[30];
       char senha[8];
       char nome[60];
@@ -19,8 +19,8 @@ int main(void){
       float valVac = 100;
       float valCirur = 5000;
       int numPacientes = 1500; 
-  }
-void inicio(main){        
+ 
+int main(void){        
               printf("BEM VINDO Á NUVIDA!\n");
               printf("Digite (1) se você é um paciente\n");
               printf("Digite (2) se você é um médico\n");
@@ -33,9 +33,9 @@ void inicio(main){
                 break;
               case '3':funcionario();
                 break;      
-                    }
+          }
   }    
-void paciente(main){            
+void paciente(void){            
           printf("Digite (1) para login\n");
           printf("Digite (2) para se cadastrar\n");
           printf("Digite (3) para deixar um elogio ou reclamação\n");
@@ -47,28 +47,28 @@ void paciente(main){
                   break;
               case'3':reclamacao_elogio();
                   break;
-    }               
+          }               
   }
-void login_paciente(main){   
-     printf("E-mail:\n");
-     scanf("%s",email);
-     printf("Senha:\n");
-     scanf("%id",senha);
-     printf("Usuário: %s - Seja bem vindo à NuVida!\n",email); 
-     printf("Digite (1) para gerar atestado médico\n");
-     printf("Digite (2) para marcar uma consulta\n");
-     printf("Digite (3) para cancelar uma consulta\n");     
-     scanf("\n%c",&control);            
-     switch (control){
-         case '1':atestado();
-           break;
-         case'2':agendar();
-           break;
-         case'3':cancelamento_de_consultas();
-           break;
-   }     
-  }
-void cadastro_paciente(main){      
+void login_paciente(void){   
+           printf("E-mail:\n");
+           scanf("%s",email);
+           printf("Senha:\n");
+           scanf("%id",senha);
+           printf("Usuário: %s - Seja bem vindo à NuVida!\n",email); 
+           printf("Digite (1) para gerar atestado médico\n");
+           printf("Digite (2) para marcar uma consulta\n");
+           printf("Digite (3) para cancelar uma consulta\n");     
+           scanf("\n%c",&control);            
+           switch (control){
+               case '1':atestado();
+                 break;
+               case'2':agendar();
+                 break;
+               case'3':cancelamento_de_consultas();
+                 break;
+            }        
+  }       
+void cadastro_paciente(void){      
         printf("Nome:\n");
         scanf("%s",nome);
         printf("Data de nascimento:\n");
@@ -93,43 +93,43 @@ void cadastro_paciente(main){
         printf("Você será redirecionado para a página de login\n");
         login_paciente();           
   }
-void medico(main){          
-    printf("Digite (1) para login\n");
-    printf("Digite (2) para se cadastrar\n");
-    scanf("\n%c",&control);
-       switch(control){
-        case'1':login_medico();
-            break;
-        case'2':cadastro_medico();
-            break;
-             }                     
-  }
-void login_medico(main){      
-       printf("E-mail:\n");
-       scanf("%s",email);
-       printf("Senha:\n");
-       scanf("%id",senha);
-       printf("Usuário: %s - Seja bem vindo à NuVida!\n",email); 
-       printf("Digite (1) para fazer um atestado médico\n");
-       printf("Digite (2) para marcar uma consulta\n");
-       printf("Digite (3) para cancelar uma consulta\n");
-       printf("Digite (4) para registrar uma internação\n");
-       printf("Digite (5) para ver os relatórios\n");
-       scanf("\n%c",&control);            
-       switch (control){
-           case '1':atestado();
-             break;
-           case'2':agendar();
-             break;
-           case'3':cancelamento_de_consultas();
-             break;
-           case'4':internacao();
-             break;
-           case'5':relatorio();
-             break;
-      }
+void medico(void){          
+        printf("Digite (1) para login\n");
+        printf("Digite (2) para se cadastrar\n");
+        scanf("\n%c",&control);
+           switch(control){
+            case'1':login_medico();
+                break;
+            case'2':cadastro_medico();
+                break;
+                 }                     
+  }    
+void login_medico(void){      
+           printf("E-mail:\n");
+           scanf("%s",email);
+           printf("Senha:\n");
+           scanf("%id",senha);
+           printf("Usuário: %s - Seja bem vindo à NuVida!\n",email); 
+           printf("Digite (1) para fazer um atestado médico\n");
+           printf("Digite (2) para marcar uma consulta\n");
+           printf("Digite (3) para cancelar uma consulta\n");
+           printf("Digite (4) para registrar uma internação\n");
+           printf("Digite (5) para ver os relatórios\n");
+           scanf("\n%c",&control);            
+           switch (control){
+               case '1':atestado();
+                 break;
+               case'2':agendar();
+                 break;
+               case'3':cancelamento_de_consultas();
+                 break;
+               case'4':internacao();
+                 break;
+               case'5':relatorio();
+                 break;
+          }
     }
-void cadastro_medico(main){
+void cadastro_medico(void){
       printf("Nome:\n");
       scanf("%s",nome);
       printf("CPF:\n");
@@ -147,37 +147,37 @@ void cadastro_medico(main){
       printf("Você foi cadastro com sucesso e será redirecionado para página de login!\n");
       login_medico();
    }
-void funcionario(main){
-        printf("Digite (1) para login\n");
-        printf("Digite (2) para se cadastrar como funcionário\n");
-        scanf("\n%c",&control);
-        switch(control){
-          case'1':login_funcionario();
-             break;
-          case'2':cadastro_funcionario();
-             break;
-        }
-  }   
-void login_funcionario(main){
-        printf("E-mail:\n");
-        scanf("%s",email);
-        printf("Senha:\n");
-        scanf("%id",senha);
-        printf("Usuário: %s - Seja bem vindo à NuVida!\n",email);         
-        printf("Digite (1) para marcar uma consulta\n");
-        printf("Digite (2) para cancelar uma consulta\n");
-        printf("Digite (3) para ver os relatórios\n");
-        scanf("\n%c",&control);            
-        switch (control){
-            case '1':agendar();
-              break;
-            case'2':cancelamento_de_consultas();
-              break;
-            case'3':relatorio();
-              break;
-        }
+void funcionario(void){
+          printf("Digite (1) para login\n");
+          printf("Digite (2) para se cadastrar como funcionário\n");
+          scanf("\n%c",&control);
+          switch(control){
+            case'1':login_funcionario();
+               break;
+            case'2':cadastro_funcionario();
+               break;
+          }
+  }     
+void login_funcionario(void){
+          printf("E-mail:\n");
+          scanf("%s",email);
+          printf("Senha:\n");
+          scanf("%id",senha);
+          printf("Usuário: %s - Seja bem vindo à NuVida!\n",email);         
+          printf("Digite (1) para marcar uma consulta\n");
+          printf("Digite (2) para cancelar uma consulta\n");
+          printf("Digite (3) para ver os relatórios\n");
+          scanf("\n%c",&control);            
+          switch (control){
+              case '1':agendar();
+                break;
+              case'2':cancelamento_de_consultas();
+                break;
+              case'3':relatorio();
+                break;
+          }
    } 
-void cadastro_funcionario(main){
+void cadastro_funcionario(void){
       printf("Nome:\n");
       scanf("%s",nome);
       printf("CPF:\n");
@@ -195,7 +195,7 @@ void cadastro_funcionario(main){
       printf("Você foi cadastro com sucesso e será redirecionado a página de login!\n");
       login_funcionario();
   }
-void internacao(main){
+void internacao(void){
        printf("Nome do paciente:\n");
        scanf("%s",nome);
        printf("Idade:\n");
@@ -206,7 +206,7 @@ void internacao(main){
        scanf("%s",data);
        printf("O paciente %s foi internado por motivo de: %s, na data de: %s",nome,motivo,data);
   }                              
-void agendar(main){
+void agendar(void){
        printf("E-mail:\n");
        scanf("%s",email);
        printf("CPF:\n");
@@ -218,7 +218,7 @@ void agendar(main){
        scanf("%s",horario);
        printf("Sua consulta foi marcada para o dia: %s às %s\n",data,horario);
   }
-void cancelamento_de_consultas(main){
+void cancelamento_de_consultas(void){
        printf("E-mail:\n");
        scanf("%s",email);
        printf("Senha:\n");
@@ -228,20 +228,20 @@ void cancelamento_de_consultas(main){
        printf("Você tem certeza?\n");
        printf("Digite (1) se SIM ou (2) se NÃO\n");
        scanf("\n%c",&control);
-       if(control == '1'){
-         printf("A consulta do dia %s foi cancelada\n",data);
-       }else{
-         printf("Você foi redirecionado para a página de login\n");
-         login_paciente();
-       }
+             if(control == '1'){
+               printf("A consulta do dia %s foi cancelada\n",data);
+             }else{
+               printf("Você foi redirecionado para a página de login\n");
+               login_paciente();
+             }
   }
-void reclamacao_elogio(main){
+void reclamacao_elogio(void){
        printf("Deixe seu mensagem abaixo:\n");
        scanf("%s");
        printf("Sua mensagem foi enviada.\n");
        printf("Nós da NuVida te agradecemos por isso!\n");
   }
-void atestado(main){
+void atestado(void){
   printf("Digite a data da sua consulta:\n");
   scanf("%id",data);
   printf("Digite o horário da sua consulta:\n");
@@ -249,7 +249,7 @@ void atestado(main){
   printf("Paciente: %s  seu atestado foi gerado\n",email);
   printf("Por favor, acesse o link a seguir e o imprima: \n");
  }
-void relatorio(main){    
+void relatorio(void){    
       do{
         printf("Você está na área de relatórios agora\n");
         printf("Digite (1) para Unidade Paraisopólis\n");
@@ -269,7 +269,7 @@ void relatorio(main){
      } 
       } while(control > 0 & control < 3);
   }
-void paraisopolis(main){
+void paraisopolis(void){
       printf("Relatórios da Unidade Paraisopólis\n");
       printf("Digite (1) para totalização do faturamento diário\n");
       printf("Digite (2) para totalização do faturamento mensal\n");
@@ -284,7 +284,7 @@ void paraisopolis(main){
                  break;
           }
   }
-void morumbi(main){
+void morumbi(void){
        printf("Relatórios da Unidade Morumbi\n");
        printf("Digite (1) para totalização do faturamento diário\n");
        printf("Digite (2) para totalização do faturamento mensal\n");
@@ -299,7 +299,7 @@ void morumbi(main){
                   break;
            }
   }
-void vila(main){
+void vila(void){
        printf("Relatórios da Unidade Vila\n");
        printf("Digite (1) para totalização do faturamento diário\n");
        printf("Digite (2) para totalização do faturamento mensal\n");
@@ -314,7 +314,7 @@ void vila(main){
                   break;       
         }
   }
-void faturamento_diario(main){
+void faturamento_diario(void){
   printf("Digite o número de exames feitos hoje: ");
   scanf("%f",&ex);
   printf("Digite o número de consultas odontológicas feitas hoje: ");
@@ -330,7 +330,7 @@ void faturamento_diario(main){
   printf("Faturamento diário de cirurgias: R$%1.f\n",cirur*valCirur);
   printf("Faturamento diário da unidade: R$%1.f\n", ex*valEx + dent*valDent + vac*valVac + cirur*valCirur);
  }
-void faturamento_mensal(main){
+void faturamento_mensal(void){
       printf("Abaixo, digite a quantidade de serviços prestados no mês\n");
       printf("Digite o número de exames mensais realizados: ");
       scanf("%f",&ex);
@@ -347,10 +347,10 @@ void faturamento_mensal(main){
       printf("Faturamento mensal de cirurgias: R$%1.f\n",cirur*valCirur);
       printf("Faturamento mensal da unidade: R$%1.f\n", ex*valEx + dent*valDent + vac*valVac + cirur*valCirur);
   }
-void quantidadePacientes(main){     
+void quantidadePacientes(void){     
       printf("Essa unidade tem 1500 pacientes\n");     
   }
-void totalRede(main){
+void totalRede(void){
       printf("Digite (1) para calcular o faturamento total da rede NuVida\n");
       printf("Digite (2) para ver o número de pacientes da rede\n");
   }
