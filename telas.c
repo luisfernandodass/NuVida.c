@@ -1,9 +1,6 @@
 #include <stdio.h>
 #include <string.h>
 #include <stdlib.h>
-
-   
-      int numPacientes = 1500; 
  
 int main(char control, char email[60], int senha[8], char nome[100], char cpf[12], char endereco[100],char data[10], char horario[6],int idade[2],char motivo[200],float ex, float dent, float vac, float cirur, float valEx, float valDent, float valVac, float valCirur){        
               printf("BEM VINDO Á NUVIDA!\n");
@@ -53,7 +50,7 @@ void login_paciente(char control, char email[60],int senha[8], char cpf[12], cha
                  break;
             }        
   }       
-void cadastro_paciente(char control,char email[60],int senha[8], char nome[100], char cpf[12], char endereco[100], char data[10],char horario[6]){      
+void cadastro_paciente(char control,char email[60],int senha[8], char nome[100], char cpf[12], char endereco[100], char data[10],char horario[6],int numPacientes){      
         printf("Nome:\n");
         scanf("%s",nome);
         printf("Data de nascimento:\n");
@@ -332,7 +329,7 @@ void faturamento_mensal(float ex, float dent, float vac, float cirur, float valE
       printf("Faturamento mensal de cirurgias: R$%1.f\n",cirur*valCirur);
       printf("Faturamento mensal da unidade: R$%1.f\n", ex*valEx + dent*valDent + vac*valVac + cirur*valCirur);
   }
-void quantidadePacientes(void){     
+void quantidadePacientes(int numPacientes){     
       printf("Essa unidade tem 1500 pacientes\n");     
   }
 void totalRede(void){
