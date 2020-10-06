@@ -5,7 +5,7 @@
    
       int numPacientes = 1500; 
  
-int main(char control, char email, char senha, char nome, char cpf, char endereco,char data, char horario){        
+int main(char control, char email[60], int senha[8], char nome[100], char cpf[12], char endereco[100],char data[10], char horario[6],int idade[2],char motivo[200],float ex, float dent, float vac, float cirur, float valEx, float valDent, float valVac, float valCirur){        
               printf("BEM VINDO Á NUVIDA!\n");
               printf("Digite (1) se você é um paciente\n");
               printf("Digite (2) se você é um médico\n");
@@ -14,13 +14,13 @@ int main(char control, char email, char senha, char nome, char cpf, char enderec
          switch (control){
               case '1':paciente(control, email, senha, nome, cpf, endereco, data, horario);
                 break;
-              case '2':medico(control,nome,data,cpf,endereco,email,senha,horario);
+              case '2':medico(control,email,senha,nome,cpf,endereco,data,horario,idade,motivo,ex,dent,vac,cirur,valEx,valDent,valVac,valCirur);
                 break;
-              case '3':funcionario(control,nome,data,endereco,cpf,email,senha,horario);
+              case '3':funcionario(control,nome,data,endereco,cpf,email,senha,horario,ex,dent,vac,cirur,valEx,valDent,valVac,valCirur);
                 break;      
           }
   }    
-void paciente(char control, char email[60], char senha[8], char nome, char cpf[12], char endereco,char data, char horario){            
+void paciente(char control, char email[60], int senha[8], char nome[100], char cpf[12], char endereco[100],char data[10], char horario[6]){            
           printf("Digite (1) para login\n");
           printf("Digite (2) para se cadastrar\n");
           printf("Digite (3) para deixar um elogio ou reclamação\n");
@@ -34,7 +34,7 @@ void paciente(char control, char email[60], char senha[8], char nome, char cpf[1
                   break;
           }               
   }
-void login_paciente(char control, char email[60],char senha[8], char cpf[12], char data, char horario){   
+void login_paciente(char control, char email[60],int senha[8], char cpf[12], char data[10], char horario[6]){   
            printf("E-mail:\n");
            scanf("%s",email);
            printf("Senha:\n");
@@ -53,7 +53,7 @@ void login_paciente(char control, char email[60],char senha[8], char cpf[12], ch
                  break;
             }        
   }       
-void cadastro_paciente(char control, char nome, char data, char cpf, char endereco, char email, char senha, char horario){      
+void cadastro_paciente(char control,char email[60],int senha[8], char nome[100], char cpf[12], char endereco[100], char data[10],char horario[6]){      
         printf("Nome:\n");
         scanf("%s",nome);
         printf("Data de nascimento:\n");
@@ -78,18 +78,18 @@ void cadastro_paciente(char control, char nome, char data, char cpf, char endere
         printf("Você será redirecionado para a página de login\n");
         login_paciente(control, email, senha, cpf, data, horario);           
   }
-void medico(char control, char nome, char data, char cpf, char endereco, char email, char senha, char horario,char idade, char motivo){          
+void medico(char control,char email[60],int senha[8], char nome[100], char cpf[12], char endereco[100],char data[10],char horario[6],int idade[2], char motivo[100],float ex, float dent, float vac, float cirur, float valEx, float valDent, float valVac, float valCirur){          
         printf("Digite (1) para login\n");
         printf("Digite (2) para se cadastrar\n");
         scanf("\n%c",&control);
            switch(control){
-            case'1':login_medico(control,email,senha,nome,data,cpf,idade,motivo,endereco,horario);
+            case'1':login_medico(control,email,senha,nome,data,cpf,idade,motivo,endereco,horario,ex,dent,vac,cirur,valEx,valDent,valVac,valCirur);
                 break;
-            case'2':cadastro_medico(control,email,senha,nome,data,cpf,idade,motivo,endereco,horario);
+            case'2':cadastro_medico(control,email,senha,nome,data,cpf,idade,motivo,endereco,horario,ex,dent,vac,cirur,valEx,valDent,valVac,valCirur);
                 break;
                  }                     
   }    
-void login_medico(char control,char email,char senha,char nome,char data,char cpf,char idade,char motivo,char endereco,char horario, float ex, float dent, float vac, float cirur, float valEx, float valDent, float valVac, float valCirur){      
+void login_medico(char control,char email[60],int senha[8],char nome[100],char data[10],char cpf[12],int idade[2],char motivo[200],char endereco[100],char horario[6], float ex, float dent, float vac, float cirur, float valEx, float valDent, float valVac, float valCirur){      
            printf("E-mail:\n");
            scanf("%s",email);
            printf("Senha:\n");
@@ -114,7 +114,7 @@ void login_medico(char control,char email,char senha,char nome,char data,char cp
                  break;
           }
     }
-void cadastro_medico(char control,char nome,char data, char cpf,char idade,char motivo,char endereco,char email,char senha,char horario, float ex, float dent, float vac, float cirur, float valEx, float valDent, float valVac, float valCirur){
+void cadastro_medico(char control,char nome[100],char data[10], char cpf[12],int idade[2],char motivo[100],char endereco[100],char email[60],int senha[8],char horario[6], float ex, float dent, float vac, float cirur, float valEx, float valDent, float valVac, float valCirur){
       printf("Nome:\n");
       scanf("%s",nome);
       printf("CPF:\n");
@@ -132,18 +132,18 @@ void cadastro_medico(char control,char nome,char data, char cpf,char idade,char 
       printf("Você foi cadastro com sucesso e será redirecionado para página de login!\n");
       login_medico(control,nome,data,cpf,idade,motivo,endereco,email,senha,horario,ex,dent,vac,cirur,valEx,valDent,valVac,valCirur);
    }
-void funcionario(char control, char nome,char data,char endereco,char cpf,char email,char senha,char horario){
+void funcionario(char control,char nome[100],char data[10],char endereco[100],char cpf[12],char email[60],int senha[8],char horario[6],float ex, float dent, float vac, float cirur, float valEx, float valDent, float valVac, float valCirur){
           printf("Digite (1) para login\n");
           printf("Digite (2) para se cadastrar como funcionário\n");
           scanf("\n%c",&control);
           switch(control){
-            case'1':login_funcionario(control,data,cpf,email,senha,horario);
+            case'1':login_funcionario(control,data,cpf,email,senha,horario,ex,dent,vac,cirur,valEx,valDent,valVac,valCirur);
                break;
-            case'2':cadastro_funcionario(control,nome,cpf,data,endereco,email,senha,horario);
+            case'2':cadastro_funcionario(control,nome,cpf,data,endereco,email,senha,horario,ex,dent,vac,cirur,valEx,valDent,valVac,valCirur);
                break;
           }
   }     
-void login_funcionario(char control,char email,char senha,char data,char cpf, char horario){
+void login_funcionario(char control,char email[60],char senha[8],char data[10],char cpf[12], char horario[6],float ex, float dent, float vac, float cirur, float valEx, float valDent, float valVac, float valCirur){
           printf("E-mail:\n");
           scanf("%s",email);
           printf("Senha:\n");
@@ -158,11 +158,11 @@ void login_funcionario(char control,char email,char senha,char data,char cpf, ch
                 break;
               case'2':cancelamento_de_consultas(control,email,senha,cpf,data,horario);
                 break;
-              case'3':relatorio(control);
+              case'3':relatorio(control,ex,dent,vac,cirur,valEx,valDent,valVac,valCirur);
                 break;
           }
    } 
-void cadastro_funcionario(char control,char nome,char cpf,char data,char endereco,char email,char senha,char horario){
+void cadastro_funcionario(char control,char nome[100],char cpf[12],char data[10],char endereco[100],char email[60],int senha[8],char horario[6],float ex, float dent, float vac, float cirur, float valEx, float valDent, float valVac, float valCirur){
       printf("Nome:\n");
       scanf("%s",nome);
       printf("CPF:\n");
@@ -178,9 +178,9 @@ void cadastro_funcionario(char control,char nome,char cpf,char data,char enderec
       printf("Senha:\n");
       scanf("%id",senha);
       printf("Você foi cadastro com sucesso e será redirecionado a página de login!\n");
-      login_funcionario(control,data,cpf,email,senha,horario);
+      login_funcionario(control,data,cpf,email,senha,horario,ex,dent,vac,cirur,valEx,valDent,valVac,valCirur);
   }
-void internacao(char nome, char idade,char motivo, char data){
+void internacao(char nome[100], int idade[2],char motivo[100], char data[10]){
        printf("Nome do paciente:\n");
        scanf("%s",nome);
        printf("Idade:\n");
@@ -191,7 +191,7 @@ void internacao(char nome, char idade,char motivo, char data){
        scanf("%s",data);
        printf("O paciente %s foi internado por motivo de: %s, na data de: %s",nome,motivo,data);
   }                              
-void agendar(char email, char cpf, char data, char horario){
+void agendar(char email[60], char cpf[12], char data[10],char horario[6]){
        printf("E-mail:\n");
        scanf("%s",email);
        printf("CPF:\n");
@@ -203,7 +203,7 @@ void agendar(char email, char cpf, char data, char horario){
        scanf("%s",horario);
        printf("Sua consulta foi marcada para o dia: %s às %s\n",data,horario);
   }
-void cancelamento_de_consultas(char control, char email, char senha,char cpf,char data,char horario){
+void cancelamento_de_consultas(char control, char email[60],char senha[8],char cpf[12],char data[10],char horario[6]){
        printf("E-mail:\n");
        scanf("%s",email);
        printf("Senha:\n");
@@ -226,11 +226,11 @@ void reclamacao_elogio(void){
        printf("Sua mensagem foi enviada.\n");
        printf("Nós da NuVida te agradecemos por isso!\n");
   }
-void atestado(char data, char horario, char email){
+void atestado(char data[10], char horario[6], char email[60]){
   printf("Digite a data da sua consulta:\n");
-  scanf("%id",data);
+  scanf("%s",data);
   printf("Digite o horário da sua consulta:\n");
-  scanf("%id",horario);
+  scanf("%s",horario);
   printf("Paciente: %s  seu atestado foi gerado\n",email);
   printf("Por favor, acesse o link a seguir e o imprima: \n");
  }
