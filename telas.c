@@ -3,13 +3,13 @@
 #include <stdlib.h>
  
 int main(){        
-              char control;            
-              printf("BEM VINDO Á NUVIDA!\n");
-              printf("Digite (1) se você é um paciente\n");
-              printf("Digite (2) se você é um médico\n");
-              printf("Digite (3) se você é um funcionário\n");
-              scanf("\n%c",&control);              
-         switch (control){
+    char control;            
+       printf("BEM VINDO Á NUVIDA!\n");
+       printf("Digite (1) se você é um paciente\n");
+       printf("Digite (2) se você é um médico\n");
+       printf("Digite (3) se você é um funcionário\n");
+       scanf("\n%c",&control);              
+          switch (control){
               case '1':paciente();
                 break;
               case '2':medico();
@@ -57,6 +57,7 @@ void login_paciente(){
 void cadastro_paciente(){             
     char nome[100];
     char data[8];
+    char sexo[1];
     char cpf[13];
     char tel[10];
     char endereco[60];
@@ -64,21 +65,23 @@ void cadastro_paciente(){
     int senha[8];
     int numPacientes;
         printf("Nome:\n");
-        scanf("%s",nome);
+        gets(nome);
         printf("Data de nascimento:\n");
-        scanf("%s",data);
+        gets(data);
+        printf("Qual seu sexo? Digite (m) se masculino ou (f) se feminino\n");
+        gets(sexo);        
         printf("CPF:\n");
-        scanf("%s",cpf);
+        gets(cpf);
         printf("Telefone:\n");
-        scanf("%s",tel);
+        gets(tel);
         printf("Endereço:\n");
-        scanf("%s",endereco);
+        gets(endereco);
         printf("Você possui alguma alergia? Se sim, quais? Se não, não preencha\n");
         scanf("%s");
         printf("Você possui plano de saúde? Se não, não preencha\n");
         scanf("%s");       
         printf("E-mail:\n");
-        scanf("%s",email);
+        gets(email);
         printf("Senha:\n");
         scanf("%id",senha);
         printf("Você foi cadastro com sucesso!\n");         
@@ -104,7 +107,7 @@ void login_medico(){
     char email[60];
     int senha[8];    
         printf("E-mail:\n");
-        scanf("%s",email);
+        gets("%s",email);
         printf("Senha:\n");
         scanf("%id",senha);
         printf("Usuário: %s - Seja bem vindo à NuVida!\n",email); 
@@ -131,22 +134,25 @@ void cadastro_medico(){
     char nome[100];
     char cpf[13];
     char data[8];
+    char sexo[1];
     char tel[10];
     char endereco[60];
     char email[60];
     int senha[8];
        printf("Nome:\n");
-       scanf("%s",nome);
+       gets("%s",nome);
        printf("CPF:\n");
-       scanf("%id",cpf);
+       gets(cpf);
        printf("Data de nascimento:\n");
-       scanf("%s",data);
+       gets(data);
+       printf("Qual seu sexo? Digite (m) se masculino ou (f) se feminino\n");
+       gets(sexo);        
        printf("Telefone:\n");
-       scanf("%s",tel);
+       gets(tel);
        printf("Endereço:\n");
-       scanf("%s",endereco);
+       gets(endereco);
        printf("E-mail:\n");
-       scanf("%s",email);
+       gets(email);
        printf("Senha:\n");
        scanf("%id",senha);
        printf("Você foi cadastro com sucesso e será redirecionado para página de login!\n");
@@ -169,7 +175,7 @@ void login_funcionario(){
     char email[60];
     int senha[8];
         printf("E-mail:\n");
-        scanf("%s",email);
+        gets(email);
         printf("Senha:\n");
         scanf("%id",senha);
         printf("Usuário: %s - Seja bem vindo à NuVida!\n",email);         
@@ -190,22 +196,25 @@ void cadastro_funcionario(){
     char nome[100];
     char cpf[13];
     char data[8];
+    char sexo[1];
     char tel[10];
     char endereco[60];
     char email[60];
     int senha[8];
        printf("Nome:\n");
-       scanf("%s",nome);
+       gets(nome);
        printf("CPF:\n");
-       scanf("%id",cpf);
+       gets(cpf);
        printf("Data de nascimento:\n");
-       scanf("%s",data);
+       gets(data);
+       printf("Qual seu sexo? Digite (m) se masculino ou (f) se feminino\n");
+       gets(sexo);        
        printf("Telefone:\n");
-       scanf("%s",tel);
+       gets(tel);
        printf("Endereço:\n");
-       scanf("%id",endereco);
+       gets(endereco);
        printf("E-mail:\n");
-       scanf("%s",email);
+       gets(email);
        printf("Senha:\n");
        scanf("%id",senha);
        printf("Você foi cadastro com sucesso e será redirecionado a página de login!\n");
@@ -217,29 +226,35 @@ void internacao(){
     char motivo[200];
     char data[8];
        printf("Nome do paciente:\n");
-       scanf("%s",nome);
+       gets(nome);
        printf("Idade:\n");
        scanf("%id",idade);
        printf("Motivo:\n");
-       scanf("%s",motivo);
+       gets(motivo);
        printf("Data da internação:\n");
-       scanf("%s",data);
+       gets(data);
        printf("O paciente %s foi internado por motivo de: %s, na data de: %s",nome,motivo,data);
   }                              
 void agendar(){ 
+       char nome[100];
+       char sexo[1];
        char email[60];        
        char cpf[13];
        char data[8];
-       char horario[10];                
+       char horario[10]; 
+       printf("Digite seu nome completo:\n");
+       gets(nome); 
+       printf("Qual seu sexo? Digite (m) se masculino ou (f) se feminino\n");
+       gets(sexo);        
        printf("E-mail:\n");
-       scanf("%s",email);
+       gets(email);
        printf("CPF:\n");
-       scanf("%id",cpf);
+       gets(cpf);
        printf("AGENDE ABAIXO\n");
        printf("Data:");
-       scanf("%s",data);
+       gets(data);
        printf("Horário:");
-       scanf("%s",horario);
+       gets(horario);
        printf("Sua consulta foi marcada para o dia: %s às %s\n",data,horario);
   }
 void cancelamento_de_consultas(){
@@ -248,11 +263,11 @@ void cancelamento_de_consultas(){
     int senha[8];      
     char data[8];      
        printf("E-mail:\n");
-       scanf("%s",email);
+       gets(email);
        printf("Senha:\n");
        scanf("%id",senha);
        printf("Digite a data da consulta a ser cancelada:");
-       scanf("%s",data);
+       gets(data);
        printf("Você tem certeza?\n");
        printf("Digite (1) se SIM ou (2) se NÃO\n");
        scanf("\n%c",&control);
@@ -272,12 +287,14 @@ void reclamacao_elogio(void){
 void atestado(){
    char data[8];
    char horario[8];
-   char email[60];
+   char nome[100];
+      printf("Digite seu nome completo:\n");
+      gets(nome);
       printf("Digite a data da sua consulta:\n");
-      scanf("%s",data);
+      gets(data);
       printf("Digite o horário da sua consulta:\n");
-      scanf("%s",horario);
-      printf("Paciente: %s  seu atestado foi gerado\n",email);
+      gets(horario);
+      printf("Paciente: %s  seu atestado foi gerado!\n",nome);
       printf("Por favor, acesse o link a seguir e o imprima: \n");
  }
 void relatorio(){   
