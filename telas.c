@@ -43,7 +43,8 @@ void login_paciente(){
         printf("Usuário: %s - Seja bem vindo à NuVida!\n",email); 
         printf("Digite (1) para gerar atestado médico\n");
         printf("Digite (2) para marcar uma consulta\n");
-        printf("Digite (3) para cancelar uma consulta\n");     
+        printf("Digite (3) para cancelar uma consulta\n");   
+        printf("Digite (4) para realizar um pagamento\n");
         scanf("\n%c",&control);            
            switch (control){
                case '1':atestado();
@@ -51,6 +52,8 @@ void login_paciente(){
                case'2':agendar();
                  break;
                case'3':cancelamento_de_consultas();
+                 break;
+               case'4':pagamento();
                  break;
             }        
   }       
@@ -90,6 +93,131 @@ void cadastro_paciente(){
         printf("Você será redirecionado para a página de login\n");
         login_paciente();           
   }
+void pagamento(){
+      char control;
+      printf("Olá, você está na área de pagamentos\n");
+      printf("Digite (1) para pré-pagamento\n");
+      printf("Digite (2) para pós-pagamento\n");
+      scanf("\n%c",&control);
+        switch(control){
+        case'1':prePagamento();
+          break;
+        case'2':posPagamento();
+          break;
+        }
+  }
+void prePagamento(){
+     char control;
+     printf("Olá, tudo bem? Quero te informar que o pré-pagamento não tem taxas ou juros.\n");
+     printf("Por favor, escolha um serviço:\n");
+     printf("1 - Consulta médica\n");
+     printf("2 - Consulta odontológica\n");
+     scanf("\n%c",control);
+         switch (control){
+            case '1':prePagamentoConsultaMedica();
+              break;
+            case '2':prePagamentoConsultaOdontologica();
+              break;
+         }
+  }
+void prePagamentoConsultaMedica(){
+     int cartao[15];
+     char nome[60];
+     printf("O valor da nossa consulta médica é de R$50,00\n");
+     printf("Para a sua segurança só aceitamos cartões de crédito\n");
+     printf("Aceitamos: Mastercard, Visa e AmericaExpress\n");
+     printf("Número do cartão:\n");
+     scanf("%id");
+     printf("Nome no cartão:\n");
+     gets(nome);
+     printf("Data de validade:\n");
+     scanf("%id");
+     printf("Código de segurança:\n");
+     scanf("%id");
+}
+void prePagamentoConsultaOdontologica(){
+     int cartao[15];
+     char nome[60];
+     printf("O valor da nossa consulta odontológica é de R$60,00\n");
+     printf("Para a sua segurança só aceitamos cartões de crédito\n");
+     printf("Aceitamos: Mastercard, Visa e AmericaExpress\n");
+     printf("Número do cartão:\n");
+     scanf("%id");
+     printf("Nome no cartão:\n");
+     gets(nome);
+     printf("Data de validade:\n");
+     scanf("%id");
+     printf("Código de segurança:\n");
+     scanf("%id");
+}
+void posPagamento(){
+     char control;
+     printf("Olá, tudo bem? Quero te informar que o pós-pagamento tem 1% de juros.\n");
+     printf("Por favor, escolha um serviço:\n");
+     printf("1 - Consulta médica\n");
+     printf("2 - Consulta odontológica\n");
+     scanf("\n%c",&control);
+         switch (control){
+            case'1':posPagamentoConsultaMedica();
+              break;
+            case'2':posPagamentoConsultaOdontologica();
+              break;
+         }
+  }
+void posPagamentoConsultaMedica(){
+     int numCartao[15];
+     char nome[60];
+     int data[2];
+     int cv[3];
+     float valor = 60;
+     float juros = 1;
+     float total = valor + juros;    
+     printf("O valor da nossa consulta médica é de R$50,00\n");
+     printf("Para a sua segurança só aceitamos cartões de crédito\n");
+     printf("Aceitamos: Mastercard, Visa e AmericaExpress\n");
+     printf("Número do cartão:\n");
+     scanf("%id",numCartao);
+     printf("Nome no cartão:\n");
+     gets(nome);
+     printf("Data de validade:\n");
+     scanf("%id",data);
+     printf("Código de segurança:\n");
+     scanf("%id",cv);
+     printf("Dia do pagamento:\n");
+     scanf("%id",data);
+       if(data > 15){
+              printf("Por causa dos juros, o valor da sua consulta é: %f\n",total);
+       }else{
+         printf("O valor final da consulta é: %f\n",valor);
+       }
+  }
+void posPagamentoConsultaOdontologica(){
+     int numCartao[15];
+     char nome[60];
+     int data[2];
+     int cv[3];
+     float valor = 60;
+     float juros = 1;
+     float total = valor + juros;    
+     printf("O valor da nossa consulta odontológica é de R$60,00\n");
+     printf("Para a sua segurança só aceitamos cartões de crédito\n");
+     printf("Aceitamos: Mastercard, Visa e AmericaExpress\n");
+     printf("Número do cartão:\n");
+     scanf("$id",numCartao);
+     printf("Nome no cartão:\n");
+     gets(nome);
+     printf("Data de validade:\n");
+     scanf("%id",data);
+     printf("Código de segurança:\n");
+     scanf("%id",cv);
+     printf("Dia do pagamento:\n");
+     scanf("%id",data);
+       if(data > 15){
+              printf("Por causa dos juros, o valor da sua consulta é: %f\n",total);
+       }else{
+         printf("O valor final da consulta é: %f\n",valor);
+       }
+}
 void medico(){
     char control;
        printf("Digite (1) para login\n");
@@ -278,7 +406,7 @@ void cancelamento_de_consultas(){
                login_paciente();
              }
   }
-void reclamacao_elogio(void){
+void reclamacao_elogio(){
        printf("Deixe seu mensagem abaixo:\n");
        scanf("%s");
        printf("Sua mensagem foi enviada.\n");
@@ -419,7 +547,7 @@ void quantidadePacientes(){
       int numPacientes;
       printf("Essa unidade tem 1500 pacientes\n");     
   }
-void totalRede(void){
+void totalRede(){
       printf("Digite (1) para calcular o faturamento total da rede NuVida\n");
       printf("Digite (2) para ver o número de pacientes da rede\n");
   }
