@@ -203,6 +203,7 @@ void posPagamentoConsultaMedica()
   int cv[3];
   float valor = 50;
   int dia;
+  char c[9];
   printf("O valor da nossa consulta médica é de R$50,00\n");
   printf("Para a sua segurança só aceitamos cartões de crédito\n");
   printf("Bandeiras: Mastercard, Visa e AmericaExpress\n");
@@ -215,25 +216,48 @@ void posPagamentoConsultaMedica()
   printf("Código de segurança:\n");
   scanf("%id", cv);
   printf("Dia do pagamento:\n");
-  scanf("%id", &dia);
-  if (dia > 15)
+  scanf("\n%id", &dia);
+  if (dia == 16)
   {
-    printf("Por causa dos juros, o valor da sua consulta é: %f\n",valor + 0.33);
+    printf("Por causa dos juros, o valor da sua consulta é: R$%f\n", valor + 0.33);
   }
-  else
+  if (dia == 17)
   {
-    printf("O valor final da consulta é: %1.f\n");
+    printf("Por causa dos juros, o valor da sua consulta é: R$%f\n", valor + 0.66);
+  }
+  if (dia == 18)
+  {
+    printf("Por causa dos juros, o valor da sua consulta é: R$%f\n", valor + 0.99);
+  }
+  if (dia == 19)
+  {
+    printf("Por causa dos juros, o valor da sua consulta é: R$%f\n", valor + 1.32);
+  }
+  if (dia == 20)
+  {
+    printf("Por causa dos juros, o valor da sua conta é: R$%f\n", valor + 1.65);
+  }
+  if(dia <=15)
+  {
+    printf("O valor final da consulta é: R$%1.f\n",valor);
+  }
+  printf("Para confirmar o pagamento, digite 'Confirmar'\n");
+  scanf("\n%s", &c);
+  if (c == 'Confirmar' || c == 'confirmar' || c == 'CONFIRMAR')
+  {
+    printf("Seu pagamento foi aprovado!\n");
+    printf("Por favor, acesse o link a seguir e apresente-o na clínica: \n");
   }
 }
 void posPagamentoConsultaOdontologica()
 {
   int numCartao[15];
   char nome[60];
-  int data[2];
+  char data[2];
   int cv[3];
   float valor = 60;
-  float juros = 1;
-  float total = valor + juros;
+  int dia;
+  char c;
   printf("O valor da nossa consulta odontológica é de R$60,00\n");
   printf("Para a sua segurança só aceitamos cartões de crédito\n");
   printf("Aceitamos: Mastercard, Visa e AmericaExpress\n");
@@ -246,14 +270,37 @@ void posPagamentoConsultaOdontologica()
   printf("Código de segurança:\n");
   scanf("%id", cv);
   printf("Dia do pagamento:\n");
-  scanf("%id", data);
-  if (data > 15)
+  scanf("\n%id", &dia);
+  if (dia == 16)
   {
-    printf("Por causa dos juros, o valor da sua consulta é: %f\n", total);
+    printf("Por causa dos juros, o valor da sua consulta é: R$%f\n", valor + 0.33);
   }
-  else
+  if (dia == 17)
   {
-    printf("O valor final da consulta é: %f\n", valor);
+    printf("Por causa dos juros, o valor da sua consulta é: R$%f\n", valor + 0.66);
+  }
+  if (dia == 18)
+  {
+    printf("Por causa dos juros, o valor da sua consulta é: R$%f\n", valor + 0.99);
+  }
+  if (dia == 19)
+  {
+    printf("Por causa dos juros, o valor da sua consulta é: R$%f\n", valor + 1.32);
+  }
+  if (dia == 20)
+  {
+    printf("Por causa dos juros, o valor da sua consulta é:R$%f\n", valor + 1.65);
+  }
+  if(dia <=15)
+  {
+    printf("O valor final da consulta é: R$%1.f\n",valor);
+  }
+  printf("Para confirmar o pagamento, digite 'Confirmar'\n");
+  scanf("\n%c", &c);
+  if (c == 'Confirmar' || c == 'confirmar' || c == 'CONFIRMAR');
+  {
+    printf("Seu pagamento foi aprovado!\n");
+    printf("Por favor, acesse o link a seguir e apresente-o na clínica: \n");
   }
 }
 void medico()
