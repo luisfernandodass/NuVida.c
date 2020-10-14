@@ -25,9 +25,9 @@ void main()
 void paciente()
 {
   char control;
-  printf("1 - login\n");
-  printf("2 - cadastro\n");
-  printf("3 - elogio ou reclamação\n");
+  printf("1 - Login\n");
+  printf("2 - Cadastro\n");
+  printf("3 - Elogio ou reclamação\n");
   scanf("\n%c", &control);
   switch (control)
   {
@@ -52,10 +52,10 @@ void login_paciente()
   printf("Senha:\n");
   scanf("%id", senha);
   printf("Usuário: %s - Seja bem vindo à NuVida!\n", email);
-  printf("1 - atestado médico\n");
-  printf("2 - marcar consulta\n");
-  printf("3 - cancelar consulta\n");
-  printf("4 - realizar pagamento\n");
+  printf("1 - Atestado médico\n");
+  printf("2 - Marcar consulta\n");
+  printf("3 - Cancelar consulta\n");
+  printf("4 - Realizar pagamento\n");
   scanf("\n%c", &control);
   switch (control)
   {
@@ -83,7 +83,7 @@ void cadastro_paciente()
   char endereco[60];
   char email[60];
   int senha[8];
-  int numPacientes;
+  int juntas = 7121;
   printf("Nome:\n");
   gets(nome);
   printf("Data de nascimento:\n");
@@ -105,8 +105,8 @@ void cadastro_paciente()
   printf("Senha:\n");
   scanf("%id", senha);
   printf("Você foi cadastro com sucesso!\n");
-  numPacientes++;
-  printf("Parabéns, seja bem vindo! Você é o nosso paciente número: %i\n", numPacientes);
+  juntas++;
+  printf("Parabéns, seja bem vindo! Você é o paciente número: %i da rede\n", juntas);
   printf("Você será redirecionado para a página de login\n");
   login_paciente();
 }
@@ -114,8 +114,8 @@ void pagamento()
 {
   char control;
   printf("Olá, você está na área de pagamentos\n");
-  printf("1 - pré-pagamento\n");
-  printf("2 - pós-pagamento\n");
+  printf("1 - Pré-pagamento\n");
+  printf("2 - Pós-pagamento\n");
   scanf("\n%c", &control);
   switch (control)
   {
@@ -197,6 +197,7 @@ void posPagamento()
 }
 void posPagamentoConsultaMedica()
 {
+  char control;
   int numCartao[15];
   char nome[60];
   char data[2];
@@ -237,9 +238,9 @@ void posPagamentoConsultaMedica()
   {
     printf("Por causa dos juros, o valor da sua conta é: R$%f\n", valor + 1.65);
   }
-  if(dia <=15)
+  if (dia <= 15)
   {
-    printf("O valor final da consulta é: R$%1.f\n",valor);
+    printf("O valor final da consulta é: R$%1.f\n", valor);
   }
   printf("Para confirmar o pagamento, digite (c)\n");
   scanf("\n%c", &c);
@@ -247,10 +248,20 @@ void posPagamentoConsultaMedica()
   {
     printf("Seu pagamento foi aprovado!\n");
     printf("Por favor, acesse o link a seguir e apresente-o na clínica: \n");
+    
+    printf("Digite [1] para voltar ao menu\n");
+    printf("Digite [2] para encerrar o programa\n");
+    scanf("\n%c",control);
+    switch (control){
+      case'1':
+         main();
+         break;
+    }
   }
 }
 void posPagamentoConsultaOdontologica()
 {
+  char control;
   int numCartao[15];
   char nome[60];
   char data[2];
@@ -291,23 +302,33 @@ void posPagamentoConsultaOdontologica()
   {
     printf("Por causa dos juros, o valor da sua consulta é:R$%f\n", valor + 1.65);
   }
-  if(dia <=15)
+  if (dia <= 15)
   {
-    printf("O valor final da consulta é: R$%1.f\n",valor);
+    printf("O valor final da consulta é: R$%1.f\n", valor);
   }
   printf("Para confirmar o pagamento, digite (c)\n");
   scanf("\n%c", &c);
-  if (c == 'c' || c == 'C');
+  if (c == 'c' || c == 'C')
+    ;
   {
     printf("Seu pagamento foi aprovado!\n");
     printf("Por favor, acesse o link a seguir e apresente-o na clínica: \n");
+
+    printf("Digite [1] para voltar ao menu\n");
+    printf("Digite [2] para encerrar o programa\n");
+    scanf("\n%c",control);
+    switch (control){
+      case'1':
+         main();
+         break;
+    }
   }
 }
 void medico()
 {
   char control;
-  printf("1 - login\n");
-  printf("2 - cadastro\n");
+  printf("1 - Login\n");
+  printf("2 - Cadastro\n");
   scanf("\n%c", &control);
   switch (control)
   {
@@ -386,8 +407,8 @@ void cadastro_medico()
 void funcionario()
 {
   char control;
-  printf("1 - login\n");
-  printf("2 - cadastro\n");
+  printf("1 - Login\n");
+  printf("2 - Cadastro\n");
   scanf("\n%c", &control);
   switch (control)
   {
@@ -409,9 +430,9 @@ void login_funcionario()
   printf("Senha:\n");
   scanf("%id", senha);
   printf("Usuário: %s - Seja bem vindo à NuVida!\n", email);
-  printf("1 - marcar uma consulta\n");
-  printf("2 - cancelar uma consulta\n");
-  printf("3 - relatórios\n");
+  printf("1 - Marcar consulta\n");
+  printf("2 - Mancelar consulta\n");
+  printf("3 - Relatórios\n");
   scanf("\n%c", &control);
   switch (control)
   {
@@ -457,6 +478,7 @@ void cadastro_funcionario()
 }
 void internacao()
 {
+  char control;
   char nome[100];
   int idade[2];
   char motivo[200];
@@ -470,9 +492,19 @@ void internacao()
   printf("Data da internação:\n");
   gets(data);
   printf("O paciente %s foi internado por motivo de: %s, na data de: %s", nome, motivo, data);
+
+  printf("Digite [1] para voltar ao menu\n");
+    printf("Digite [2] para encerrar o programa\n");
+    scanf("\n%c",control);
+    switch (control){
+      case'1':
+         main();
+         break;
+    }
 }
 void agendar()
 {
+  char control;
   char nome[100];
   char sexo[1];
   char email[60];
@@ -492,7 +524,16 @@ void agendar()
   gets(data);
   printf("Horário:");
   gets(horario);
-  printf("Sua consulta foi marcada para o dia: %s às %s\n", data, horario);
+  printf("Sua consulta foi marcada para o dia: %s às %s\n", data, horario);  
+
+    printf("Digite [1] para voltar ao menu\n");
+    printf("Digite [2] para encerrar o programa\n");
+    scanf("\n%c",control);
+    switch (control){
+      case'1':
+         main();
+         break;
+    }
 }
 void cancelamento_de_consultas()
 {
@@ -507,16 +548,24 @@ void cancelamento_de_consultas()
   printf("Digite a data da consulta a ser cancelada:");
   gets(data);
   printf("Você tem certeza?\n");
-  printf("Digite (1) se SIM ou (2) se NÃO\n");
+  printf("Para confirmar digite [c]\n");
   scanf("\n%c", &control);
-  if (control == '1')
+  if (control == 'c' || control == 'C')
   {
     printf("A consulta do dia %s foi cancelada\n", data);
-  }
-  else
-  {
-    printf("Você foi redirecionado para a página de login\n");
-    login_paciente();
+
+    printf("Digite [1] para voltar ao menu\n");
+    printf("Digite [2] para encerrar o programa\n");
+    scanf("\n%c",control);
+    switch (control){
+      case'1':
+         main();
+         break;
+    }
+ 
+  }else{
+    printf("ERROR! Você será redirecionado para a aréa de cancelamento\n");
+    cancelamento_de_consultas();
   }
 }
 void reclamacao_elogio()
@@ -543,38 +592,36 @@ void atestado()
 void relatorio()
 {
   char control;
-  do
+
+  printf("Você está na área de relatórios agora\n");
+  printf("1 - Unidade Paraisopólis\n");
+  printf("2 - Unidade Morumbi\n");
+  printf("3 - Unidade Vila\n");
+  printf("4 - Todas unidades da rede NuVida\n");
+  scanf("\n%c", &control);
+  switch (control)
   {
-    printf("Você está na área de relatórios agora\n");
-    printf("1 - Unidade Paraisopólis\n");
-    printf("2 - Unidade Morumbi\n");
-    printf("3 - Unidade Vila\n");
-    printf("4 - Todas unidades da rede NuVida\n");
-    scanf("\n%c", &control);
-    switch (control)
-    {
-    case '1':
-      paraisopolis();
-      break;
-    case '2':
-      morumbi();
-      break;
-    case '3':
-      vila();
-      break;
-    case '4':
-      totalRede();
-      break;
-    }
-  } while (control > 0 & control < 3);
+  case '1':
+    paraisopolis();
+    break;
+  case '2':
+    morumbi();
+    break;
+  case '3':
+    vila();
+    break;
+  case '4':
+    totalRede();
+    break;
+  }
 }
 void paraisopolis()
 {
   char control;
   printf("Relatórios da Unidade Paraisopólis\n");
-  printf("1 - totalização do faturamento diário\n");
-  printf("2 - totalização do faturamento mensal\n");
-  printf("3 - número de pacientes dessa unidade\n");
+  printf("1 - Faturamento diário\n");
+  printf("2 - Faturamento mensal\n");
+  printf("3 - Número de pacientes dessa unidade\n");
   scanf("\n%c", &control);
   switch (control)
   {
@@ -644,11 +691,11 @@ void faturamento_diario()
   printf("Digite o número de exames feitos hoje: ");
   scanf("%f", &ex);
   printf("Digite o número de consultas odontológicas feitas hoje: ");
-  scanf("%f",  &dent);
+  scanf("%f", &dent);
   printf("Digite o número de vacinas vendidas hoje: ");
-  scanf("%f",  &vac);
+  scanf("%f", &vac);
   printf("Digite o número de cirurgias feitas hoje: ");
-  scanf("%f",  &cirur);
+  scanf("%f", &cirur);
   printf("Calculando...\n");
   printf("Faturamento diário de exames: R$%1.f\n", ex * valEx);
   printf("Faturamento diário de odontologia: R$%1.f\n", dent * valDent);
@@ -740,20 +787,23 @@ void quantidadePacientes()
   int morumbi = 1115;
   int vila = 956;
   int juntas = paraisopolis + morumbi + vila;
-  printf("Todas as clínicas da NuVida juntas somam: %i pacientes até o momento.\n",juntas);
+  printf("Calculando...\n");
+  printf("Todas as clínicas da NuVida juntas somam: %i pacientes até o momento.\n", juntas);
 }
 void quantidadePacientesParaisopolis()
 {
-   printf("A unidade Paraisopólis tem 5050 pacientes\n");
+  printf("A unidade Paraisopólis tem 5050 pacientes\n");
+  printf("Acesse o link a seguir para ver a lista de pacientes: \n");
 }
 void quantidadePacientesMorumbi()
-
 {
-   printf("A unidade Morumbi tem 1115 pacientes\n");
+  printf("A unidade Morumbi tem 1115 pacientes\n");
+  printf("Acesse o link a seguir para ver a lista de pacientes: \n");
 }
 void quantidadePacientesVila()
 {
-   printf("A unidade Vila tem 956 pacientes\n");
+  printf("A unidade Vila tem 956 pacientes\n");
+  printf("Acesse o link a seguir para ver a lista de pacientes: \n");
 }
 void totalRede()
 {
@@ -761,17 +811,28 @@ void totalRede()
   printf("1 - Faturamento diário da rede NuVida\n");
   printf("2 - Faturamento mensal da rede NuVida\n");
   printf("3 - Número de pacientes da rede\n");
-  scanf("\n%c",&control);
-  switch(control)
+  scanf("\n%c", &control);
+  switch (control)
   {
-        case'1':
-        faturamento_diarioRede();
-          break;
-        case'2':
-        faturamento_mensalRede();
-          break;         
-        case'3':
-        quantidadePacientes();
-          break;
+  case '1':
+    faturamento_diarioRede();
+    break;
+  case '2':
+    faturamento_mensalRede();
+    break;
+  case '3':
+    quantidadePacientes();
+    break;
   }
+}
+void encerrar(){
+    char control;
+    printf("O programa foi encerrado!");
+    printf("Digite [1] para voltar ao menu\n");
+    scanf("\n%c",control);
+    switch (control){
+      case'1':
+         main();
+         break;
+    }
 }
