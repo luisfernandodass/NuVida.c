@@ -4,45 +4,48 @@
 
 void menu()
 {
-   main();
+  main();
 }
 void paciente()
 {
-  char control;
+  char control = 0;
   printf("[1] - Login\n");
   printf("[2] - Cadastro\n");
   printf("[3] - Elogio ou reclamação\n");
   printf("[4] - Voltar ao menu\n");
   printf("[5] - Encerrar o programa\n");
   scanf("\n%c", &control);
-  switch (control)
+  do
   {
-  case '1':
-    login_paciente();
-    break;
-  case '2':
-    cadastro_paciente();
-    break;
-  case '3':
-    reclamacao_elogio();
-    break;
-  case '4':
-    menu();
-    break;
-  case '5':
-    exit(0);
-    break;
-  }
+    switch (control)
+    {
+    case '1':
+      login_paciente();
+      break;
+    case '2':
+      cadastro_paciente();
+      break;
+    case '3':
+      reclamacao_elogio();
+      break;
+    case '4':
+      menu();
+      break;
+    case '5':
+      exit(0);
+      break;
+    }
+  } while (control > 0 & control <= 5);
 }
 void login_paciente()
 {
-  char control;
+  char control = 0;
   char email[60];
   int senha[8];
   printf("E-mail:\n");
-  scanf("%s", email);
+  scanf("%s", &email);
   printf("Senha:\n");
-  scanf("%id", senha);
+  scanf("%id", &senha);
   printf("Usuário: %s - Seja bem vindo à NuVida!\n", email);
   printf("-----------------------------------\n");
   printf("[1] - Atestado médico\n");
@@ -52,27 +55,30 @@ void login_paciente()
   printf("[5] - Voltar ao menu\n");
   printf("[6] - Encerrar o programa\n");
   scanf("\n%c", &control);
-  switch (control)
+  do
   {
-  case '1':
-    atestado();
-    break;
-  case '2':
-    agendar();
-    break;
-  case '3':
-    cancelamento_de_consultas();
-    break;
-  case '4':
-    pagamento();
-    break;
-  case '5':
-    menu();
-    break;
-  case '6':
-    exit(0);
-    break;
-  }
+    switch (control)
+    {
+    case '1':
+      atestado();
+      break;
+    case '2':
+      agendar();
+      break;
+    case '3':
+      cancelamento_de_consultas();
+      break;
+    case '4':
+      pagamento();
+      break;
+    case '5':
+      menu();
+      break;
+    case '6':
+      exit(0);
+      break;
+    }
+  } while (control > 0 & control <= 6);
 }
 void cadastro_paciente()
 {
@@ -104,7 +110,7 @@ void cadastro_paciente()
   printf("E-mail:\n");
   gets(email);
   printf("Senha:\n");
-  scanf("%id", senha);
+  scanf("%id", &senha);
   printf("Você foi cadastro com sucesso!\n");
   juntas++;
   printf("Parabéns, seja bem vindo! Você é o paciente número: %i da rede\n", juntas);
@@ -113,37 +119,40 @@ void cadastro_paciente()
 }
 void medico()
 {
-  char control;
+  char control = 0;
   printf("[1] - Login\n");
   printf("[2] - Cadastro\n");
   printf("[3] - Voltar ao menu\n");
   printf("[4] - Encerrar o programa\n");
   scanf("\n%c", &control);
-  switch (control)
+  do
   {
-  case '1':
-    login_medico();
-    break;
-  case '2':
-    cadastro_medico();
-    break;
-  case '3':
-    menu();
-    break;
-  case '4':
-    exit(0);
-    break;
-  }
+    switch (control)
+    {
+    case '1':
+      login_medico();
+      break;
+    case '2':
+      cadastro_medico();
+      break;
+    case '3':
+      menu();
+      break;
+    case '4':
+      exit(0);
+      break;
+    }
+  } while (control > 0 & control <= 4);
 }
 void login_medico()
 {
-  char control;
+  char control = 0;
   char email[60];
   int senha[8];
   printf("E-mail:\n");
-  gets("%s", email);
+  scanf("%s",&email);
   printf("Senha:\n");
-  scanf("%id", senha);
+  scanf("%id", &senha);
   printf("Usuário: %s - Seja bem vindo à NuVida!\n", email);
   printf("-----------------------------------\n");
   printf("[1] - Atestado médico\n");
@@ -154,30 +163,33 @@ void login_medico()
   printf("[6] - Voltar ao menu\n");
   printf("[7] - Encerrar o programa\n");
   scanf("\n%c", &control);
-  switch (control)
+  do
   {
-  case '1':
-    atestado();
-    break;
-  case '2':
-    agendar();
-    break;
-  case '3':
-    cancelamento_de_consultas();
-    break;
-  case '4':
-    internacao();
-    break;
-  case '5':
-    relatorio();
-    break;
-  case '6':
-    menu();
-    break;
-  case '7':
-    exit(0);
-    break;
-  }
+    switch (control)
+    {
+    case '1':
+      atestado();
+      break;
+    case '2':
+      agendar();
+      break;
+    case '3':
+      cancelamento_de_consultas();
+      break;
+    case '4':
+      internacao();
+      break;
+    case '5':
+      relatorio();
+      break;
+    case '6':
+      menu();
+      break;
+    case '7':
+      exit(0);
+      break;
+    }
+  } while (control > 0 & control <= 7);
 }
 void cadastro_medico()
 {
@@ -210,37 +222,40 @@ void cadastro_medico()
 }
 void funcionario()
 {
-  char control;
+  char control = 0;
   printf("[1] - Login\n");
   printf("[2] - Cadastro\n");
   printf("[3] - Voltar ao menu\n");
   printf("[4] - Encerrar o programa\n");
   scanf("\n%c", &control);
-  switch (control)
+  do
   {
-  case '1':
-    login_funcionario();
-    break;
-  case '2':
-    cadastro_funcionario();
-    break;
-  case '3':
-    menu();
-    break;
-  case '4':
-    exit(0);
-    break;
-  }
+    switch (control)
+    {
+    case '1':
+      login_funcionario();
+      break;
+    case '2':
+      cadastro_funcionario();
+      break;
+    case '3':
+      menu();
+      break;
+    case '4':
+      exit(0);
+      break;
+    }
+  } while (control > 0 & control <= 4);
 }
 void login_funcionario()
 {
-  char control;
+  char control = 0;
   char email[60];
   int senha[8];
   printf("E-mail:\n");
   gets(email);
   printf("Senha:\n");
-  scanf("%id", senha);
+  scanf("%id", &senha);
   printf("Usuário: %s - Seja bem vindo à NuVida!\n", email);
   printf("-----------------------------------\n");
   printf("[1] - Marcar consulta\n");
@@ -249,24 +264,27 @@ void login_funcionario()
   printf("[4] - Voltar ao menu\n");
   printf("[5] - Encerrar o programa\n");
   scanf("\n%c", &control);
-  switch (control)
+  do
   {
-  case '1':
-    agendar();
-    break;
-  case '2':
-    cancelamento_de_consultas();
-    break;
-  case '3':
-    relatorio();
-    break;
-  case '4':
-    menu();
-    break;
-  case '5':
-    exit(0);
-    break;
-  }
+    switch (control)
+    {
+    case '1':
+      agendar();
+      break;
+    case '2':
+      cancelamento_de_consultas();
+      break;
+    case '3':
+      relatorio();
+      break;
+    case '4':
+      menu();
+      break;
+    case '5':
+      exit(0);
+      break;
+    }
+  } while (control > 0 & control <= 5);
 }
 void cadastro_funcionario()
 {
@@ -291,66 +309,71 @@ void cadastro_funcionario()
   printf("Endereço:\n");
   gets(endereco);
   printf("E-mail:\n");
-  scanf("%s",email);
+  scanf("%s", &email);
   printf("Senha:\n");
-  scanf("%id", senha);
+  scanf("%id", &senha);
   printf("Você foi cadastro com sucesso e será redirecionado a página de login!\n");
   return login_funcionario();
 }
 void pagamento()
 {
-  char control;
+  char control = 0;
   printf("Olá, você está na área de pagamentos\n");
   printf("[1] - Pré-pagamento\n");
   printf("[2] - Pós-pagamento\n");
   printf("[3] - Voltar ao menu\n");
   printf("[4] - Encerrar o programa\n");
   scanf("\n%c", &control);
-  switch (control)
+  do
   {
-  case '1':
-    prePagamento();
-    break;
-  case '2':
-    posPagamento();
-    break;
-  case '3':
-    menu();
-    break;
-  case '4':
-    exit(0);
-    break;
-  }
+    switch (control)
+    {
+    case '1':
+      prePagamento();
+      break;
+    case '2':
+      posPagamento();
+      break;
+    case '3':
+      menu();
+      break;
+    case '4':
+      exit(0);
+      break;
+    }
+  } while (control > 0 & control <= 4);
 }
 void prePagamento()
 {
-  char control;
+  char control = 0;
   printf("Olá, tudo bem? Quero te informar que o pré-pagamento não tem taxas ou juros.\n");
   printf("Por favor, escolha uma opção:\n");
   printf("[1] - Consulta médica\n");
   printf("[2] - Consulta odontológica\n");
   printf("[3] - Voltar ao menu\n");
   printf("[4] - Encerrar o programa\n");
-  scanf("\n%c", control);
-  switch (control)
+  scanf("\n%c", &control);
+  do
   {
-  case '1':
-    prePagamentoConsultaMedica();
-    break;
-  case '2':
-    prePagamentoConsultaOdontologica();
-    break;
-  case '3':
-    menu();
-    break;
-  case '4':
-    exit(0);
-    break;
-  }
+    switch (control)
+    {
+    case '1':
+      prePagamentoConsultaMedica();
+      break;
+    case '2':
+      prePagamentoConsultaOdontologica();
+      break;
+    case '3':
+      menu();
+      break;
+    case '4':
+      exit(0);
+      break;
+    }
+  } while (control > 0 & control <= 4);
 }
 void prePagamentoConsultaMedica()
 {
-  int cartao[15];
   char nome[60];
   printf("O valor da nossa consulta médica é de R$50,00\n");
   printf("Para a sua segurança só aceitamos cartões de crédito\n");
@@ -366,7 +389,6 @@ void prePagamentoConsultaMedica()
 }
 void prePagamentoConsultaOdontologica()
 {
-  int cartao[15];
   char nome[60];
   printf("O valor da nossa consulta odontológica é de R$60,00\n");
   printf("Para a sua segurança só aceitamos cartões de crédito\n");
@@ -382,7 +404,7 @@ void prePagamentoConsultaOdontologica()
 }
 void posPagamento()
 {
-  char control;
+  char control = 0;
   printf("Olá, tudo bem? Quero te informar que o pós-pagamento tem 1% de juros.\n");
   printf("Por favor, escolha uma opção:\n");
   printf("[1] - Consulta médica\n");
@@ -390,25 +412,28 @@ void posPagamento()
   printf("[3] - Voltar ao menu\n");
   printf("[4] - Encerrar o programa\n");
   scanf("\n%c", &control);
-  switch (control)
+  do
   {
-  case '1':
-    posPagamentoConsultaMedica();
-    break;
-  case '2':
-    posPagamentoConsultaOdontologica();
-    break;
-  case '3':
-    menu();
-    break;
-  case '4':
-    exit(0);
-    break;
-  }
+    switch (control)
+    {
+    case '1':
+      posPagamentoConsultaMedica();
+      break;
+    case '2':
+      posPagamentoConsultaOdontologica();
+      break;
+    case '3':
+      menu();
+      break;
+    case '4':
+      exit(0);
+      break;
+    }
+  } while (control > 0 & control <= 4);
 }
 void posPagamentoConsultaMedica()
 {
-  char control;
+  char control = 0;
   int numCartao[15];
   char nome[60];
   char data[2];
@@ -420,13 +445,13 @@ void posPagamentoConsultaMedica()
   printf("Para a sua segurança só aceitamos cartões de crédito\n");
   printf("Bandeiras: Mastercard, Visa e AmericaExpress\n");
   printf("Número do cartão:\n");
-  scanf("%id", numCartao);
+  scanf("%id", &numCartao);
   printf("Nome no cartão:\n");
   gets(nome);
   printf("Data de validade:\n");
   gets(data);
   printf("Código de segurança:\n");
-  scanf("%id", cv);
+  scanf("%id", &cv);
   printf("Dia do pagamento:\n");
   scanf("\n%id", &dia);
   if (dia == 16)
@@ -459,10 +484,9 @@ void posPagamentoConsultaMedica()
   {
     printf("Seu pagamento foi aprovado!\n");
     printf("Por favor, acesse o link a seguir e apresente-o na clínica: \n");
-
     printf("\nDigite [1] para voltar ao menu\n");
     printf("Digite [2] para encerrar o programa\n");
-    scanf("\n%c", control);
+    scanf("\n%c", &control);
     switch (control)
     {
     case '1':
@@ -476,7 +500,7 @@ void posPagamentoConsultaMedica()
 }
 void posPagamentoConsultaOdontologica()
 {
-  char control;
+  char control = 0;
   int numCartao[15];
   char nome[60];
   char data[2];
@@ -488,13 +512,13 @@ void posPagamentoConsultaOdontologica()
   printf("Para a sua segurança só aceitamos cartões de crédito\n");
   printf("Aceitamos: Mastercard, Visa e AmericaExpress\n");
   printf("Número do cartão:\n");
-  scanf("$id", numCartao);
+  scanf("$id", &numCartao);
   printf("Nome no cartão:\n");
   gets(nome);
   printf("Data de validade:\n");
-  scanf("%id", data);
+  scanf("%id", &data);
   printf("Código de segurança:\n");
-  scanf("%id", cv);
+  scanf("%id", &cv);
   printf("Dia do pagamento:\n");
   scanf("\n%id", &dia);
   if (dia == 16)
@@ -528,10 +552,9 @@ void posPagamentoConsultaOdontologica()
   {
     printf("Seu pagamento foi aprovado!\n");
     printf("Por favor, acesse o link a seguir e apresente-o na clínica: \n");
-
     printf("Digite [1] para voltar ao menu\n");
     printf("Digite [2] para encerrar o programa\n");
-    scanf("\n%c", control);
+    scanf("\n%c", &control);
     switch (control)
     {
     case '1':
@@ -545,37 +568,39 @@ void posPagamentoConsultaOdontologica()
 }
 void internacao()
 {
-  char control;
+  char control = 0;
   char nome[100];
   int idade[2];
   char motivo[200];
   char data[8];
   printf("Nome do paciente:\n");
-  scanf("%s",nome);
+  scanf("%s", &nome);
   printf("Idade:\n");
-  scanf("%id", idade);
+  scanf("%id", &idade);
   printf("Motivo:\n");
   gets(motivo);
   printf("Data da internação:\n");
   gets(data);
   printf("O paciente %s foi internado por motivo de: %s, na data de: %s", nome, motivo, data);
-
   printf("Digite [1] para voltar ao menu\n");
   printf("Digite [2] para encerrar o programa\n");
-  scanf("\n%c", control);
-  switch (control)
+  scanf("\n%c", &control);
+  do
   {
-  case '1':
-    menu();
-    break;
-  case '2':
-    exit(0);
-    break;
-  }
+    switch (control)
+    {
+    case '1':
+      menu();
+      break;
+    case '2':
+      exit(0);
+      break;
+    }
+  } while (control > 0 & control <= 2);
 }
 void agendar()
 {
-  char control;
+  char control = 0;
   char nome[100];
   char sexo[1];
   char email[60];
@@ -583,11 +608,11 @@ void agendar()
   char data[8];
   char horario[10];
   printf("Digite seu nome completo:\n");
-  scanf("%s",nome);
+  scanf("%s", &nome);
   printf("Qual seu sexo? Digite (m) se masculino ou (f) se feminino\n");
-  scanf("%s",sexo);
+  scanf("%s", &sexo);
   printf("E-mail:\n");
-  scanf("%s", email);
+  scanf("%s", &email);
   printf("CPF:\n");
   gets(cpf);
   printf("AGENDE ABAIXO\n");
@@ -599,29 +624,32 @@ void agendar()
   printf("-----------------------------------\n");
   printf("Digite [1] para voltar ao menu\n");
   printf("Digite [2] para encerrar o programa\n");
-  scanf("\n%c", control);
-  switch (control)
+  scanf("\n%c", &control);
+  do
   {
-  case '1':
-    menu();
-    break;
-  case '2':
-    exit(0);
-    break;
-  }
+    switch (control)
+    {
+    case '1':
+      menu();
+      break;
+    case '2':
+      exit(0);
+      break;
+    }
+  } while (control > 0 & control <= 2);
 }
 void cancelamento_de_consultas()
 {
-  char control;
+  char control = 0;
   char email[60];
   int senha[8];
   char data[8];
   printf("E-mail:\n");
-  scanf("%s", email);
+  scanf("%s", &email);
   printf("Senha:\n");
-  scanf("%id", senha);
+  scanf("%id", &senha);
   printf("Digite a data da consulta a ser cancelada:\n");
-  scanf("%s", data);
+  scanf("%s", &data);
   printf("Você tem certeza?\n");
   printf("Para confirmar digite [c]\n");
   scanf("\n%c", &control);
@@ -631,7 +659,7 @@ void cancelamento_de_consultas()
     printf("-----------------------------------\n");
     printf("[1] - Voltar ao menu\n");
     printf("[2] - Encerrar o programa\n");
-    scanf("\n%c", control);
+    scanf("\n%c", &control);
     switch (control)
     {
     case '1':
@@ -671,8 +699,7 @@ void atestado()
 }
 void relatorio()
 {
-  char control;
-
+  char control = 0;
   printf("Você está na área de relatórios agora\n");
   printf("[1] - Unidade Paraisopólis\n");
   printf("[2] - Unidade Morumbi\n");
@@ -681,31 +708,34 @@ void relatorio()
   printf("[5] - Voltar ao menu\n");
   printf("[6] - Encerrar o programa\n");
   scanf("\n%c", &control);
-  switch (control)
+  do
   {
-  case '1':
-    paraisopolis();
-    break;
-  case '2':
-    morumbi();
-    break;
-  case '3':
-    vila();
-    break;
-  case '4':
-    totalRede();
-    break;
-  case '5':
-    menu();
-    break;
-  case '6':
-    exit(0);
-    break;
-  }
+    switch (control)
+    {
+    case '1':
+      paraisopolis();
+      break;
+    case '2':
+      morumbi();
+      break;
+    case '3':
+      vila();
+      break;
+    case '4':
+      totalRede();
+      break;
+    case '5':
+      menu();
+      break;
+    case '6':
+      exit(0);
+      break;
+    }
+  } while (control > 0 & control <= 6);
 }
 void paraisopolis()
 {
-  char control;
+  char control = 0;
   printf("Relatórios da Unidade Paraisopólis\n");
   printf("[1] - Faturamento diário\n");
   printf("[2] - Faturamento mensal\n");
@@ -713,28 +743,31 @@ void paraisopolis()
   printf("[4] - Voltar ao menu\n");
   printf("[5] - Encerrar o programa\n");
   scanf("\n%c", &control);
-  switch (control)
+  do
   {
-  case '1':
-    faturamento_diario();
-    break;
-  case '2':
-    faturamento_mensal();
-    break;
-  case '3':
-    quantidadePacientesParaisopolis();
-    break;
-  case '4':
-    menu();
-    break;
-  case '5':
-    exit(0);
-    break;
-  }
+    switch (control)
+    {
+    case '1':
+      faturamento_diario();
+      break;
+    case '2':
+      faturamento_mensal();
+      break;
+    case '3':
+      quantidadePacientesParaisopolis();
+      break;
+    case '4':
+      menu();
+      break;
+    case '5':
+      exit(0);
+      break;
+    }
+  } while (control > 0 & control <= 5);
 }
 void morumbi()
 {
-  char control;
+  char control = 0;
   printf("Relatórios da Unidade Morumbi\n");
   printf("[1] - Totalização do faturamento diário\n");
   printf("[2] - Totalização do faturamento mensal\n");
@@ -742,28 +775,31 @@ void morumbi()
   printf("[4] - Voltar ao menu\n");
   printf("[5] - Encerrar o programa\n");
   scanf("\n%c", &control);
-  switch (control)
+  do
   {
-  case '1':
-    faturamento_diario();
-    break;
-  case '2':
-    faturamento_mensal();
-    break;
-  case '3':
-    quantidadePacientesMorumbi();
-    break;
-  case '4':
-    menu();
-    break;
-  case '5':
-    exit(0);
-    break;
-  }
+    switch (control)
+    {
+    case '1':
+      faturamento_diario();
+      break;
+    case '2':
+      faturamento_mensal();
+      break;
+    case '3':
+      quantidadePacientesMorumbi();
+      break;
+    case '4':
+      menu();
+      break;
+    case '5':
+      exit(0);
+      break;
+    }
+  } while (control > 0 & control <= 5);
 }
 void vila()
 {
-  char control;
+  char control = 0;
   printf("Relatórios da Unidade Vila\n");
   printf("[1] - Totalização do faturamento diário\n");
   printf("[2] - Totalização do faturamento mensal\n");
@@ -771,31 +807,31 @@ void vila()
   printf("[4] - Voltar ao menu\n");
   printf("[5] - Encerrar o programa\n");
   scanf("\n%c", &control);
-  switch (control)
+  do
   {
-  case '1':
-    faturamento_diario();
-    break;
-  case '2':
-    faturamento_mensal();
-    break;
-  case '3':
-    quantidadePacientesVila();
-    break;
-  case '4':
-    menu();
-    break;
-  case '5':
-    exit(0);
-    break;
-  }
+    switch (control)
+    {
+    case '1':
+      faturamento_diario();
+      break;
+    case '2':
+      faturamento_mensal();
+      break;
+    case '3':
+      quantidadePacientesVila();
+      break;
+    case '4':
+      menu();
+      break;
+    case '5':
+      exit(0);
+      break;
+    }
+  } while (control > 0 & control <= 5);
 }
 void faturamento_diario()
 {
-  float ex;
-  float dent;
-  float vac;
-  float cirur;
+  float ex, dent, vac, cirur;
   float valEx = 50;
   float valDent = 60;
   float valVac = 120;
@@ -817,10 +853,7 @@ void faturamento_diario()
 }
 void faturamento_mensal()
 {
-  float ex;
-  float dent;
-  float vac;
-  float cirur;
+  float ex, dent, vac, cirur;
   float valEx = 50;
   float valDent = 60;
   float valVac = 120;
@@ -843,10 +876,7 @@ void faturamento_mensal()
 }
 void faturamento_diarioRede()
 {
-  float ex;
-  float dent;
-  float vac;
-  float cirur;
+  float ex, dent, vac, cirur;
   float valEx = 50;
   float valDent = 60;
   float valVac = 120;
@@ -869,10 +899,7 @@ void faturamento_diarioRede()
 }
 void faturamento_mensalRede()
 {
-  float ex;
-  float dent;
-  float vac;
-  float cirur;
+  float ex, dent, vac, cirur;
   float valEx = 50;
   float valDent = 60;
   float valVac = 120;
@@ -921,49 +948,55 @@ void quantidadePacientesVila()
 }
 void totalRede()
 {
-  char control;
+  char control = 0;
   printf("[1] - Faturamento diário da rede NuVida\n");
   printf("[2] - Faturamento mensal da rede NuVida\n");
   printf("[3] - Número de pacientes da rede\n");
   printf("[4] - Voltar ao menu\n");
   printf("[5] - Encerrar o programa\n");
   scanf("\n%c", &control);
-  switch (control)
+  do
   {
-  case '1':
-    faturamento_diarioRede();
-    break;
-  case '2':
-    faturamento_mensalRede();
-    break;
-  case '3':
-    quantidadePacientes();
-    break;
-  case '4':
-    menu();
-    break;
-  case '5':
-    exit(1);
-    break;
-  }
+    switch (control)
+    {
+    case '1':
+      faturamento_diarioRede();
+      break;
+    case '2':
+      faturamento_mensalRede();
+      break;
+    case '3':
+      quantidadePacientes();
+      break;
+    case '4':
+      menu();
+      break;
+    case '5':
+      exit(0);
+      break;
+    }
+  } while (control > 0 & control <= 5);
 }
 void main()
 {
-  char control;
+  char control = 0;
   printf("-----BEM VINDO Á NUVIDA!-----\n");
   printf("Digite [1] se você é um paciente\n");
   printf("Digite [2] se você é um médico\n");
   printf("Digite [3] se você é um funcionário\n");
   scanf("\n%c", &control);
-  switch (control)
+  do
   {
-  case '1':
-    paciente();
-    break;
-  case '2':
-    medico();
-    break;
-  case '3':
-    funcionario();
-  }
+    switch (control)
+    {
+    case '1':
+      paciente();
+      break;
+    case '2':
+      medico();
+      break;
+    case '3':
+      funcionario();
+    }
+  } while (control > 0 & control <= 3);
 }
