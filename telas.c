@@ -150,7 +150,7 @@ void login_medico()
   char email[60];
   int senha[8];
   printf("E-mail:\n");
-  scanf("%s",&email);
+  scanf("%s", &email);
   printf("Senha:\n");
   scanf("%id", &senha);
   printf("Usuário: %s - Seja bem vindo à NuVida!\n", email);
@@ -453,30 +453,34 @@ void posPagamentoConsultaMedica()
   printf("Código de segurança:\n");
   scanf("%id", &cv);
   printf("Dia do pagamento:\n");
-  scanf("\n%id", &dia);
+  scanf("%id", &dia);
   if (dia == 16)
   {
-    printf("Por causa dos juros, o valor da sua consulta é: R$%f\n", valor + 0.33);
+    printf("Por causa dos juros, o valor da sua consulta é: R$%2.f\n", valor + 0.33);
   }
-  if (dia == 17)
+  else if (dia == 17)
   {
-    printf("Por causa dos juros, o valor da sua consulta é: R$%f\n", valor + 0.66);
+    printf("Por causa dos juros, o valor da sua consulta é: R$%2.f\n", valor + 0.66);
   }
-  if (dia == 18)
+  else if (dia == 18)
   {
-    printf("Por causa dos juros, o valor da sua consulta é: R$%f\n", valor + 0.99);
+    printf("Por causa dos juros, o valor da sua consulta é: R$%2.f\n", valor + 0.99);
   }
-  if (dia == 19)
+  else if (dia == 19)
   {
-    printf("Por causa dos juros, o valor da sua consulta é: R$%f\n", valor + 1.32);
+    printf("Por causa dos juros, o valor da sua consulta é: R$%2.f\n", valor + 1.32);
   }
-  if (dia == 20)
+  else if (dia == 20)
   {
-    printf("Por causa dos juros, o valor da sua conta é: R$%f\n", valor + 1.65);
+    printf("Por causa dos juros, o valor da sua conta é: R$%2.f\n", valor + 1.65);
   }
-  if (dia <= 15)
+  else if (dia <= 15 && dia != 0)
   {
-    printf("O valor final da consulta é: R$%1.f\n", valor);
+    printf("O valor final da consulta é: R$%2.f\n", valor);
+  }
+  else
+  {
+    printf("A data de pagamento está muito atrasada, por favor entre em contato conosco no número: (11)9123-4578\n");
   }
   printf("Para confirmar o pagamento, digite (c)\n");
   scanf("\n%c", &c);
@@ -496,6 +500,11 @@ void posPagamentoConsultaMedica()
       exit(0);
       break;
     }
+  }
+  else
+  {
+    printf("Por favor, escolha uma opção válida\n");
+    return posPagamentoConsultaMedica();
   }
 }
 void posPagamentoConsultaOdontologica()
@@ -523,36 +532,39 @@ void posPagamentoConsultaOdontologica()
   scanf("\n%id", &dia);
   if (dia == 16)
   {
-    printf("Por causa dos juros, o valor da sua consulta é: R$%f\n", valor + 0.33);
+    printf("Por causa dos juros, o valor da sua consulta é: R$%2.f\n", valor + 0.33);
   }
-  if (dia == 17)
+  else if (dia == 17)
   {
-    printf("Por causa dos juros, o valor da sua consulta é: R$%f\n", valor + 0.66);
+    printf("Por causa dos juros, o valor da sua consulta é: R$%2.f\n", valor + 0.66);
   }
-  if (dia == 18)
+  else if (dia == 18)
   {
-    printf("Por causa dos juros, o valor da sua consulta é: R$%f\n", valor + 0.99);
+    printf("Por causa dos juros, o valor da sua consulta é: R$%2.f\n", valor + 0.99);
   }
-  if (dia == 19)
+  else if (dia == 19)
   {
-    printf("Por causa dos juros, o valor da sua consulta é: R$%f\n", valor + 1.32);
+    printf("Por causa dos juros, o valor da sua consulta é: R$%2.f\n", valor + 1.32);
   }
-  if (dia == 20)
+  else if (dia == 20)
   {
-    printf("Por causa dos juros, o valor da sua consulta é:R$%f\n", valor + 1.65);
+    printf("Por causa dos juros, o valor da sua conta é: R$%2.f\n", valor + 1.65);
   }
-  if (dia <= 15)
+  else if (dia <= 15 && dia != 0)
   {
-    printf("O valor final da consulta é: R$%1.f\n", valor);
+    printf("O valor final da consulta é: R$%2.f\n", valor);
+  }
+  else
+  {
+    printf("A data de pagamento está muito atrasada, por favor entre em contato conosco no número: (11)9123-4578\n");
   }
   printf("Para confirmar o pagamento, digite (c)\n");
   scanf("\n%c", &c);
   if (c == 'c' || c == 'C')
-    ;
   {
     printf("Seu pagamento foi aprovado!\n");
     printf("Por favor, acesse o link a seguir e apresente-o na clínica: \n");
-    printf("Digite [1] para voltar ao menu\n");
+    printf("\nDigite [1] para voltar ao menu\n");
     printf("Digite [2] para encerrar o programa\n");
     scanf("\n%c", &control);
     switch (control)
@@ -565,38 +577,11 @@ void posPagamentoConsultaOdontologica()
       break;
     }
   }
-}
-void internacao()
-{
-  char control = 0;
-  char nome[100];
-  int idade[2];
-  char motivo[200];
-  char data[8];
-  printf("Nome do paciente:\n");
-  scanf("%s", &nome);
-  printf("Idade:\n");
-  scanf("%id", &idade);
-  printf("Motivo:\n");
-  gets(motivo);
-  printf("Data da internação:\n");
-  gets(data);
-  printf("O paciente %s foi internado por motivo de: %s, na data de: %s", nome, motivo, data);
-  printf("Digite [1] para voltar ao menu\n");
-  printf("Digite [2] para encerrar o programa\n");
-  scanf("\n%c", &control);
-  do
+  else
   {
-    switch (control)
-    {
-    case '1':
-      menu();
-      break;
-    case '2':
-      exit(0);
-      break;
-    }
-  } while (control > 0 & control <= 2);
+    printf("Por favor, escolha uma opção válida\n");
+    return posPagamentoConsultaOdontologica();
+  }
 }
 void agendar()
 {
