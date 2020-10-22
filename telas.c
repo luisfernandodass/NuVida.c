@@ -36,16 +36,17 @@ void paciente()
       break;
     }
   } while (control > 0 & control <= 5);
+  printf("Por favor, escolha uma opção válida\n");
 }
 void login_paciente()
 {
   char control = 0;
-  char email[60];
+  char email[100];
   int senha[8];
   printf("E-mail:\n");
-  scanf("%s", &email);
+  gets(email);
   printf("Senha:\n");
-  scanf("%id", &senha);
+  scanf("%id", senha);
   printf("Usuário: %s - Seja bem vindo à NuVida!\n", email);
   printf("-----------------------------------\n");
   printf("[1] - Atestado médico\n");
@@ -79,6 +80,7 @@ void login_paciente()
       break;
     }
   } while (control > 0 & control <= 6);
+  printf("Por favor, escolha uma opção válida\n");
 }
 void cadastro_paciente()
 {
@@ -92,23 +94,23 @@ void cadastro_paciente()
   int senha[8];
   int juntas = 7121;
   printf("Nome:\n");
-  gets(nome);
+  scanf("%s", nome);
   printf("Data de nascimento:\n");
-  gets(data);
+  scanf("%s", data);
   printf("Qual seu sexo? Digite (m) se masculino ou (f) se feminino\n");
-  gets(sexo);
+  scanf("%s", sexo);
   printf("CPF:\n");
-  gets(cpf);
+  scanf("%s", cpf);
   printf("Telefone:\n");
-  gets(tel);
+  scanf("%s", tel);
   printf("Endereço:\n");
-  gets(endereco);
+  scanf("%s", endereco);
   printf("Você possui alguma alergia? Se sim, quais? Se não, não preencha\n");
   scanf("%s");
   printf("Você possui plano de saúde? Se não, não preencha\n");
   scanf("%s");
   printf("E-mail:\n");
-  gets(email);
+  scanf(email);
   printf("Senha:\n");
   scanf("%id", &senha);
   printf("Você foi cadastro com sucesso!\n");
@@ -143,6 +145,7 @@ void medico()
       break;
     }
   } while (control > 0 & control <= 4);
+  printf("Por favor, escolha uma opção válida\n");
 }
 void login_medico()
 {
@@ -190,6 +193,7 @@ void login_medico()
       break;
     }
   } while (control > 0 & control <= 7);
+  printf("Por favor, escolha uma opção válida\n");
 }
 void cadastro_medico()
 {
@@ -246,6 +250,7 @@ void funcionario()
       break;
     }
   } while (control > 0 & control <= 4);
+  printf("Por favor, escolha uma opção válida\n");
 }
 void login_funcionario()
 {
@@ -285,6 +290,7 @@ void login_funcionario()
       break;
     }
   } while (control > 0 & control <= 5);
+  printf("Por favor, escolha uma opção válida\n");
 }
 void cadastro_funcionario()
 {
@@ -342,6 +348,7 @@ void pagamento()
       break;
     }
   } while (control > 0 & control <= 4);
+  printf("Por favor, escolha uma opção válida\n");
 }
 void prePagamento()
 {
@@ -371,6 +378,7 @@ void prePagamento()
       break;
     }
   } while (control > 0 & control <= 4);
+  printf("Por favor, escolha uma opção válida\n");
 }
 void prePagamentoConsultaMedica()
 {
@@ -430,6 +438,7 @@ void posPagamento()
       break;
     }
   } while (control > 0 & control <= 4);
+  printf("Por favor, escolha uma opção válida\n");
 }
 void posPagamentoConsultaMedica()
 {
@@ -622,6 +631,40 @@ void agendar()
       break;
     }
   } while (control > 0 & control <= 2);
+  printf("Por favor, escolha uma opção válida\n");
+}
+void internacao()
+{
+  char control = 0;
+  char nome[100];
+  int idade[2];
+  char motivo[200];
+  char data[8];
+  printf("Nome do paciente:\n");
+  scanf("%s", &nome);
+  printf("Idade:\n");
+  scanf("%id", &idade);
+  printf("Motivo:\n");
+  gets(motivo);
+  printf("Data da internação:\n");
+  gets(data);
+  printf("O paciente %s foi internado por motivo de: %s, na data de: %s", nome, motivo, data);
+  printf("Digite [1] para voltar ao menu\n");
+  printf("Digite [2] para encerrar o programa\n");
+  scanf("\n%c", &control);
+  do
+  {
+    switch (control)
+    {
+    case '1':
+      menu();
+      break;
+    case '2':
+      exit(0);
+      break;
+    }
+  } while (control > 0 & control <= 2);
+  printf("Por favor, escolha uma opção válida\n");
 }
 void cancelamento_de_consultas()
 {
@@ -657,7 +700,7 @@ void cancelamento_de_consultas()
   }
   else
   {
-    printf("ERRO! Escolha uma opção válida.\n");
+    printf("Por favor, escolha uma opção válida\n");
     return cancelamento_de_consultas();
   }
 }
@@ -717,6 +760,7 @@ void relatorio()
       break;
     }
   } while (control > 0 & control <= 6);
+  printf("Por favor, escolha uma opção válida\n");
 }
 void paraisopolis()
 {
@@ -749,6 +793,7 @@ void paraisopolis()
       break;
     }
   } while (control > 0 & control <= 5);
+  printf("Por favor, escolha uma opção válida\n");
 }
 void morumbi()
 {
@@ -781,6 +826,7 @@ void morumbi()
       break;
     }
   } while (control > 0 & control <= 5);
+  printf("Por favor, escolha uma opção válida\n");
 }
 void vila()
 {
@@ -813,6 +859,7 @@ void vila()
       break;
     }
   } while (control > 0 & control <= 5);
+  printf("Por favor, escolha uma opção válida\n");
 }
 void faturamento_diario()
 {
@@ -961,6 +1008,7 @@ void totalRede()
       break;
     }
   } while (control > 0 & control <= 5);
+  printf("Por favor, escolha uma opção válida\n");
 }
 void main()
 {
@@ -984,4 +1032,5 @@ void main()
       funcionario();
     }
   } while (control > 0 & control <= 3);
+  printf("Por favor, escolha uma opção válida\n");
 }
