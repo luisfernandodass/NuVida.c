@@ -1,6 +1,7 @@
 #include <stdio.h>
-#include <string.h>
 #include <stdlib.h>
+#include <string.h>
+
 
 void menu()
 {
@@ -84,35 +85,42 @@ void login_paciente()
 }
 void cadastro_paciente()
 {
-  char nome[100];
-  char data[8];
-  char sexo[1];
-  char cpf[13];
-  char tel[10];
-  char endereco[60];
-  char email[60];
-  int senha[8];
+  struct cadastro
+  {
+    char nome[110];
+    char data[10];
+    char sexo[2];
+    char cpf[15];
+    char tel[13];
+    char endereco[110];
+    char email[110];
+    int senha[8];
+  };
+
+  struct cadastro paciente;
+
   int juntas = 7121;
+  
   printf("Nome:\n");
-  scanf("%s", nome);
+  fgets(paciente.nome, 100, stdin);
   printf("Data de nascimento:\n");
-  scanf("%s", data);
+  fgets(paciente.data, 8, stdin);
   printf("Qual seu sexo? Digite (m) se masculino ou (f) se feminino\n");
-  scanf("%s", sexo);
+  fgets(paciente.sexo, 2, stdin);
   printf("CPF:\n");
-  scanf("%s", cpf);
+  fgets(paciente.cpf, 13, stdin);
   printf("Telefone:\n");
-  scanf("%s", tel);
+  fgets(paciente.tel, 10, stdin);
   printf("Endereço:\n");
-  scanf("%s", endereco);
+  fgets(paciente.endereco, 100, stdin);
   printf("Você possui alguma alergia? Se sim, quais? Se não, não preencha\n");
   scanf("%s");
   printf("Você possui plano de saúde? Se não, não preencha\n");
   scanf("%s");
   printf("E-mail:\n");
-  scanf(email);
+  fgets(paciente.email, 100, stdin);
   printf("Senha:\n");
-  scanf("%id", &senha);
+  fgets(paciente.senha, 10, stdin);
   printf("Você foi cadastro com sucesso!\n");
   juntas++;
   printf("Parabéns, seja bem vindo! Você é o paciente número: %i da rede\n", juntas);
@@ -197,30 +205,36 @@ void login_medico()
 }
 void cadastro_medico()
 {
-  char nome[100];
-  char cpf[13];
-  char data[8];
-  char sexo[1];
-  char tel[10];
-  char endereco[60];
-  char email[60];
-  int senha[8];
+  struct cadastro
+  {
+    char nome[110];
+    char data[10];
+    char sexo[2];
+    char cpf[15];
+    char tel[13];
+    char endereco[110];
+    char email[110];
+    int senha[8];
+  };
+
+  struct cadastro medico;
+
   printf("Nome:\n");
-  gets("%s", nome);
-  printf("CPF:\n");
-  gets(cpf);
+  fgets(medico.nome, 100, stdin);
   printf("Data de nascimento:\n");
-  gets(data);
+  fgets(medico.data, 8, stdin);
   printf("Qual seu sexo? Digite (m) se masculino ou (f) se feminino\n");
-  gets(sexo);
+  fgets(medico.sexo, 2, stdin);
+  printf("CPF:\n");
+  fgets(medico.cpf, 13, stdin);
   printf("Telefone:\n");
-  gets(tel);
+  fgets(medico.tel, 10, stdin);
   printf("Endereço:\n");
-  gets(endereco);
+  fgets(medico.endereco, 100, stdin);
   printf("E-mail:\n");
-  gets(email);
+  fgets(medico.email, 100, stdin);
   printf("Senha:\n");
-  scanf("%id", senha);
+  fgets(medico.senha, 10, stdin);
   printf("Você foi cadastro com sucesso e será redirecionado para página de login!\n");
   return login_medico();
 }
@@ -294,31 +308,37 @@ void login_funcionario()
 }
 void cadastro_funcionario()
 {
-  char nome[100];
-  char cpf[13];
-  char data[8];
-  char sexo[1];
-  char tel[10];
-  char endereco[60];
-  char email[60];
-  int senha[8];
+  struct cadastro
+  {
+    char nome[110];
+    char data[10];
+    char sexo[2];
+    char cpf[15];
+    char tel[13];
+    char endereco[110];
+    char email[110];
+    int senha[8];
+  };
+
+  struct cadastro funcionario;
+
   printf("Nome:\n");
-  gets(nome);
-  printf("CPF:\n");
-  gets(cpf);
+  fgets(funcionario.nome, 100, stdin);
   printf("Data de nascimento:\n");
-  gets(data);
+  fgets(funcionario.data, 8, stdin);
   printf("Qual seu sexo? Digite (m) se masculino ou (f) se feminino\n");
-  gets(sexo);
+  fgets(funcionario.sexo, 2, stdin);
+  printf("CPF:\n");
+  fgets(funcionario.cpf, 13, stdin);
   printf("Telefone:\n");
-  gets(tel);
+  fgets(funcionario.tel, 10, stdin);
   printf("Endereço:\n");
-  gets(endereco);
+  fgets(funcionario.endereco, 100, stdin);
   printf("E-mail:\n");
-  scanf("%s", &email);
+  fgets(funcionario.email, 100, stdin);
   printf("Senha:\n");
-  scanf("%id", &senha);
-  printf("Você foi cadastro com sucesso e será redirecionado a página de login!\n");
+  fgets(funcionario.senha, 10, stdin);
+  printf("Você foi cadastro com sucesso e será redirecionado para página de login!\n");
   return login_funcionario();
 }
 void pagamento()
