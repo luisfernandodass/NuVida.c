@@ -2,7 +2,7 @@
 #include <stdlib.h>
 #include <string.h>
 
-void menu()
+int menu()
 {
   return main();
 }
@@ -177,8 +177,10 @@ int login_medico(void)
   char email[60];
   int senha[8];
   printf("E-mail:\n");
+  __fpurge(stdin);
   scanf("%s", &email);
   printf("Senha:\n");
+  __fpurge(stdin);
   scanf("%id", &senha);
   printf("Usuário: %s - Seja bem vindo à NuVida!\n", email);
   printf("-----------------------------------\n");
