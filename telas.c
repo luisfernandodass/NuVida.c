@@ -6,7 +6,7 @@ void menu()
 {
   return main();
 }
-void paciente()
+int paciente(void)
 {
   char control = 0;
   printf("[1] - Login\n");
@@ -40,7 +40,7 @@ void paciente()
   printf("Por favor, escolha uma opção válida\n");
   return paciente();
 }
-void login_paciente()
+int login_paciente(void)
 {
   char control = 0;
   char email[100];
@@ -88,7 +88,7 @@ void login_paciente()
   printf("Por favor, escolha uma opção válida\n");
   return login_paciente();
 }
-void cadastro_paciente()
+int cadastro_paciente(void)
 {
   struct cadastro
   {
@@ -141,7 +141,7 @@ void cadastro_paciente()
   printf("Você será redirecionado para a página de login\n");
   return login_paciente();
 }
-void medico()
+int medico(void)
 {
   char control = 0;
   printf("[1] - Login\n");
@@ -171,8 +171,8 @@ void medico()
   printf("Por favor, escolha uma opção válida\n");
   return medico();
 }
-void login_medico()
-{
+int login_medico(void)
+   {
   char control = 0;
   char email[60];
   int senha[8];
@@ -221,7 +221,7 @@ void login_medico()
   printf("Por favor, escolha uma opção válida\n");
   return login_medico();
 }
-void cadastro_medico()
+int cadastro_medico(void)
 {
   struct cadastro
   {
@@ -264,7 +264,7 @@ void cadastro_medico()
   printf("Você foi cadastro com sucesso e será redirecionado para página de login!\n");
   return login_medico();
 }
-void funcionario()
+int funcionario(void)
 {
   char control = 0;
   printf("[1] - Login\n");
@@ -294,7 +294,7 @@ void funcionario()
   printf("Por favor, escolha uma opção válida\n");
   return funcionario();
 }
-void login_funcionario()
+int login_funcionario(void)
 {
   char control = 0;
   char email[60];
@@ -338,7 +338,7 @@ void login_funcionario()
   printf("Por favor, escolha uma opção válida\n");
   return login_funcionario();
 }
-void cadastro_funcionario()
+int cadastro_funcionario(void)
 {
   struct cadastro
   {
@@ -382,7 +382,7 @@ void cadastro_funcionario()
   printf("-----------------------------------\n");
   return login_funcionario();
 }
-void pagamento()
+int pagamento(void)
 {
   char control = 0;
   printf("Olá, você está na área de pagamentos\n");
@@ -413,7 +413,7 @@ void pagamento()
   printf("Por favor, escolha uma opção válida\n");
   return pagamento();
 }
-void prePagamento()
+int prePagamento(void)
 {
   char control = 0;
   printf("Olá, tudo bem? Quero te informar que o pré-pagamento não tem taxas ou juros.\n");
@@ -445,7 +445,7 @@ void prePagamento()
   printf("Por favor, escolha uma opção válida\n");
   return prePagamento();
 }
-void prePagamentoConsultaMedica()
+int prePagamentoConsultaMedica(void)
 {
   char control = 0;
   int numCartao[15];
@@ -504,7 +504,7 @@ void prePagamentoConsultaMedica()
     return menuOuSaida();
   }
 }
-void prePagamentoConsultaOdontologica()
+int prePagamentoConsultaOdontologica(void)
 {
   char control = 0;
   int numCartao[15];
@@ -563,7 +563,7 @@ void prePagamentoConsultaOdontologica()
     return menuOuSaida();
   }
 }
-void posPagamento()
+int posPagamento(void)
 {
   char control = 0;
   printf("Olá, tudo bem? Quero te informar que o pós-pagamento tem 1% de juros.\n");
@@ -595,7 +595,7 @@ void posPagamento()
   printf("Por favor, escolha uma opção válida\n");
   return posPagamento();
 }
-void posPagamentoConsultaMedica()
+int posPagamentoConsultaMedica(void)
 {
   char control = 0;
   int numCartao[15];
@@ -682,7 +682,7 @@ void posPagamentoConsultaMedica()
     return menuOuSaida();
   }
 }
-void posPagamentoConsultaOdontologica()
+int posPagamentoConsultaOdontologica(void)
 {
   char control = 0;
   int numCartao[15];
@@ -769,7 +769,7 @@ void posPagamentoConsultaOdontologica()
     return menuOuSaida();
   }
 }
-void agendar()
+int agendar(void)
 {
   char control = 0;
   char nome[100];
@@ -818,7 +818,7 @@ void agendar()
   printf("Por favor, escolha uma opção válida\n");
   return menuOuSaida();
 }
-void internacao()
+int internacao(void)
 {
   char control = 0;
   char nome[100];
@@ -857,7 +857,7 @@ void internacao()
   printf("Por favor, escolha uma opção válida\n");
   return menuOuSaida();
 }
-void cancelamento_de_consultas()
+int cancelamento_de_consultas(void)
 {
   char control = 0;
   char email[60];
@@ -904,7 +904,7 @@ void cancelamento_de_consultas()
     return menuOuSaida();
   }
 }
-void reclamacao_elogio()
+int reclamacao_elogio(void)
 {
   printf("Deixe seu mensagem abaixo:\n");
   __fpurge(stdin);
@@ -914,7 +914,7 @@ void reclamacao_elogio()
   printf("-----------------------------------\n");
   return menuOuSaida();
 }
-void atestado()
+int atestado(void)
 {
   char data[8];
   char horario[8];
@@ -933,7 +933,7 @@ void atestado()
   printf("-----------------------------------\n");
   return menuOuSaida();
 }
-void relatorio()
+int relatorio(void)
 {
   char control = 0;
   printf("Você está na área de relatórios agora\n");
@@ -972,7 +972,7 @@ void relatorio()
   printf("Por favor, escolha uma opção válida\n");
   return relatorio();
 }
-void paraisopolis()
+int paraisopolis(void)
 {
   char control = 0;
   printf("Relatórios da Unidade Paraisopólis\n");
@@ -1007,7 +1007,7 @@ void paraisopolis()
   printf("Por favor, escolha uma opção válida\n");
   return paraisopolis();
 }
-void morumbi()
+int morumbi(void)
 {
   char control = 0;
   printf("Relatórios da Unidade Morumbi\n");
@@ -1042,7 +1042,7 @@ void morumbi()
   printf("Por favor, escolha uma opção válida\n");
   return morumbi();
 }
-void vila()
+int vila(void)
 {
   char control = 0;
   printf("Relatórios da Unidade Vila\n");
@@ -1078,7 +1078,7 @@ void vila()
   return vila();
 }
 //para acessar faturamento tem senha (1010),(2020),(3535)
-void faturamento_diario()
+int faturamento_diario(void)
 {
   float ex, dent, vac, cirur;
   float valEx = 50;
@@ -1116,7 +1116,7 @@ void faturamento_diario()
     return menuOuSaida();
   }
 }
-void faturamento_mensal()
+int faturamento_mensal(void)
 {
   float ex, dent, vac, cirur;
   float valEx = 50;
@@ -1154,7 +1154,7 @@ void faturamento_mensal()
     return menuOuSaida();
   }
 }
-void faturamento_diarioRede()
+int faturamento_diarioRede(void)
 {
   float ex, dent, vac, cirur;
   float valEx = 50;
@@ -1192,7 +1192,7 @@ void faturamento_diarioRede()
     return menuOuSaida();
   }
 }
-void faturamento_mensalRede()
+int faturamento_mensalRede(void)
 {
   float ex, dent, vac, cirur;
   float valEx = 50;
@@ -1232,7 +1232,7 @@ void faturamento_mensalRede()
 }
 
 //quantidade de pacientes para cada unidade é diferente
-void quantidadePacientes()
+void quantidadePacientes(void)
 {
   int paraisopolis = 5050;
   int morumbi = 1115;
@@ -1241,22 +1241,22 @@ void quantidadePacientes()
   printf("Calculando...\n");
   printf("Todas as clínicas da NuVida juntas somam: %i pacientes até o momento.\n", juntas);
 }
-void quantidadePacientesParaisopolis()
+void quantidadePacientesParaisopolis(void)
 {
   printf("A unidade Paraisopólis tem 5050 pacientes\n");
   printf("Acesse o link a seguir para ver a lista de pacientes: \n");
 }
-void quantidadePacientesMorumbi()
+void quantidadePacientesMorumbi(void)
 {
   printf("A unidade Morumbi tem 1115 pacientes\n");
   printf("Acesse o link a seguir para ver a lista de pacientes: \n");
 }
-void quantidadePacientesVila()
+void quantidadePacientesVila(void)
 {
   printf("A unidade Vila tem 956 pacientes\n");
   printf("Acesse o link a seguir para ver a lista de pacientes: \n");
 }
-void totalRede()
+int totalRede(void)
 {
   char control = 0;
   printf("[1] - Faturamento diário da rede NuVida\n");
@@ -1288,8 +1288,9 @@ void totalRede()
     }
   } while (control > 0 & control <= 5);
   printf("Por favor, escolha uma opção válida\n");
+  return totalRede();
 }
-void main()
+int main(void)
 {
   char control = 0;
   printf("-----BEM VINDO Á NUVIDA!-----\n");
@@ -1315,7 +1316,7 @@ void main()
   printf("Por favor, escolha uma opção válida\n");
   return menu();
 }
-void menuOuSaida(){
+int menuOuSaida(void){
   char control = 0;
   printf("[1] - Voltar ao menu\n");
   printf("[2] - Encerrar o programa\n");
