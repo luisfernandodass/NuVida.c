@@ -6,7 +6,7 @@ int menu()
 {
   return main();
 }
-int patient(void)
+int paciente(void)
 {
   char control = 0;
   printf("[1] - Login\n");
@@ -20,10 +20,10 @@ int patient(void)
     switch (control)
     {
     case '1':
-      login_patient();
+      login_paciente();
       break;
     case '2':
-      register_patient();
+      cadastro_paciente();
       break;
     case '3':
       reclamacao_elogio();
@@ -37,17 +37,17 @@ int patient(void)
     }
   } while (control > 0 & control <= 5);
   printf("Por favor, escolha uma opção válida!\n");
-  return patient();
+  return paciente();
 }
-int login_patient(void)
+int login_paciente(void)
 {
   char control = 0;
   char email[100];
   int senha[8];
   printf("E-mail:\n");
-  scanf("\n%s",email);
+  scanf("\n%s", email);
   printf("Senha:\n");
-  scanf("\n%id",senha);
+  scanf("\n%id", senha);
   printf("Usuário: %s - Seja bem vindo à NuVida!\n", email);
   printf("-----------------------------------\n");
   printf("[1] - Atestado médico\n");
@@ -82,9 +82,9 @@ int login_patient(void)
     }
   } while (control > 0 & control <= 6);
   printf("Por favor, escolha uma opção válida!\n");
-  return login_patient();
+  return login_paciente();
 }
-int register_patient(void)
+int cadastro_paciente(void)
 {
   struct signUp
   {
@@ -100,34 +100,34 @@ int register_patient(void)
     int senha[8];
   };
 
-  struct signUp patient;
+  struct signUp paciente;
 
   int juntas = 7121;
   printf("Nome:\n");
-  scanf("%s",patient.nome, 100, stdin);
+  scanf("%s", paciente.nome, 100, stdin);
   printf("Data de nascimento:\n");
-  scanf("%s",patient.data, 8, stdin);
+  scanf("%s", paciente.data, 8, stdin);
   printf("Qual seu sexo? Digite (m) se masculino ou (f) se feminino\n");
-  scanf("%s",patient.sexo, 2, stdin);
+  scanf("%s", paciente.sexo, 2, stdin);
   printf("CPF:\n");
-  scanf("%s",patient.cpf, 13, stdin);
+  scanf("%s", paciente.cpf, 13, stdin);
   printf("Telefone:\n");
-  scanf("%s",patient.tel, 10, stdin);
+  scanf("%s", paciente.tel, 10, stdin);
   printf("Endereço:\n");
-  scanf("%s",patient.endereco, 100, stdin);
+  scanf("%s", paciente.endereco, 100, stdin);
   printf("Você possui alguma alergia? Se sim, quais? Se não, não preencha\n");
-  scanf("\n%s",patient.alergia, 25, stdin);
+  scanf("\n%s", paciente.alergia, 25, stdin);
   printf("Você possui plano de saúde? Se não, não preencha\n");
-  scanf("\n%s",patient.plano, 18, stdin);
+  scanf("\n%s", paciente.plano, 18, stdin);
   printf("E-mail:\n");
-  scanf("%s",patient.email, 100, stdin);
+  scanf("%s", paciente.email, 100, stdin);
   printf("Senha:\n");
-  scanf("%id",patient.senha, 10, stdin);
+  scanf("%id", paciente.senha, 10, stdin);
   printf("Você foi cadastro com sucesso!\n");
   juntas++;
-  printf("Parabéns, seja bem vindo! Você é o patient número: %i da rede\n", juntas);
+  printf("Parabéns, seja bem vindo! Você é o paciente número: %i da rede\n", juntas);
   printf("Você será redirecionado para a página de login\n");
-  return login_patient();
+  return login_paciente();
 }
 int medico(void)
 {
@@ -145,7 +145,7 @@ int medico(void)
       login_medico();
       break;
     case '2':
-      register_medico();
+      cadastro_medico();
       break;
     case '3':
       menu();
@@ -159,7 +159,7 @@ int medico(void)
   return medico();
 }
 int login_medico(void)
-   {
+{
   char control = 0;
   char email[100];
   int senha[8];
@@ -207,7 +207,7 @@ int login_medico(void)
   printf("Por favor, escolha uma opção válida!\n");
   return login_medico();
 }
-int register_medico(void)
+int cadastro_medico(void)
 {
   struct signUp
   {
@@ -224,21 +224,21 @@ int register_medico(void)
   struct signUp medico;
 
   printf("Nome:\n");
-  scanf("%s",medico.nome, 100, stdin);
+  scanf("%s", medico.nome, 100, stdin);
   printf("Data de nascimento:\n");
-  scanf("%s",medico.data, 8, stdin);
+  scanf("%s", medico.data, 8, stdin);
   printf("Qual seu sexo? Digite (m) se masculino ou (f) se feminino\n");
-  scanf("%s",medico.sexo, 2, stdin);
+  scanf("%s", medico.sexo, 2, stdin);
   printf("CPF:\n");
-  scanf("%s",medico.cpf, 13, stdin);
+  scanf("%s", medico.cpf, 13, stdin);
   printf("Telefone:\n");
-  scanf("%s",medico.tel, 10, stdin);
+  scanf("%s", medico.tel, 10, stdin);
   printf("Endereço:\n");
-  scanf("%s",medico.endereco, 100, stdin);
+  scanf("%s", medico.endereco, 100, stdin);
   printf("E-mail:\n");
-  scanf("%s",medico.email, 100, stdin);
+  scanf("%s", medico.email, 100, stdin);
   printf("Senha:\n");
-  scanf("%id",medico.senha, 10, stdin);
+  scanf("%id", medico.senha, 10, stdin);
   printf("Você foi cadastro com sucesso e será redirecionado para página de login!\n");
   return login_medico();
 }
@@ -258,7 +258,7 @@ int funcionario(void)
       login_funcionario();
       break;
     case '2':
-      register_funcionario();
+      cadastro_funcionario();
       break;
     case '3':
       menu();
@@ -277,9 +277,9 @@ int login_funcionario(void)
   char email[100];
   int senha[8];
   printf("E-mail:\n");
-  scanf("\n%s",email);
+  scanf("\n%s", email);
   printf("Senha:\n");
-  scanf("\n%id",senha);
+  scanf("\n%id", senha);
   printf("Usuário: %s - Seja bem vindo à NuVida!\n", email);
   printf("-----------------------------------\n");
   printf("[1] - Marcar consulta\n");
@@ -312,7 +312,7 @@ int login_funcionario(void)
   printf("Por favor, escolha uma opção válida!\n");
   return login_funcionario();
 }
-int register_funcionario(void)
+int cadastro_funcionario(void)
 {
   struct signUp
   {
@@ -329,21 +329,21 @@ int register_funcionario(void)
   struct signUp funcionario;
 
   printf("Nome:\n");
-  scanf("%s",funcionario.nome, 100, stdin);
+  scanf("%s", funcionario.nome, 100, stdin);
   printf("Data de nascimento:\n");
-  scanf("%s",funcionario.data, 8, stdin);
+  scanf("%s", funcionario.data, 8, stdin);
   printf("Qual seu sexo? Digite (m) se masculino ou (f) se feminino\n");
-  scanf("%s",funcionario.sexo, 2, stdin);
+  scanf("%s", funcionario.sexo, 2, stdin);
   printf("CPF:\n");
-  scanf("%s",funcionario.cpf, 13, stdin);
+  scanf("%s", funcionario.cpf, 13, stdin);
   printf("Telefone:\n");
-  scanf("%s",funcionario.tel, 10, stdin);
+  scanf("%s", funcionario.tel, 10, stdin);
   printf("Endereço:\n");
-  scanf("%s",funcionario.endereco, 100, stdin);
+  scanf("%s", funcionario.endereco, 100, stdin);
   printf("E-mail:\n");
-  scanf("%s",funcionario.email, 100, stdin);
+  scanf("%s", funcionario.email, 100, stdin);
   printf("Senha:\n");
-  scanf("%id",funcionario.senha, 10, stdin);
+  scanf("%id", funcionario.senha, 10, stdin);
   printf("Você foi cadastro com sucesso e será redirecionado para página de login!\n");
   printf("-----------------------------------\n");
   return login_funcionario();
@@ -409,16 +409,19 @@ int prePagamento(void)
   printf("Por favor, escolha uma opção válida!\n");
   return prePagamento();
 }
-char * findLastDigits(char digits[]){
-    char *pnumber;
-    int i = 0;
-    while(digits[i] != '-'){
-        i++;
-    }
+char *findLastDigits(char digits[])
+{
+  char *pnumber;
+  int i = 0;
+  while (digits[i] != '-')
+  {
     i++;
-    pnumber =  &digits[i];
-    return pnumber;
+  }
+  i++;
+  pnumber = &digits[i];
+  return pnumber;
 }
+//pagamentos
 int prePagamentoConsultaMedica(void)
 {
   char control = 0;
@@ -429,59 +432,61 @@ int prePagamentoConsultaMedica(void)
   int cv[3];
   char *p;
   char c, s;
-  
+
   printf("O valor da nossa consulta médica é de R$50,00\n");
   printf("Para a sua segurança só aceitamos cartões de crédito\n");
   printf("Aceitamos: Mastercard, Visa e AmericaExpress\n");
   printf("Número do cartão:\n");
-  scanf("\n%s",card);
+  scanf("\n%s", card);
   printf("Nome no cartão:\n");
-  scanf("\n%s",nome);
-  printf("Data de validade:\n"); 
-  scanf("\n%s",dataValidade);
-  printf("Código de segurança:\n"); 
-  scanf("\n%id",cv);
+  scanf("\n%s", nome);
+  printf("Data de validade:\n");
+  scanf("\n%s", dataValidade);
+  printf("Código de segurança:\n");
+  scanf("\n%id", cv);
   printf("Data de pagamento\n");
-  scanf("\n%s",dataPagamento);
+  scanf("\n%s", dataPagamento);
   p = findLastDigits(card);
-  printf("O ultimo digito do seu cpf é %s ?\n",p);
+  printf("O ultimo digito do seu cpf é %s ?\n", p);
   printf("Se sim, digite (s)\n");
   scanf("\n%c", &s);
-  if (s == 's' || s == 'S'){
-  printf("Para confirmar o pagamento, digite (c)\n");
-  scanf("\n%c", &c);
-  if (c == 'c' || c == 'C')
+  if (s == 's' || s == 'S')
   {
-    printf("Seu pagamento foi aprovado!\n");
-    printf("Por favor, acesse o link a seguir e apresente-o na clínica: \n");
-    printf("-----------------------------------\n");
-    printf("Digite [1] para voltar ao menu\n");
-    printf("Digite [2] para encerrar o programa\n");  
-    scanf("\n%c", &control);
-    do{
-    switch (control)
+    printf("Para confirmar o pagamento, digite (c)\n");
+    scanf("\n%c", &c);
+    if (c == 'c' || c == 'C')
     {
-    case '1':
-      menu();
-      break;
-    case '2':
-      exit(0);
-      break;
+      printf("Seu pagamento foi aprovado!\n");
+      printf("Por favor, acesse o link a seguir e apresente-o na clínica: \n");
+      printf("-----------------------------------\n");
+      printf("Digite [1] para voltar ao menu\n");
+      printf("Digite [2] para encerrar o programa\n");
+      scanf("\n%c", &control);
+      do
+      {
+        switch (control)
+        {
+        case '1':
+          menu();
+          break;
+        case '2':
+          exit(0);
+          break;
+        }
+      } while (control > 0 & control <= 2);
+      printf("Por favor, escolha uma opção válida!\n");
+      return menuOrExit();
     }
-    }while(control > 0 & control <= 2);
-    printf("Por favor, escolha uma opção válida!\n");
-    return menuOuSaida();
-  }
   }
   else
   {
     printf("Por favor, escolha uma opção válida!\n");
-    return menuOuSaida();
+    return menuOrExit();
   }
 }
 int prePagamentoConsultaOdontologica(void)
 {
- char control = 0;
+  char control = 0;
   char card[15];
   char nome[100];
   char dataValidade[8];
@@ -489,54 +494,56 @@ int prePagamentoConsultaOdontologica(void)
   int cv[3];
   char *p;
   char c, s;
-  
+
   printf("O valor da nossa consulta odontológica é de R$50,00\n");
   printf("Para a sua segurança só aceitamos cartões de crédito\n");
   printf("Aceitamos: Mastercard, Visa e AmericaExpress\n");
   printf("Número do cartão:\n");
-  scanf("\n%s",card);
+  scanf("\n%s", card);
   printf("Nome no cartão:\n");
-  scanf("\n%s",nome);
-  printf("Data de validade:\n"); 
-  scanf("\n%s",dataValidade);
-  printf("Código de segurança:\n"); 
-  scanf("\n%id",cv);
+  scanf("\n%s", nome);
+  printf("Data de validade:\n");
+  scanf("\n%s", dataValidade);
+  printf("Código de segurança:\n");
+  scanf("\n%id", cv);
   printf("Data de pagamento\n");
-  scanf("\n%s",dataPagamento);
+  scanf("\n%s", dataPagamento);
   p = findLastDigits(card);
-  printf("O ultimo digito do seu cpf é %s ?\n",p);
+  printf("O ultimo digito do seu cpf é %s ?\n", p);
   printf("Se sim, digite (s)\n");
   scanf("\n%c", &s);
-  if (s == 's' || s == 'S'){
-  printf("Para confirmar o pagamento, digite (c)\n");
-  scanf("\n%c", &c);
-  if (c == 'c' || c == 'C')
+  if (s == 's' || s == 'S')
   {
-    printf("Seu pagamento foi aprovado!\n");
-    printf("Por favor, acesse o link a seguir e apresente-o na clínica: \n");
-    printf("-----------------------------------\n");
-    printf("Digite [1] para voltar ao menu\n");
-    printf("Digite [2] para encerrar o programa\n");  
-    scanf("\n%c", &control);
-    do{
-    switch (control)
+    printf("Para confirmar o pagamento, digite (c)\n");
+    scanf("\n%c", &c);
+    if (c == 'c' || c == 'C')
     {
-    case '1':
-      menu();
-      break;
-    case '2':
-      exit(0);
-      break;
+      printf("Seu pagamento foi aprovado!\n");
+      printf("Por favor, acesse o link a seguir e apresente-o na clínica: \n");
+      printf("-----------------------------------\n");
+      printf("Digite [1] para voltar ao menu\n");
+      printf("Digite [2] para encerrar o programa\n");
+      scanf("\n%c", &control);
+      do
+      {
+        switch (control)
+        {
+        case '1':
+          menu();
+          break;
+        case '2':
+          exit(0);
+          break;
+        }
+      } while (control > 0 & control <= 2);
+      printf("Por favor, escolha uma opção válida!\n");
+      return menuOrExit();
     }
-    }while(control > 0 & control <= 2);
-    printf("Por favor, escolha uma opção válida!\n");
-    return menuOuSaida();
-  }
   }
   else
   {
     printf("Por favor, escolha uma opção válida!\n");
-    return menuOuSaida();
+    return menuOrExit();
   }
 }
 int posPagamento(void)
@@ -587,46 +594,47 @@ int posPagamentoConsultaMedica(void)
   printf("Número do cartão:\n");
   scanf("%id", card);
   printf("Nome no cartão:\n");
-  scanf("\n%s",name);
+  scanf("\n%s", name);
   printf("Data de validade:\n");
   scanf("%id", date);
   printf("Código de segurança:\n");
-  scanf("\n%s",cv);
+  scanf("\n%s", cv);
   printf("Data do pagamento:\n");
   scanf("\n%id", &payday);
   p = findLastDigits(card);
-  printf("O ultimo digito do seu cpf é %s ?\n",p);
-   printf("Se sim, digite (s)\n");
+  printf("O ultimo digito do seu cpf é %s ?\n", p);
+  printf("Se sim, digite (s)\n");
   scanf("\n%c", &s);
-  if (s == 's' || s == 'S'){
-  if (payday == 16)
+  if (s == 's' || s == 'S')
   {
-    printf("Por causa dos juros, o valor da sua consulta é: R$%f\n", price + 0.33);
-  }
-  else if (payday == 17)
-  {
-    printf("Por causa dos juros, o valor da sua consulta é: R$%f\n", price + 0.66);
-  }
-  else if (payday == 18)
-  {
-    printf("Por causa dos juros, o valor da sua consulta é: R$%f\n", price + 0.99);
-  }
-  else if (payday == 19)
-  {
-    printf("Por causa dos juros, o valor da sua consulta é: R$%f\n", price + 1.32);
-  }
-  else if (payday == 20)
-  {
-    printf("Por causa dos juros, o valor da sua conta é: R$%f\n", price + 1.65);
-  }
-  else if (payday <= 15 && payday != 0)
-  {
-    printf("O valor final da consulta é: R$%2.f\n", price);
-  }
-  else
-  {
-    printf("A data de pagamento está muito atrasada, por favor entre em contato conosco no número: (11)9123-4578\n");
-  }
+    if (payday == 16)
+    {
+      printf("Por causa dos juros, o valor da sua consulta é: R$%f\n", price + 0.33);
+    }
+    else if (payday == 17)
+    {
+      printf("Por causa dos juros, o valor da sua consulta é: R$%f\n", price + 0.66);
+    }
+    else if (payday == 18)
+    {
+      printf("Por causa dos juros, o valor da sua consulta é: R$%f\n", price + 0.99);
+    }
+    else if (payday == 19)
+    {
+      printf("Por causa dos juros, o valor da sua consulta é: R$%f\n", price + 1.32);
+    }
+    else if (payday == 20)
+    {
+      printf("Por causa dos juros, o valor da sua conta é: R$%f\n", price + 1.65);
+    }
+    else if (payday <= 15 && payday != 0)
+    {
+      printf("O valor final da consulta é: R$%2.f\n", price);
+    }
+    else
+    {
+      printf("A data de pagamento está muito atrasada, por favor entre em contato conosco no número: (11)9123-4578\n");
+    }
   }
   printf("Para confirmar o pagamento, digite (c)\n");
   scanf("\n%c", &c);
@@ -635,32 +643,33 @@ int posPagamentoConsultaMedica(void)
     printf("Seu pagamento foi aprovado!\n");
     printf("-----------------------------------\n");
     printf("Digite [1] para voltar ao menu\n");
-    printf("Digite [2] para encerrar o programa\n");  
+    printf("Digite [2] para encerrar o programa\n");
     scanf("\n%c", &control);
-    do{
-    switch (control)
+    do
     {
-    case '1':
-      menu();
-      break;
-    case '2':
-      exit(0);
-      break;
-    }
-    }while(control > 0 & control <= 2);
+      switch (control)
+      {
+      case '1':
+        menu();
+        break;
+      case '2':
+        exit(0);
+        break;
+      }
+    } while (control > 0 & control <= 2);
     printf("Por favor, escolha uma opção válida!\n");
-    return menuOuSaida();
+    return menuOrExit();
   }
-  
+
   else
   {
     printf("Por favor, escolha uma opção válida!\n");
-    return menuOuSaida();
+    return menuOrExit();
   }
 }
 int posPagamentoConsultaOdontologica(void)
 {
-   char control = 0;
+  char control = 0;
   char card[15];
   char name[100];
   char date[10];
@@ -675,46 +684,47 @@ int posPagamentoConsultaOdontologica(void)
   printf("Número do cartão:\n");
   scanf("%id", card);
   printf("Nome no cartão:\n");
-  scanf("\n%s",name);
+  scanf("\n%s", name);
   printf("Data de validade:\n");
   scanf("%id", date);
   printf("Código de segurança:\n");
-  scanf("\n%s",cv);
+  scanf("\n%s", cv);
   printf("Data do pagamento:\n");
   scanf("\n%id", &payday);
   p = findLastDigits(card);
-  printf("O ultimo digito do seu cpf é %s ?\n",p);
-   printf("Se sim, digite (s)\n");
+  printf("O ultimo digito do seu cpf é %s ?\n", p);
+  printf("Se sim, digite (s)\n");
   scanf("\n%c", &s);
-  if (s == 's' || s == 'S'){
-  if (payday == 16)
+  if (s == 's' || s == 'S')
   {
-    printf("Por causa dos juros, o valor da sua consulta é: R$%f\n", price + 0.33);
-  }
-  else if (payday == 17)
-  {
-    printf("Por causa dos juros, o valor da sua consulta é: R$%f\n", price + 0.66);
-  }
-  else if (payday == 18)
-  {
-    printf("Por causa dos juros, o valor da sua consulta é: R$%f\n", price + 0.99);
-  }
-  else if (payday == 19)
-  {
-    printf("Por causa dos juros, o valor da sua consulta é: R$%f\n", price + 1.32);
-  }
-  else if (payday == 20)
-  {
-    printf("Por causa dos juros, o valor da sua conta é: R$%f\n", price + 1.65);
-  }
-  else if (payday <= 15 && payday != 0)
-  {
-    printf("O valor final da consulta é: R$%2.f\n", price);
-  }
-  else
-  {
-    printf("A data de pagamento está muito atrasada, por favor entre em contato conosco no número: (11)9123-4578\n");
-  }
+    if (payday == 16)
+    {
+      printf("Por causa dos juros, o valor da sua consulta é: R$%f\n", price + 0.33);
+    }
+    else if (payday == 17)
+    {
+      printf("Por causa dos juros, o valor da sua consulta é: R$%f\n", price + 0.66);
+    }
+    else if (payday == 18)
+    {
+      printf("Por causa dos juros, o valor da sua consulta é: R$%f\n", price + 0.99);
+    }
+    else if (payday == 19)
+    {
+      printf("Por causa dos juros, o valor da sua consulta é: R$%f\n", price + 1.32);
+    }
+    else if (payday == 20)
+    {
+      printf("Por causa dos juros, o valor da sua conta é: R$%f\n", price + 1.65);
+    }
+    else if (payday <= 15 && payday != 0)
+    {
+      printf("O valor final da consulta é: R$%2.f\n", price);
+    }
+    else
+    {
+      printf("A data de pagamento está muito atrasada, por favor entre em contato conosco no número: (11)9123-4578\n");
+    }
   }
   printf("Para confirmar o pagamento, digite (c)\n");
   scanf("\n%c", &c);
@@ -723,29 +733,31 @@ int posPagamentoConsultaOdontologica(void)
     printf("Seu pagamento foi aprovado!\n");
     printf("-----------------------------------\n");
     printf("Digite [1] para voltar ao menu\n");
-    printf("Digite [2] para encerrar o programa\n");  
+    printf("Digite [2] para encerrar o programa\n");
     scanf("\n%c", &control);
-    do{
-    switch (control)
+    do
     {
-    case '1':
-      menu();
-      break;
-    case '2':
-      exit(0);
-      break;
-    }
-    }while(control > 0 & control <= 2);
+      switch (control)
+      {
+      case '1':
+        menu();
+        break;
+      case '2':
+        exit(0);
+        break;
+      }
+    } while (control > 0 & control <= 2);
     printf("Por favor, escolha uma opção válida!\n");
-    return menuOuSaida();
+    return menuOrExit();
   }
-  
+
   else
   {
     printf("Por favor, escolha uma opção válida!\n");
-    return menuOuSaida();
+    return menuOrExit();
   }
 }
+
 int agendar(void)
 {
   char control = 0;
@@ -756,18 +768,18 @@ int agendar(void)
   char data[10];
   char horario[10];
   printf("Digite seu nome completo:\n");
-  scanf("\n%s",nome);
+  scanf("\n%s", nome);
   printf("Qual seu sexo? Digite (m) se masculino ou (f) se feminino\n");
-  scanf("\n%s",sexo);
+  scanf("\n%s", sexo);
   printf("E-mail:\n");
-  scanf("\n%s",email);
+  scanf("\n%s", email);
   printf("CPF:\n");
-  scanf("\n%s",cpf);
+  scanf("\n%s", cpf);
   printf("-----AGENDE ABAIXO-----\n");
   printf("Data:");
-  scanf("\n%s",data);
+  scanf("\n%s", data);
   printf("Horário:");
-  scanf("\n%s",horario);
+  scanf("\n%s", horario);
   printf("Sua consulta foi marcada para o dia: %s às %s\n", data, horario);
   printf("-----------------------------------\n");
   printf("Digite [1] para voltar ao menu\n");
@@ -786,7 +798,7 @@ int agendar(void)
     }
   } while (control > 0 & control <= 2);
   printf("Por favor, escolha uma opção válida!\n");
-  return menuOuSaida();
+  return menuOrExit();
 }
 int internacao(void)
 {
@@ -796,13 +808,13 @@ int internacao(void)
   char motivo[200];
   char data[8];
   printf("Nome do paciente:\n");
-  scanf("\n%s",nome);
+  scanf("\n%s", nome);
   printf("Idade:\n");
-  scanf("\n%id",idade);
+  scanf("\n%id", idade);
   printf("Motivo:\n");
-  scanf("\n%s",motivo);
+  scanf("\n%s", motivo);
   printf("Data da internação:\n");
-  scanf("\n%s",data);
+  scanf("\n%s", data);
   printf("O paciente %s foi internado por motivo de: %s, na data de: %s", nome, motivo, data);
   printf("Digite [1] para voltar ao menu\n");
   printf("Digite [2] para encerrar o programa\n");
@@ -820,7 +832,7 @@ int internacao(void)
     }
   } while (control > 0 & control <= 2);
   printf("Por favor, escolha uma opção válida!\n");
-  return menuOuSaida();
+  return menuOrExit();
 }
 int cancelamento_de_consultas(void)
 {
@@ -829,11 +841,11 @@ int cancelamento_de_consultas(void)
   int senha[8];
   char data[10];
   printf("E-mail:\n");
-  scanf("\n%s",email);
+  scanf("\n%s", email);
   printf("Senha:\n");
-  scanf("\n%id",senha);
+  scanf("\n%id", senha);
   printf("Digite a data da consulta a ser cancelada:\n");
-  scanf("\n%s",data);
+  scanf("\n%s", data);
   printf("Você tem certeza?\n");
   printf("Para confirmar digite [c]\n");
   scanf("\n%c", &control);
@@ -843,37 +855,49 @@ int cancelamento_de_consultas(void)
     printf("-----------------------------------\n");
     printf("[1] - Voltar ao menu\n");
     printf("[2] - Encerrar o programa\n");
-   
+
     scanf("\n%c", &control);
-    do{
-    switch (control)
+    do
     {
-    case '1':
-      menu();
-      break;
-    case '2':
-      exit(0);
-      break;
-    }
-    }while(control > 0 & control <= 2);
+      switch (control)
+      {
+      case '1':
+        menu();
+        break;
+      case '2':
+        exit(0);
+        break;
+      }
+    } while (control > 0 & control <= 2);
     printf("Por favor, escolha uma opção válida!\n");
-    return menuOuSaida();
+    return menuOrExit();
   }
   else
   {
     printf("Por favor, escolha uma opção válida!\n");
-    return menuOuSaida();
+    return menuOrExit();
   }
 }
 int reclamacao_elogio(void)
 {
-  char mensagem[200];
+  char url[] = "reclamacaoElogio.txt";
+
+  FILE *file;
+  file = fopen(url, "w");
+
+  if (file == NULL)
+    printf("Erro, nao foi possivel abrir o arquivo\n");
+
+  char mensagem[400];
   printf("Deixe seu mensagem abaixo:\n");
-  scanf("\n%s",mensagem);
+  scanf("\n%s", mensagem);
+  fprintf(file, mensagem);
   printf("Sua mensagem foi enviada.\n");
   printf("Nós da NuVida te agradecemos por isso!\n");
   printf("-----------------------------------\n");
-  return menuOuSaida();
+
+   fclose(file);
+  return menuOrExit();
 }
 int atestado(void)
 {
@@ -881,15 +905,15 @@ int atestado(void)
   char data[10];
   char horario[10];
   printf("Digite seu nome completo:\n");
-  scanf("\n%s",nome);
+  scanf("\n%s", nome);
   printf("Digite a data da sua consulta:\n");
-  scanf("\n%s",data);
+  scanf("\n%s", data);
   printf("Digite o horário da sua consulta:\n");
-  scanf("\n%s",horario);
+  scanf("\n%s", horario);
   printf("Paciente: %s  seu atestado foi gerado!\n", nome);
   printf("Por favor, acesse o link a seguir e o imprima: \n");
   printf("-----------------------------------\n");
-  return menuOuSaida();
+  return menuOrExit();
 }
 int relatorio(void)
 {
@@ -950,7 +974,7 @@ int paraisopolis(void)
       faturamento_mensal();
       break;
     case '3':
-      numberOfPatientsParaisopolis();
+      numeroDePacientesParaisopolis();
       break;
     case '4':
       menu();
@@ -984,7 +1008,7 @@ int morumbi(void)
       faturamento_mensal();
       break;
     case '3':
-      numberOfPatientsMorumbi();
+      numeroDePacientesMorumbi();
       break;
     case '4':
       menu();
@@ -1018,7 +1042,7 @@ int vilaSonia(void)
       faturamento_mensal();
       break;
     case '3':
-      numberOfPatientsVilaSonia();
+      numeroDePacientesVilaSonia();
       break;
     case '4':
       menu();
@@ -1031,146 +1055,231 @@ int vilaSonia(void)
   printf("Por favor, escolha uma opção válida!!\n");
   return vilaSonia();
 }
+
 //para acessar faturamento tem senha (1010),(2020),(3535)
 int faturamento_diario(void)
 {
+  char url[] = "faturamentoDiarioUnidade.txt";
+
   float ex, dent, vac, cirur;
   float valEx = 50;
   float valDent = 60;
   float valVac = 120;
   float valCirur = 5000;
+
+  FILE *file;
+  file = fopen(url, "w");
+
+  if (file == NULL)
+    printf("Erro, nao foi possivel abrir o arquivo\n");
+
   int credencial = 0;
+
   printf("Por favor, digite sua credencial abaixo\n");
-  scanf("\n%id",&credencial);
-  if(credencial == 1010 ||credencial == 2020  || credencial == 3535){
-  printf("Abaixo, digite a quantidade de serviços prestados hoje nesta unidade\n");
-  printf("Digite o número de exames feitos hoje: ");
-  scanf("\n%f", &ex);
-  printf("Digite o número de consultas odontológicas feitas hoje: ");
-  scanf("\n%f", &dent);
-  printf("Digite o número de vacinas vendidas hoje: ");
-  scanf("\n%f", &vac);
-  printf("Digite o número de cirurgias feitas hoje: ");
-  scanf("\n%f", &cirur);
-  printf("Calculando...\n");
-  printf("Faturamento diário de exames: R$%1.f\n", ex * valEx);
-  printf("Faturamento diário de odontologia: R$%1.f\n", dent * valDent);
-  printf("Faturamento diário de vacinas: R$%1.f\n", vac * valVac);
-  printf("Faturamento diário de cirurgias: R$%1.f\n", cirur * valCirur);
-  printf("Faturamento diário da unidade: R$%1.f\n", ex * valEx + dent * valDent + vac * valVac + cirur * valCirur);
-  printf("-----------------------------------\n");
-  return menuOuSaida();
-  }else {
+  scanf("\n%id", &credencial);
+
+  if (credencial == 1010 || credencial == 2020 || credencial == 3535)
+  {
+
+    printf("Abaixo, digite a quantidade de serviços prestados hoje nesta unidade\n");
+    printf("Digite o número de exames feitos hoje: ");
+    scanf("\n%f", &ex);
+    printf("Digite o número de consultas odontológicas feitas hoje: ");
+    scanf("\n%f", &dent);
+    printf("Digite o número de vacinas vendidas hoje: ");
+    scanf("\n%f", &vac);
+    printf("Digite o número de cirurgias feitas hoje: ");
+    scanf("\n%f", &cirur);
+    printf("Calculando...\n");
+    printf("Faturamento diário de exames é: R$%1.f\n", ex * valEx);
+    fprintf(file, "Faturamento diário de exames é: R$%1.f\n", ex * valEx);
+    printf("Faturamento diário de odontologia é: R$%1.f\n", dent * valDent);
+    fprintf(file, "Faturamento diário de odontologia é: R$%1.f\n", dent * valDent);
+    printf("Faturamento diário de vacinas é: R$%1.f\n", vac * valVac);
+    fprintf(file, "Faturamento diário de vacinas é: R$%1.f\n", vac * valVac);
+    printf("Faturamento diário de cirurgias é: R$%1.f\n", cirur * valCirur);
+    fprintf(file, "Faturamento diário de cirurgias é: R$%1.f\n", cirur * valCirur);
+    printf("Faturamento diário da unidade é: R$%1.f\n", ex * valEx + dent * valDent + vac * valVac + cirur * valCirur);
+    printf("-----------------------------------\n");
+
+    fclose(file);
+    return menuOrExit();
+  }
+  else
+  {
     printf("Você não tem autorização para acessar essa área!\n");
     printf("-----------------------------------\n");
-    return menuOuSaida();
+    return menuOrExit();
   }
 }
 int faturamento_mensal(void)
 {
+  char url[] = "faturamentoMensalUnidade.txt";
+
   float ex, dent, vac, cirur;
   float valEx = 50;
   float valDent = 60;
   float valVac = 120;
   float valCirur = 5000;
+
+  FILE *file;
+  file = fopen(url, "w");
+
+  if (file == NULL)
+    printf("Erro, nao foi possivel abrir o arquivo\n");
+
   int credencial = 0;
+
   printf("Por favor, digite sua credencial abaixo\n");
-  scanf("\n%id",&credencial);
-  if(credencial == 1010 ||credencial == 2020  || credencial == 3535){
-  printf("Abaixo, digite a quantidade de serviços prestados no mês nesta unidade\n");
-  printf("Digite o número de exames feitos no mês: ");
-  scanf("\n%f", &ex);
-  printf("Digite o número de consultas odontológicas feitas no mês: ");
-  scanf("\n%f", &dent);
-  printf("Digite o número de vacinas vendidas no mês: ");
-  scanf("\n%f", &vac);
-  printf("Digite o número de cirurgias feitas no mês: ");
-  scanf("\n%f", &cirur);
-  printf("Calculando...\n");
-  printf("Faturamento mensal de exames: R$%1.f\n", ex * valEx);
-  printf("Faturamento mensal de odontologia: R$%1.f\n", dent * valDent);
-  printf("Faturamento mensal de vacinas: R$%1.f\n", vac * valVac);
-  printf("Faturamento mensal de cirurgias: R$%1.f\n", cirur * valCirur);
-  printf("Faturamento mensal da unidade: R$%1.f\n", ex * valEx + dent * valDent + vac * valVac + cirur * valCirur);
-  printf("-----------------------------------\n");
-  return menuOuSaida();
-  }else {
+  scanf("\n%id", &credencial);
+
+  if (credencial == 1010 || credencial == 2020 || credencial == 3535)
+  {
+
+    printf("Abaixo, digite a quantidade de serviços prestados no mês nesta unidade\n");
+    printf("Digite o número de exames feitos no mês: ");
+    scanf("\n%f", &ex);
+    printf("Digite o número de consultas odontológicas feitas no mês: ");
+    scanf("\n%f", &dent);
+    printf("Digite o número de vacinas vendidas no mês: ");
+    scanf("\n%f", &vac);
+    printf("Digite o número de cirurgias feitas no mês: ");
+    scanf("\n%f", &cirur);
+    printf("Calculando...\n");
+    printf("Faturamento mensal de exames é: R$%1.f\n", ex * valEx);
+    fprintf(file, "Faturamento mensal de exames é: R$%1.f\n", ex * valEx);
+    printf("Faturamento mensal de odontologia é: R$%1.f\n", dent * valDent);
+    fprintf(file, "Faturamento mensal de odontologia é: R$%1.f\n", dent * valDent);
+    printf("Faturamento mensal de vacinas é: R$%1.f\n", vac * valVac);
+    fprintf(file, "Faturamento mensal de vacinas é: R$%1.f\n", vac * valVac);
+    printf("Faturamento mensal de cirurgias é: R$%1.f\n", cirur * valCirur);
+    fprintf(file, "Faturamento mensal de cirurgias é: R$%1.f\n", cirur * valCirur);
+    printf("Faturamento mensal da unidade é: R$%1.f\n", ex * valEx + dent * valDent + vac * valVac + cirur * valCirur);
+    printf("-----------------------------------\n");
+
+    fclose(file);
+    return menuOrExit();
+  }
+  else
+  {
     printf("Você não tem autorização para acessar essa área!\n");
     printf("-----------------------------------\n");
-    return menuOuSaida();
+    return menuOrExit();
   }
 }
 int faturamento_diarioRede(void)
 {
+  char url[] = "faturamentoDiarioRede.txt";
+
   float ex, dent, vac, cirur;
   float valEx = 50;
   float valDent = 60;
   float valVac = 120;
   float valCirur = 5000;
+
+  FILE *file;
+  file = fopen(url, "w");
+
+  if (file == NULL)
+    printf("Erro, nao foi possivel abrir o arquivo\n");
+
   int credencial = 0;
+
   printf("Por favor, digite sua credencial abaixo\n");
-  scanf("\n%id",&credencial);
-  if(credencial == 1010 ||credencial == 2020  || credencial == 3535){
-  printf("Abaixo, digite a quantidade de serviços prestados hoje em toda a rede\n");
-  printf("Digite o número de exames feitos hoje: "); 
-  scanf("\n%f", &ex);
-  printf("Digite o número de consultas odontológicas feitas hoje: ");
-  scanf("\n%f", &dent);
-  printf("Digite o número de vacinas vendidas hoje: ");
-  scanf("\n%f", &vac);
-  printf("Digite o número de cirurgias feitas hoje: "); 
-  scanf("\n%f", &cirur);
-  printf("Calculando...\n");
-  printf("Faturamento diário de exames: R$%1.f\n", ex * valEx);
-  printf("Faturamento diário de odontologia: R$%1.f\n", dent * valDent);
-  printf("Faturamento diário de vacinas: R$%1.f\n", vac * valVac);
-  printf("Faturamento diário de cirurgias: R$%1.f\n", cirur * valCirur);
-  printf("Faturamento diário de toda a rede: R$%1.f\n", ex * valEx + dent * valDent + vac * valVac + cirur * valCirur);
-  printf("-----------------------------------\n");
-  return menuOuSaida();
-  }else {
+  scanf("\n%id", &credencial);
+
+  if (credencial == 1010 || credencial == 2020 || credencial == 3535)
+  {
+
+    printf("Abaixo, digite a quantidade de serviços prestados hoje em toda a rede\n");
+    printf("Digite o número de exames feitos hoje: ");
+    scanf("\n%f", &ex);
+    printf("Digite o número de consultas odontológicas feitas hoje: ");
+    scanf("\n%f", &dent);
+    printf("Digite o número de vacinas vendidas hoje: ");
+    scanf("\n%f", &vac);
+    printf("Digite o número de cirurgias feitas hoje: ");
+    scanf("\n%f", &cirur);
+    printf("Calculando...\n");
+    printf("Faturamento diário de exames é: R$%1.f\n", ex * valEx);
+    fprintf(file, "Faturamento diário de exames é: R$%1.f\n", ex * valEx);
+    printf("Faturamento diário de odontologia é: R$%1.f\n", dent * valDent);
+    fprintf(file, "Faturamento diário de odontologia é: R$%1.f\n", dent * valDent);
+    printf("Faturamento diário de vacinas é: R$%1.f\n", vac * valVac);
+    fprintf(file, "Faturamento diário de vacinas é: R$%1.f\n", vac * valVac);
+    printf("Faturamento diário de cirurgias é: R$%1.f\n", cirur * valCirur);
+    fprintf(file, "Faturamento diário de cirurgias é: R$%1.f\n", cirur * valCirur);
+    printf("Faturamento diário de toda a rede é: R$%1.f\n", ex * valEx + dent * valDent + vac * valVac + cirur * valCirur);
+    printf("-----------------------------------\n");
+
+    fclose(file);
+    return menuOrExit();
+  }
+  else
+  {
     printf("Você não tem autorização para acessar essa área!\n");
     printf("-----------------------------------\n");
-    return menuOuSaida();
+    return menuOrExit();
   }
 }
 int faturamento_mensalRede(void)
 {
+  char url[] = "faturamentoMensalRede.txt";
+
   float ex, dent, vac, cirur;
   float valEx = 50;
   float valDent = 60;
   float valVac = 120;
   float valCirur = 5000;
+
+  FILE *file;
+  file = fopen(url, "w");
+
+  if (file == NULL)
+    printf("Erro, nao foi possivel abrir o arquivo\n");
+
   int credencial = 0;
+
   printf("Por favor, digite sua credencial abaixo\n");
-  scanf("\n%id",&credencial);
-  if(credencial == 1010 ||credencial == 2020  || credencial == 3535){
-  printf("Abaixo, digite a quantidade de serviços prestados no mês em toda a rede\n");
-  printf("Digite o número de exames feitos no mês: ");
-  scanf("\n%f", &ex);
-  printf("Digite o número de consultas odontológicas feitas no mês: ");
-  scanf("\n%f", &dent);
-  printf("Digite o número de vacinas vendidas no mês: ");
-  scanf("\n%f", &vac);
-  printf("Digite o número de cirurgias feitas no mês: ");
-  scanf("\n%f", &cirur);
-  printf("Calculando...\n");
-  printf("Faturamento mensal de exames: R$%1.f\n", ex * valEx);
-  printf("Faturamento mensal de odontologia: R$%1.f\n", dent * valDent);
-  printf("Faturamento mensal de vacinas: R$%1.f\n", vac * valVac);
-  printf("Faturamento mensal de cirurgias: R$%1.f\n", cirur * valCirur);
-  printf("Faturamento mensal da unidade: R$%1.f\n", ex * valEx + dent * valDent + vac * valVac + cirur * valCirur);
-  printf("-----------------------------------\n");
-  return menuOuSaida();
-  }else {
+  scanf("\n%id", &credencial);
+
+  if (credencial == 1010 || credencial == 2020 || credencial == 3535)
+  {
+
+    printf("Abaixo, digite a quantidade de serviços prestados no mês em toda a rede\n");
+    printf("Digite o número de exames feitos no mês: ");
+    scanf("\n%f", &ex);
+    printf("Digite o número de consultas odontológicas feitas no mês: ");
+    scanf("\n%f", &dent);
+    printf("Digite o número de vacinas vendidas no mês: ");
+    scanf("\n%f", &vac);
+    printf("Digite o número de cirurgias feitas no mês: ");
+    scanf("\n%f", &cirur);
+    printf("Calculando...\n");
+    printf("Faturamento mensal de exames é: R$%1.f\n", ex * valEx);
+    fprintf(file, "Faturamento mensal de exames é: R$%1.f\n", ex * valEx);
+    printf("Faturamento mensal de odontologia é: R$%1.f\n", dent * valDent);
+    printf("Faturamento mensal de odontologia é: R$%1.f\n", dent * valDent);
+    printf("Faturamento mensal de vacinas é: R$%1.f\n", vac * valVac);
+    fprintf(file, "Faturamento mensal de vacinas é: R$%1.f\n", vac * valVac);
+    printf("Faturamento mensal de cirurgias é: R$%1.f\n", cirur * valCirur);
+    fprintf(file, "Faturamento mensal de cirurgias é: R$%1.f\n", cirur * valCirur);
+    printf("Faturamento mensal da Rede é: R$%1.f\n", ex * valEx + dent * valDent + vac * valVac + cirur * valCirur);
+    printf("-----------------------------------\n");
+
+    fclose(file);
+    return menuOrExit();
+  }
+  else
+  {
     printf("Você não tem autorização para acessar essa área!\n");
     printf("-----------------------------------\n");
-    return menuOuSaida();
+    return menuOrExit();
   }
 }
 
 //quantidade de pacientes para cada unidade é diferente
-void numberOfPatients(void)
+void numeroDePacientes(void)
 {
   int paraisopolis = 5050;
   int morumbi = 1115;
@@ -1179,17 +1288,17 @@ void numberOfPatients(void)
   printf("Calculando...\n");
   printf("Todas as clínicas da NuVida juntas somam: %i pacientes até o momento.\n", juntas);
 }
-void numberOfPatientsParaisopolis(void)
+void numeroDePacientesParaisopolis(void)
 {
   printf("A unidade Paraisopólis tem 5050 pacientes\n");
   printf("Acesse o link a seguir para ver a lista de pacientes: \n");
 }
-void numberOfPatientsMorumbi(void)
+void numeroDePacientesMorumbi(void)
 {
   printf("A unidade Morumbi tem 1115 pacientes\n");
   printf("Acesse o link a seguir para ver a lista de pacientes: \n");
 }
-void numberOfPatientsVilaSonia(void)
+void numeroDePacientesVilaSonia(void)
 {
   printf("A unidade Vila Sônia tem 956 pacientes\n");
   printf("Acesse o link a seguir para ver a lista de pacientes: \n");
@@ -1214,7 +1323,7 @@ int totalRede(void)
       faturamento_mensalRede();
       break;
     case '3':
-      numberOfPatients();
+      numeroDePacientes();
       break;
     case '4':
       menu();
@@ -1240,7 +1349,7 @@ int main(void)
     switch (control)
     {
     case '1':
-      patient();
+      paciente();
       break;
     case '2':
       medico();
@@ -1252,13 +1361,15 @@ int main(void)
   printf("Por favor, escolha uma opção válida!\n");
   return menu();
 }
-int menuOuSaida(void){
+int menuOrExit(void)
+{
   char control = 0;
   printf("[1] - Voltar ao menu\n");
   printf("[2] - Encerrar o programa\n");
-  scanf("\n%c",&control);
-  do{
-   switch (control)
+  scanf("\n%c", &control);
+  do
+  {
+    switch (control)
     {
     case '1':
       menu();
@@ -1267,7 +1378,7 @@ int menuOuSaida(void){
       exit(0);
       break;
     }
- }while (control > 0 & control <= 2);
-    printf("Por favor, escolha uma opção válida!\n");
-    return menuOuSaida();
-  }
+  } while (control > 0 & control <= 2);
+  printf("Por favor, escolha uma opção válida!\n");
+  return menuOrExit();
+}
