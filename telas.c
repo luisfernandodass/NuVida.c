@@ -86,6 +86,14 @@ int login_paciente(void)
 }
 int cadastro_paciente(void)
 {
+  char url[] = "cadastroPaciente.txt";
+
+  FILE *file;
+  file = fopen(url, "w");
+
+  if (file == NULL)
+    printf("Erro, nao foi possivel abrir o arquivo\n");
+
   struct signUp
   {
     char nome[110];
@@ -105,28 +113,41 @@ int cadastro_paciente(void)
   int juntas = 7121;
   printf("Nome:\n");
   scanf("%s", paciente.nome, 100, stdin);
+  fprintf(file, paciente.nome);
   printf("Data de nascimento:\n");
   scanf("%s", paciente.data, 8, stdin);
+  fprintf(file, paciente.data);
   printf("Qual seu sexo? Digite (m) se masculino ou (f) se feminino\n");
   scanf("%s", paciente.sexo, 2, stdin);
+  fprintf(file, paciente.sexo);
   printf("CPF:\n");
   scanf("%s", paciente.cpf, 13, stdin);
+  fprintf(file, paciente.cpf);
   printf("Telefone:\n");
   scanf("%s", paciente.tel, 10, stdin);
+  fprintf(file, paciente.tel);
   printf("Endereço:\n");
   scanf("%s", paciente.endereco, 100, stdin);
+  fprintf(file, paciente.endereco);
   printf("Você possui alguma alergia? Se sim, quais? Se não, não preencha\n");
   scanf("\n%s", paciente.alergia, 25, stdin);
+  fprintf(file, paciente.alergia);
   printf("Você possui plano de saúde? Se não, não preencha\n");
   scanf("\n%s", paciente.plano, 18, stdin);
+  fprintf(file, paciente.plano);
   printf("E-mail:\n");
   scanf("%s", paciente.email, 100, stdin);
+  fprintf(file, paciente.email);
   printf("Senha:\n");
   scanf("%id", paciente.senha, 10, stdin);
+  fprintf(file, paciente.senha);
   printf("Você foi cadastro com sucesso!\n");
   juntas++;
   printf("Parabéns, seja bem vindo! Você é o paciente número: %i da rede\n", juntas);
+  fprintf(file, "Paciente número: %i da rede\n", juntas);
   printf("Você será redirecionado para a página de login\n");
+
+  fclose(file);
   return login_paciente();
 }
 int medico(void)
@@ -209,6 +230,14 @@ int login_medico(void)
 }
 int cadastro_medico(void)
 {
+  char url[] = "cadastroMedico.txt";
+
+  FILE *file;
+  file = fopen(url, "w");
+
+  if (file == NULL)
+    printf("Erro, nao foi possivel abrir o arquivo\n");
+
   struct signUp
   {
     char nome[110];
@@ -225,21 +254,31 @@ int cadastro_medico(void)
 
   printf("Nome:\n");
   scanf("%s", medico.nome, 100, stdin);
+  fprintf(file, medico.nome);
   printf("Data de nascimento:\n");
   scanf("%s", medico.data, 8, stdin);
+  fprintf(file, medico.data);
   printf("Qual seu sexo? Digite (m) se masculino ou (f) se feminino\n");
   scanf("%s", medico.sexo, 2, stdin);
+  fprintf(file, medico.sexo);
   printf("CPF:\n");
   scanf("%s", medico.cpf, 13, stdin);
+  fprintf(file, medico.cpf);
   printf("Telefone:\n");
   scanf("%s", medico.tel, 10, stdin);
+  fprintf(file, medico.tel);
   printf("Endereço:\n");
   scanf("%s", medico.endereco, 100, stdin);
+  fprintf(file, medico.endereco);
   printf("E-mail:\n");
   scanf("%s", medico.email, 100, stdin);
+  fprintf(file, medico.email);
   printf("Senha:\n");
   scanf("%id", medico.senha, 10, stdin);
+  fprintf(file, medico.senha);
   printf("Você foi cadastro com sucesso e será redirecionado para página de login!\n");
+
+  fclose(file);
   return login_medico();
 }
 int funcionario(void)
@@ -314,6 +353,14 @@ int login_funcionario(void)
 }
 int cadastro_funcionario(void)
 {
+  char url[] = "cadastroFuncionario.txt";
+
+  FILE *file;
+  file = fopen(url, "w");
+
+  if (file == NULL)
+    printf("Erro, nao foi possivel abrir o arquivo\n");
+
   struct signUp
   {
     char nome[110];
@@ -330,22 +377,32 @@ int cadastro_funcionario(void)
 
   printf("Nome:\n");
   scanf("%s", funcionario.nome, 100, stdin);
+  fprintf(file, funcionario.nome);
   printf("Data de nascimento:\n");
   scanf("%s", funcionario.data, 8, stdin);
+  fprintf(file, funcionario.data);
   printf("Qual seu sexo? Digite (m) se masculino ou (f) se feminino\n");
   scanf("%s", funcionario.sexo, 2, stdin);
+  fprintf(file, funcionario.sexo);
   printf("CPF:\n");
   scanf("%s", funcionario.cpf, 13, stdin);
+  fprintf(file, funcionario.cpf);
   printf("Telefone:\n");
   scanf("%s", funcionario.tel, 10, stdin);
+  fprintf(file, funcionario.tel);
   printf("Endereço:\n");
   scanf("%s", funcionario.endereco, 100, stdin);
+  fprintf(file, funcionario.endereco);
   printf("E-mail:\n");
   scanf("%s", funcionario.email, 100, stdin);
+  fprintf(file, funcionario.email);
   printf("Senha:\n");
   scanf("%id", funcionario.senha, 10, stdin);
+  fprintf(file, funcionario.senha);
   printf("Você foi cadastro com sucesso e será redirecionado para página de login!\n");
   printf("-----------------------------------\n");
+
+  fclose(file);
   return login_funcionario();
 }
 int pagamento(void)
@@ -424,6 +481,14 @@ char *findLastDigits(char digits[])
 //pagamentos
 int prePagamentoConsultaMedica(void)
 {
+  char url[] = "prePagamentoConsultaMedica.txt";
+
+  FILE *file;
+  file = fopen(url, "w");
+
+  if (file == NULL)
+    printf("Erro, nao foi possivel abrir o arquivo\n");
+
   char control = 0;
   char card[15];
   char nome[100];
@@ -438,14 +503,19 @@ int prePagamentoConsultaMedica(void)
   printf("Aceitamos: Mastercard, Visa e AmericaExpress\n");
   printf("Número do cartão:\n");
   scanf("\n%s", card);
+  fprintf(file, card);
   printf("Nome no cartão:\n");
   scanf("\n%s", nome);
+  fprintf(file, nome);
   printf("Data de validade:\n");
   scanf("\n%s", dataValidade);
+  fprintf(file, dataValidade);
   printf("Código de segurança:\n");
   scanf("\n%id", cv);
+  fprintf(file, cv);
   printf("Data de pagamento\n");
   scanf("\n%s", dataPagamento);
+  fprintf(file, dataPagamento);
   p = findLastDigits(card);
   printf("O ultimo digito do seu cpf é %s ?\n", p);
   printf("Se sim, digite (s)\n");
@@ -483,9 +553,18 @@ int prePagamentoConsultaMedica(void)
     printf("Por favor, escolha uma opção válida!\n");
     return menuOrExit();
   }
+  fclose(file);
 }
 int prePagamentoConsultaOdontologica(void)
 {
+  char url[] = "prePagamentoConsultaOdontologica.txt";
+
+  FILE *file;
+  file = fopen(url, "w");
+
+  if (file == NULL)
+    printf("Erro, nao foi possivel abrir o arquivo\n");
+
   char control = 0;
   char card[15];
   char nome[100];
@@ -500,14 +579,19 @@ int prePagamentoConsultaOdontologica(void)
   printf("Aceitamos: Mastercard, Visa e AmericaExpress\n");
   printf("Número do cartão:\n");
   scanf("\n%s", card);
+  fprintf(file, card);
   printf("Nome no cartão:\n");
   scanf("\n%s", nome);
+  fprintf(file, nome);
   printf("Data de validade:\n");
   scanf("\n%s", dataValidade);
+  fprintf(file, dataValidade);
   printf("Código de segurança:\n");
   scanf("\n%id", cv);
+  fprintf(file, cv);
   printf("Data de pagamento\n");
   scanf("\n%s", dataPagamento);
+  fprintf(file, dataPagamento);
   p = findLastDigits(card);
   printf("O ultimo digito do seu cpf é %s ?\n", p);
   printf("Se sim, digite (s)\n");
@@ -545,6 +629,7 @@ int prePagamentoConsultaOdontologica(void)
     printf("Por favor, escolha uma opção válida!\n");
     return menuOrExit();
   }
+  fclose(file);
 }
 int posPagamento(void)
 {
@@ -579,6 +664,14 @@ int posPagamento(void)
 }
 int posPagamentoConsultaMedica(void)
 {
+  char url[] = "posPagamentoConsultaMedica.txt";
+
+  FILE *file;
+  file = fopen(url, "w");
+
+  if (file == NULL)
+    printf("Erro, nao foi possivel abrir o arquivo\n");
+
   char control = 0;
   char card[15];
   char name[100];
@@ -593,14 +686,19 @@ int posPagamentoConsultaMedica(void)
   printf("Bandeiras: Mastercard, Visa e AmericaExpress\n");
   printf("Número do cartão:\n");
   scanf("%id", card);
+  fprintf(file, card);
   printf("Nome no cartão:\n");
   scanf("\n%s", name);
+  fprintf(file, name);
   printf("Data de validade:\n");
   scanf("%id", date);
+  fprintf(file, date);
   printf("Código de segurança:\n");
   scanf("\n%s", cv);
+  fprintf(file, cv);
   printf("Data do pagamento:\n");
   scanf("\n%id", &payday);
+  fprintf(file, payday);
   p = findLastDigits(card);
   printf("O ultimo digito do seu cpf é %s ?\n", p);
   printf("Se sim, digite (s)\n");
@@ -610,26 +708,32 @@ int posPagamentoConsultaMedica(void)
     if (payday == 16)
     {
       printf("Por causa dos juros, o valor da sua consulta é: R$%f\n", price + 0.33);
+      fprintf(file, "Por causa dos juros, o valor da sua consulta é: R$%f\n", price + 0.33);
     }
     else if (payday == 17)
     {
       printf("Por causa dos juros, o valor da sua consulta é: R$%f\n", price + 0.66);
+      fprintf(file, "Por causa dos juros, o valor da sua consulta é: R$%f\n", price + 0.66);
     }
     else if (payday == 18)
     {
       printf("Por causa dos juros, o valor da sua consulta é: R$%f\n", price + 0.99);
+      fprintf(file, "Por causa dos juros, o valor da sua consulta é: R$%f\n", price + 0.99);
     }
     else if (payday == 19)
     {
       printf("Por causa dos juros, o valor da sua consulta é: R$%f\n", price + 1.32);
+      fprintf(file, "Por causa dos juros, o valor da sua consulta é: R$%f\n", price + 1.32);
     }
     else if (payday == 20)
     {
       printf("Por causa dos juros, o valor da sua conta é: R$%f\n", price + 1.65);
+      fprintf(file, "Por causa dos juros, o valor da sua consulta é: R$%f\n", price + 1.65);
     }
     else if (payday <= 15 && payday != 0)
     {
       printf("O valor final da consulta é: R$%2.f\n", price);
+      fprintf(file, "O valor final da consulta é: R$%2.f\n", price);
     }
     else
     {
@@ -666,9 +770,18 @@ int posPagamentoConsultaMedica(void)
     printf("Por favor, escolha uma opção válida!\n");
     return menuOrExit();
   }
+  fclose(file);
 }
 int posPagamentoConsultaOdontologica(void)
 {
+  char url[] = "posPagamentoConsultaOdontologica.txt";
+
+  FILE *file;
+  file = fopen(url, "w");
+
+  if (file == NULL)
+    printf("Erro, nao foi possivel abrir o arquivo\n");
+
   char control = 0;
   char card[15];
   char name[100];
@@ -683,14 +796,19 @@ int posPagamentoConsultaOdontologica(void)
   printf("Bandeiras: Mastercard, Visa e AmericaExpress\n");
   printf("Número do cartão:\n");
   scanf("%id", card);
+  fprintf(file, card);
   printf("Nome no cartão:\n");
   scanf("\n%s", name);
+  fprintf(file, name);
   printf("Data de validade:\n");
   scanf("%id", date);
+  fprintf(file, date);
   printf("Código de segurança:\n");
   scanf("\n%s", cv);
+  fprintf(file, cv);
   printf("Data do pagamento:\n");
   scanf("\n%id", &payday);
+  fprintf(file, payday);
   p = findLastDigits(card);
   printf("O ultimo digito do seu cpf é %s ?\n", p);
   printf("Se sim, digite (s)\n");
@@ -700,26 +818,32 @@ int posPagamentoConsultaOdontologica(void)
     if (payday == 16)
     {
       printf("Por causa dos juros, o valor da sua consulta é: R$%f\n", price + 0.33);
+      fprintf(file, "Por causa dos juros, o valor da sua consulta é: R$%f\n", price + 0.33);
     }
     else if (payday == 17)
     {
       printf("Por causa dos juros, o valor da sua consulta é: R$%f\n", price + 0.66);
+      fprintf(file, "Por causa dos juros, o valor da sua consulta é: R$%f\n", price + 0.66);
     }
     else if (payday == 18)
     {
       printf("Por causa dos juros, o valor da sua consulta é: R$%f\n", price + 0.99);
+      fprintf(file, "Por causa dos juros, o valor da sua consulta é: R$%f\n", price + 0.99);
     }
     else if (payday == 19)
     {
       printf("Por causa dos juros, o valor da sua consulta é: R$%f\n", price + 1.32);
+      fprintf(file, "Por causa dos juros, o valor da sua consulta é: R$%f\n", price + 1.32);
     }
     else if (payday == 20)
     {
       printf("Por causa dos juros, o valor da sua conta é: R$%f\n", price + 1.65);
+      fprintf(file, "Por causa dos juros, o valor da sua consulta é: R$%f\n", price + 1.65);
     }
     else if (payday <= 15 && payday != 0)
     {
       printf("O valor final da consulta é: R$%2.f\n", price);
+      fprintf(file, "O valor final da consulta é: R$%2.f\n", price);
     }
     else
     {
@@ -756,10 +880,19 @@ int posPagamentoConsultaOdontologica(void)
     printf("Por favor, escolha uma opção válida!\n");
     return menuOrExit();
   }
+  fclose(file);
 }
 
 int agendar(void)
 {
+  char url[] = "agendamento.txt";
+
+  FILE *file;
+  file = fopen(url, "w");
+
+  if (file == NULL)
+    printf("Erro, nao foi possivel abrir o arquivo\n");
+
   char control = 0;
   char nome[100];
   char sexo[1];
@@ -769,18 +902,25 @@ int agendar(void)
   char horario[10];
   printf("Digite seu nome completo:\n");
   scanf("\n%s", nome);
+  fprintf(file, nome);
   printf("Qual seu sexo? Digite (m) se masculino ou (f) se feminino\n");
   scanf("\n%s", sexo);
+  fprintf(file, sexo);
   printf("E-mail:\n");
   scanf("\n%s", email);
+  fprintf(file, email);
   printf("CPF:\n");
   scanf("\n%s", cpf);
+  fprintf(file, cpf);
   printf("-----AGENDE ABAIXO-----\n");
   printf("Data:");
   scanf("\n%s", data);
+  fprintf(file, data);
   printf("Horário:");
   scanf("\n%s", horario);
+  fprintf(file, horario);
   printf("Sua consulta foi marcada para o dia: %s às %s\n", data, horario);
+  fprintf(file, "Sua consulta foi marcada para o dia: %s às %s\n", data, horario);
   printf("-----------------------------------\n");
   printf("Digite [1] para voltar ao menu\n");
   printf("Digite [2] para encerrar o programa\n");
@@ -798,10 +938,20 @@ int agendar(void)
     }
   } while (control > 0 & control <= 2);
   printf("Por favor, escolha uma opção válida!\n");
+
+  fclose(file);
   return menuOrExit();
 }
 int internacao(void)
 {
+  char url[] = "internacao.txt";
+
+  FILE *file;
+  file = fopen(url, "w");
+
+  if (file == NULL)
+    printf("Erro, nao foi possivel abrir o arquivo\n");
+
   char control = 0;
   char nome[100];
   int idade[2];
@@ -809,13 +959,18 @@ int internacao(void)
   char data[8];
   printf("Nome do paciente:\n");
   scanf("\n%s", nome);
+  fprintf(file, nome);
   printf("Idade:\n");
   scanf("\n%id", idade);
+  fprintf(file, idade);
   printf("Motivo:\n");
   scanf("\n%s", motivo);
+  fprintf(file, motivo);
   printf("Data da internação:\n");
   scanf("\n%s", data);
+  fprintf(file, data);
   printf("O paciente %s foi internado por motivo de: %s, na data de: %s", nome, motivo, data);
+  fprintf(file, "O paciente %s foi internado por motivo de: %s, na data de: %s", nome, motivo, data);
   printf("Digite [1] para voltar ao menu\n");
   printf("Digite [2] para encerrar o programa\n");
   scanf("\n%c", &control);
@@ -832,26 +987,40 @@ int internacao(void)
     }
   } while (control > 0 & control <= 2);
   printf("Por favor, escolha uma opção válida!\n");
+
+  fclose(file);
   return menuOrExit();
 }
 int cancelamento_de_consultas(void)
 {
+  char url[] = "cancelamentoConsulta.txt";
+
+  FILE *file;
+  file = fopen(url, "w");
+
+  if (file == NULL)
+    printf("Erro, nao foi possivel abrir o arquivo\n");
+
   char control = 0;
   char email[100];
   int senha[8];
   char data[10];
   printf("E-mail:\n");
   scanf("\n%s", email);
+  fprintf(file, email);
   printf("Senha:\n");
   scanf("\n%id", senha);
+  fprintf(file, senha);
   printf("Digite a data da consulta a ser cancelada:\n");
   scanf("\n%s", data);
+  fprintf(file, data);
   printf("Você tem certeza?\n");
   printf("Para confirmar digite [c]\n");
   scanf("\n%c", &control);
   if (control == 'c' || control == 'C')
   {
     printf("A consulta do dia %s foi cancelada\n", data);
+    fprintf(file, "A consulta do dia %s foi cancelada\n", data);
     printf("-----------------------------------\n");
     printf("[1] - Voltar ao menu\n");
     printf("[2] - Encerrar o programa\n");
@@ -877,6 +1046,7 @@ int cancelamento_de_consultas(void)
     printf("Por favor, escolha uma opção válida!\n");
     return menuOrExit();
   }
+  fclose(file);
 }
 int reclamacao_elogio(void)
 {
@@ -896,23 +1066,37 @@ int reclamacao_elogio(void)
   printf("Nós da NuVida te agradecemos por isso!\n");
   printf("-----------------------------------\n");
 
-   fclose(file);
+  fclose(file);
   return menuOrExit();
 }
 int atestado(void)
 {
+  char url[] = "atestado.txt";
+
+  FILE *file;
+  file = fopen(url, "w");
+
+  if (file == NULL)
+    printf("Erro, nao foi possivel abrir o arquivo\n");
+
   char nome[100];
   char data[10];
   char horario[10];
   printf("Digite seu nome completo:\n");
   scanf("\n%s", nome);
+  fprintf(file, nome);
   printf("Digite a data da sua consulta:\n");
   scanf("\n%s", data);
+  fprintf(file, data);
   printf("Digite o horário da sua consulta:\n");
   scanf("\n%s", horario);
+  fprintf(file, horario);
   printf("Paciente: %s  seu atestado foi gerado!\n", nome);
+  fprintf(file, "Paciente: %s  seu atestado foi gerado!\n", nome);
   printf("Por favor, acesse o link a seguir e o imprima: \n");
   printf("-----------------------------------\n");
+
+  fclose(file);
   return menuOrExit();
 }
 int relatorio(void)
@@ -1281,12 +1465,24 @@ int faturamento_mensalRede(void)
 //quantidade de pacientes para cada unidade é diferente
 void numeroDePacientes(void)
 {
+  char url[] = "numeroDePacientesRede.txt";
+
+  FILE *file;
+  file = fopen(url, "w");
+
+  if (file == NULL)
+    printf("Erro, nao foi possivel abrir o arquivo\n");
+
   int paraisopolis = 5050;
   int morumbi = 1115;
   int vilaSonia = 956;
   int juntas = paraisopolis + morumbi + vilaSonia;
   printf("Calculando...\n");
+  fprintf(file, "Todas as clínicas da NuVida juntas somam: %i pacientes até o momento.\n", juntas);
   printf("Todas as clínicas da NuVida juntas somam: %i pacientes até o momento.\n", juntas);
+
+  fclose(file);
+  return menuOrExit();
 }
 void numeroDePacientesParaisopolis(void)
 {
