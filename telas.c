@@ -56,6 +56,7 @@ int login_paciente(void)
   printf("[4] - Realizar pagamento\n");
   printf("[5] - Voltar ao menu\n");
   printf("[6] - Encerrar o programa\n");
+  __fpurge(stdin);
   scanf("\n%c", &control);
   do
   {
@@ -101,8 +102,8 @@ int cadastro_paciente(void)
     char sexo[2];
     char cpf[15];
     char tel[13];
-    char endereco[110];
-    char alergia[30];
+    char endereco[210];
+    char alergia[45];
     char plano[20];
     char email[110];
     int senha[8];
@@ -112,7 +113,8 @@ int cadastro_paciente(void)
 
   int juntas = 7121;
   printf("Nome:\n");
-  scanf("%s", paciente.nome, 100, stdin);
+  __fpurge(stdin);
+  scanf("%[^\n]", paciente.nome, 100, stdin);
   fprintf(file, paciente.nome);
   printf("Data de nascimento:\n");
   scanf("%s", paciente.data, 8, stdin);
@@ -127,18 +129,21 @@ int cadastro_paciente(void)
   scanf("%s", paciente.tel, 10, stdin);
   fprintf(file, paciente.tel);
   printf("Endereço:\n");
-  scanf("%s", paciente.endereco, 100, stdin);
+  __fpurge(stdin);
+  scanf("%[^\n]", paciente.endereco, 200, stdin);
   fprintf(file, paciente.endereco);
   printf("Você possui alguma alergia? Se sim, quais? Se não, não preencha\n");
-  scanf("\n%s", paciente.alergia, 25, stdin);
+  __fpurge(stdin);
+  scanf("%[^\n]", paciente.alergia, 40, stdin);
   fprintf(file, paciente.alergia);
-  printf("Você possui plano de saúde? Se não, não preencha\n");
-  scanf("\n%s", paciente.plano, 18, stdin);
+  printf("Qual seu plano de saúde? Se não tiver, não preencha\n");
+  __fpurge(stdin);
+  scanf("%[^\n]", paciente.plano, 18, stdin);
   fprintf(file, paciente.plano);
   printf("E-mail:\n");
   scanf("%s", paciente.email, 100, stdin);
   fprintf(file, paciente.email);
-  printf("Senha:\n");
+  printf("Crie uma senha:\n");
   scanf("%id", paciente.senha, 10, stdin);
   fprintf(file, paciente.senha);
   printf("Você foi cadastro com sucesso!\n");
@@ -182,21 +187,23 @@ int medico(void)
 int login_medico(void)
 {
   char control = 0;
+  char nome[100];
   char email[100];
   int senha[8];
+  printf("Primeiro nome:\n");
+  scanf("%s",nome);
   printf("E-mail:\n");
   scanf("\n%s", email);
   printf("Senha:\n");
   scanf("\n%id", senha);
-  printf("Usuário: %s - Seja bem vindo à NuVida!\n", email);
+  printf("Médico: %s - Seja bem vindo à NuVida!\n", nome);
   printf("-----------------------------------\n");
   printf("[1] - Atestado médico\n");
-  printf("[2] - Marcar consulta\n");
-  printf("[3] - Cancelar consulta\n");
-  printf("[4] - Registrar internação\n");
-  printf("[5] - Relatórios\n");
-  printf("[6] - Voltar ao menu\n");
-  printf("[7] - Encerrar o programa\n");
+  printf("[2] - Registrar internação\n");
+  printf("[3] - Registrar receita\n");
+  printf("[4] - Voltar ao menu\n");
+  printf("[5] - Encerrar o programa\n");
+  __fpurge(stdin);
   scanf("\n%c", &control);
   do
   {
@@ -206,25 +213,19 @@ int login_medico(void)
       atestado();
       break;
     case '2':
-      agendar();
-      break;
-    case '3':
-      cancelamento_de_consultas();
-      break;
-    case '4':
       internacao();
       break;
-    case '5':
-      relatorio();
+    case '3':
+      receitaMedicamento();
       break;
-    case '6':
+    case '4':
       menu();
       break;
-    case '7':
+      case '5':
       exit(0);
       break;
     }
-  } while (control > 0 & control <= 7);
+  } while (control > 0 & control <= 5);
   printf("Por favor, escolha uma opção válida!\n");
   return login_medico();
 }
@@ -273,7 +274,7 @@ int cadastro_medico(void)
   printf("E-mail:\n");
   scanf("%s", medico.email, 100, stdin);
   fprintf(file, medico.email);
-  printf("Senha:\n");
+  printf("Crie uma senha:\n");
   scanf("%id", medico.senha, 10, stdin);
   fprintf(file, medico.senha);
   printf("Você foi cadastro com sucesso e será redirecionado para página de login!\n");
@@ -396,7 +397,7 @@ int cadastro_funcionario(void)
   printf("E-mail:\n");
   scanf("%s", funcionario.email, 100, stdin);
   fprintf(file, funcionario.email);
-  printf("Senha:\n");
+  printf("Crie uma senha:\n");
   scanf("%id", funcionario.senha, 10, stdin);
   fprintf(file, funcionario.senha);
   printf("Você foi cadastro com sucesso e será redirecionado para página de login!\n");
@@ -478,6 +479,7 @@ char *findLastDigits(char digits[])
   pnumber = &digits[i];
   return pnumber;
 }
+
 //pagamentos
 int prePagamentoConsultaMedica(void)
 {
@@ -676,28 +678,29 @@ int posPagamentoConsultaMedica(void)
   char card[15];
   char name[100];
   char date[10];
-  int cv[3];
+  char cv[3];
   float price = 50;
-  int payday;
+  char payday[2];
   char *p;
   char s, c;
+
   printf("O valor da nossa consulta médica é de R$50,00\n");
   printf("Para a sua segurança só aceitamos cartões de crédito\n");
   printf("Bandeiras: Mastercard, Visa e AmericaExpress\n");
   printf("Número do cartão:\n");
-  scanf("%id", card);
+  scanf("%s", card);
   fprintf(file, card);
   printf("Nome no cartão:\n");
   scanf("\n%s", name);
   fprintf(file, name);
   printf("Data de validade:\n");
-  scanf("%id", date);
+  scanf("\n%s", date);
   fprintf(file, date);
   printf("Código de segurança:\n");
   scanf("\n%s", cv);
   fprintf(file, cv);
   printf("Data do pagamento:\n");
-  scanf("\n%id", &payday);
+  scanf("\n%s", &payday);
   fprintf(file, payday);
   p = findLastDigits(card);
   printf("O ultimo digito do seu cpf é %s ?\n", p);
@@ -958,19 +961,22 @@ int internacao(void)
   char motivo[200];
   char data[8];
   printf("Nome do paciente:\n");
-  scanf("\n%s", nome);
+  __fpurge(stdin);
+  scanf("%[^\n]", nome);
   fprintf(file, nome);
   printf("Idade:\n");
   scanf("\n%id", idade);
   fprintf(file, idade);
   printf("Motivo:\n");
-  scanf("\n%s", motivo);
+  __fpurge(stdin);
+  scanf("%[^\n]", motivo);
   fprintf(file, motivo);
   printf("Data da internação:\n");
   scanf("\n%s", data);
   fprintf(file, data);
-  printf("O paciente %s foi internado por motivo de: %s, na data de: %s", nome, motivo, data);
-  fprintf(file, "O paciente %s foi internado por motivo de: %s, na data de: %s", nome, motivo, data);
+  printf("O paciente %s foi internado por motivo de: %s, na data de: %s\n", nome, motivo, data);
+  fprintf(file, "O paciente %s foi internado por motivo de: %s, na data de: %s\n", nome, motivo, data);
+  printf("-----------------------------------\n");
   printf("Digite [1] para voltar ao menu\n");
   printf("Digite [2] para encerrar o programa\n");
   scanf("\n%c", &control);
@@ -1003,17 +1009,21 @@ int cancelamento_de_consultas(void)
 
   char control = 0;
   char email[100];
-  int senha[8];
+  char senha[10];
   char data[10];
   printf("E-mail:\n");
   scanf("\n%s", email);
   fprintf(file, email);
   printf("Senha:\n");
-  scanf("\n%id", senha);
+   __fpurge(stdin);
+  scanf("\n%s", senha);
   fprintf(file, senha);
   printf("Digite a data da consulta a ser cancelada:\n");
   scanf("\n%s", data);
   fprintf(file, data);
+
+
+  
   printf("Você tem certeza?\n");
   printf("Para confirmar digite [c]\n");
   scanf("\n%c", &control);
@@ -1062,6 +1072,7 @@ int reclamacao_elogio(void)
   printf("Deixe seu mensagem abaixo:\n");
   scanf("\n%s", mensagem);
   fprintf(file, mensagem);
+   printf("-----------------------------------\n");
   printf("Sua mensagem foi enviada.\n");
   printf("Nós da NuVida te agradecemos por isso!\n");
   printf("-----------------------------------\n");
@@ -1082,19 +1093,55 @@ int atestado(void)
   char nome[100];
   char data[10];
   char horario[10];
-  printf("Digite seu nome completo:\n");
-  scanf("\n%s", nome);
+  printf("Nome do paciente:\n");
+   __fpurge(stdin);
+  scanf("%[^\n]", nome);
   fprintf(file, nome);
-  printf("Digite a data da sua consulta:\n");
-  scanf("\n%s", data);
+  printf("Data da consulta:\n");
+  scanf("%s", data);
   fprintf(file, data);
-  printf("Digite o horário da sua consulta:\n");
-  scanf("\n%s", horario);
+  printf("Horário da sua consulta:\n");
+  scanf("%s", horario);
   fprintf(file, horario);
-  printf("Paciente: %s  seu atestado foi gerado!\n", nome);
-  fprintf(file, "Paciente: %s  seu atestado foi gerado!\n", nome);
+  printf("-----------------------------------\n");
+  printf("Verificando... \n");
+   printf("-----------------------------------\n");
+  printf("O atestado do paciente: %s foi gerado!\n", nome);
+  fprintf(file, "O atestado do paciente: %s foi gerado!\n", nome);
   printf("Por favor, acesse o link a seguir e o imprima: \n");
   printf("-----------------------------------\n");
+
+  fclose(file);
+  return menuOrExit();
+}
+int receitaMedicamento(void)
+{
+char url[] = "receita.txt";
+
+  FILE *file;
+  file = fopen(url, "w");
+
+  if (file == NULL)
+    printf("Erro, nao foi possivel abrir o arquivo\n");
+
+   char medicamento[100];
+   char dias[2];
+   char vezes[15];
+   printf("Por favor, médico, receite os medicamentos com nome, dias e horários\n");
+   printf("-----------------------------------\n");
+   printf("Medicamento:\n");
+   scanf("%s",medicamento);
+   fprintf(file,medicamento);
+   printf("Quantidade de dias:\n");
+   scanf("%s",dias);
+   fprintf(file,dias);
+   printf("Vezes por dia:\n");
+   scanf("%s",vezes);
+   fprintf(file,vezes);
+   printf("-----------------------------------\n");
+   printf("Paciente, você deve tomar o %s durante %s dias, %s vezes por dia.\n",medicamento, dias, vezes);
+   printf("Siga a receita fielmente, passada sobre prescrição médica.\n");
+
 
   fclose(file);
   return menuOrExit();
