@@ -42,13 +42,16 @@ int paciente(void)
 int login_paciente(void)
 {
   char control = 0;
+  char nome[100];
   char email[100];
   int senha[8];
+  printf("Primeiro nome:\n");
+   scanf("%s",nome);
   printf("E-mail:\n");
   scanf("\n%s", email);
   printf("Senha:\n");
   scanf("\n%id", senha);
-  printf("Usuário: %s - Seja bem vindo à NuVida!\n", email);
+  printf("Paciente: %s - Seja bem vindo à NuVida!\n", nome);
   printf("-----------------------------------\n");
   printf("[1] - Atestado médico\n");
   printf("[2] - Marcar consulta\n");
@@ -314,18 +317,22 @@ int funcionario(void)
 int login_funcionario(void)
 {
   char control = 0;
+  char nome[100];
   char email[100];
   int senha[8];
+  printf("Primeiro nome:\n");
+   scanf("%s",nome);
   printf("E-mail:\n");
   scanf("\n%s", email);
   printf("Senha:\n");
   scanf("\n%id", senha);
-  printf("Usuário: %s - Seja bem vindo à NuVida!\n", email);
+  printf("Funcionário: %s - Seja bem vindo à NuVida!\n", nome);
   printf("-----------------------------------\n");
   printf("[1] - Marcar consulta\n");
   printf("[2] - Cancelar consulta\n");
   printf("[3] - Relatórios\n");
   printf("[4] - Voltar ao menu\n");
+   __fpurge(stdin);
   printf("[5] - Encerrar o programa\n");
   scanf("\n%c", &control);
   do
@@ -903,10 +910,10 @@ int agendar(void)
   char cpf[13];
   char data[10];
   char horario[10];
-  printf("Digite seu nome completo:\n");
+  printf("Digite o nome completo:\n");
   scanf("\n%s", nome);
   fprintf(file, nome);
-  printf("Qual seu sexo? Digite (m) se masculino ou (f) se feminino\n");
+  printf("Qual o sexo? Digite (m) se masculino ou (f) se feminino\n");
   scanf("\n%s", sexo);
   fprintf(file, sexo);
   printf("E-mail:\n");
@@ -919,10 +926,10 @@ int agendar(void)
   printf("Data:");
   scanf("\n%s", data);
   fprintf(file, data);
-  printf("Horário:");
+  printf("Horário:\n");
   scanf("\n%s", horario);
   fprintf(file, horario);
-  printf("Sua consulta foi marcada para o dia: %s às %s\n", data, horario);
+  printf("A consulta foi marcada para o dia: %s às %s\n",data, horario);
   fprintf(file, "Sua consulta foi marcada para o dia: %s às %s\n", data, horario);
   printf("-----------------------------------\n");
   printf("Digite [1] para voltar ao menu\n");
@@ -1531,20 +1538,26 @@ void numeroDePacientes(void)
   fclose(file);
   return menuOrExit();
 }
-void numeroDePacientesParaisopolis(void)
+int numeroDePacientesParaisopolis(void)
 {
   printf("A unidade Paraisopólis tem 5050 pacientes\n");
   printf("Acesse o link a seguir para ver a lista de pacientes: \n");
+   printf("-----------------------------------\n");
+    return menuOrExit();
 }
-void numeroDePacientesMorumbi(void)
+int numeroDePacientesMorumbi(void)
 {
   printf("A unidade Morumbi tem 1115 pacientes\n");
   printf("Acesse o link a seguir para ver a lista de pacientes: \n");
+   printf("-----------------------------------\n");
+    return menuOrExit();
 }
-void numeroDePacientesVilaSonia(void)
+int numeroDePacientesVilaSonia(void)
 {
   printf("A unidade Vila Sônia tem 956 pacientes\n");
   printf("Acesse o link a seguir para ver a lista de pacientes: \n");
+   printf("-----------------------------------\n");
+    return menuOrExit();
 }
 int totalRede(void)
 {
