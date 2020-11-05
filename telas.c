@@ -46,6 +46,7 @@ int login_paciente(void)
   char email[100];
   int senha[8];
   printf("Primeiro nome:\n");
+   __fpurge(stdin);
    scanf("%s",nome);
   printf("E-mail:\n");
   scanf("\n%s", email);
@@ -153,7 +154,7 @@ int cadastro_paciente(void)
   juntas++;
   printf("Parabéns, seja bem vindo! Você é o paciente número: %i da rede\n", juntas);
   fprintf(file, "Paciente número: %i da rede\n", juntas);
-  printf("Você será redirecionado para a página de login\n");
+  printf("Você foi cadastro com sucesso e será redirecionado para página de login!\n");
 
   fclose(file);
   return login_paciente();
@@ -194,6 +195,7 @@ int login_medico(void)
   char email[100];
   int senha[8];
   printf("Primeiro nome:\n");
+ __fpurge(stdin);
   scanf("%s",nome);
   printf("E-mail:\n");
   scanf("\n%s", email);
@@ -257,7 +259,8 @@ int cadastro_medico(void)
   struct signUp medico;
 
   printf("Nome:\n");
-  scanf("%s", medico.nome, 100, stdin);
+  __fpurge(stdin);
+  scanf("%[^\n]", medico.nome, 100, stdin);
   fprintf(file, medico.nome);
   printf("Data de nascimento:\n");
   scanf("%s", medico.data, 8, stdin);
@@ -272,7 +275,8 @@ int cadastro_medico(void)
   scanf("%s", medico.tel, 10, stdin);
   fprintf(file, medico.tel);
   printf("Endereço:\n");
-  scanf("%s", medico.endereco, 100, stdin);
+  __fpurge(stdin);
+  scanf("%[^\n]", medico.endereco, 100, stdin);
   fprintf(file, medico.endereco);
   printf("E-mail:\n");
   scanf("%s", medico.email, 100, stdin);
@@ -321,6 +325,7 @@ int login_funcionario(void)
   char email[100];
   int senha[8];
   printf("Primeiro nome:\n");
+   __fpurge(stdin);
    scanf("%s",nome);
   printf("E-mail:\n");
   scanf("\n%s", email);
@@ -384,7 +389,8 @@ int cadastro_funcionario(void)
   struct signUp funcionario;
 
   printf("Nome:\n");
-  scanf("%s", funcionario.nome, 100, stdin);
+  __fpurge(stdin);
+  scanf("%[^\n]", funcionario.nome, 100, stdin);
   fprintf(file, funcionario.nome);
   printf("Data de nascimento:\n");
   scanf("%s", funcionario.data, 8, stdin);
@@ -399,7 +405,8 @@ int cadastro_funcionario(void)
   scanf("%s", funcionario.tel, 10, stdin);
   fprintf(file, funcionario.tel);
   printf("Endereço:\n");
-  scanf("%s", funcionario.endereco, 100, stdin);
+   __fpurge(stdin);
+  scanf("%[^\n]", funcionario.endereco, 100, stdin);
   fprintf(file, funcionario.endereco);
   printf("E-mail:\n");
   scanf("%s", funcionario.email, 100, stdin);
@@ -1517,7 +1524,7 @@ int faturamento_mensalRede(void)
 }
 
 //quantidade de pacientes para cada unidade é diferente
-void numeroDePacientes(void)
+int numeroDePacientes(void)
 {
   char url[] = "numeroDePacientesRede.txt";
 
