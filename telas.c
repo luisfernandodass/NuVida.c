@@ -46,8 +46,8 @@ int login_paciente(void)
   char email[100];
   int senha[8];
   printf("Primeiro nome:\n");
-   __fpurge(stdin);
-   scanf("%s",nome);
+  __fpurge(stdin);
+  scanf("%s", nome);
   printf("E-mail:\n");
   scanf("\n%s", email);
   printf("Senha:\n");
@@ -195,8 +195,8 @@ int login_medico(void)
   char email[100];
   int senha[8];
   printf("Primeiro nome:\n");
- __fpurge(stdin);
-  scanf("%s",nome);
+  __fpurge(stdin);
+  scanf("%s", nome);
   printf("E-mail:\n");
   scanf("\n%s", email);
   printf("Senha:\n");
@@ -226,7 +226,7 @@ int login_medico(void)
     case '4':
       menu();
       break;
-      case '5':
+    case '5':
       exit(0);
       break;
     }
@@ -325,8 +325,8 @@ int login_funcionario(void)
   char email[100];
   int senha[8];
   printf("Primeiro nome:\n");
-   __fpurge(stdin);
-   scanf("%s",nome);
+  __fpurge(stdin);
+  scanf("%s", nome);
   printf("E-mail:\n");
   scanf("\n%s", email);
   printf("Senha:\n");
@@ -337,7 +337,7 @@ int login_funcionario(void)
   printf("[2] - Cancelar consulta\n");
   printf("[3] - Relatórios\n");
   printf("[4] - Voltar ao menu\n");
-   __fpurge(stdin);
+  __fpurge(stdin);
   printf("[5] - Encerrar o programa\n");
   scanf("\n%c", &control);
   do
@@ -405,7 +405,7 @@ int cadastro_funcionario(void)
   scanf("%s", funcionario.tel, 10, stdin);
   fprintf(file, funcionario.tel);
   printf("Endereço:\n");
-   __fpurge(stdin);
+  __fpurge(stdin);
   scanf("%[^\n]", funcionario.endereco, 100, stdin);
   fprintf(file, funcionario.endereco);
   printf("E-mail:\n");
@@ -693,7 +693,8 @@ int posPagamentoConsultaMedica(void)
   char name[100];
   char date[10];
   char cv[3];
-  float price = 50;
+  float price = 70;
+  char paymonth = 0;
   char payday[2];
   char *p;
   char s, c;
@@ -713,7 +714,10 @@ int posPagamentoConsultaMedica(void)
   printf("Código de segurança:\n");
   scanf("\n%s", cv);
   fprintf(file, cv);
-  printf("Data do pagamento:\n");
+  printf("Mês do pagamento:\n");
+  scanf("\n%c", &paymonth);
+
+  printf("Dia do pagamento:\n");
   scanf("\n%s", &payday);
   fprintf(file, payday);
   p = findLastDigits(card);
@@ -722,40 +726,42 @@ int posPagamentoConsultaMedica(void)
   scanf("\n%c", &s);
   if (s == 's' || s == 'S')
   {
-    if (payday == 16)
+    do
     {
-      printf("Por causa dos juros, o valor da sua consulta é: R$%f\n", price + 0.33);
-      fprintf(file, "Por causa dos juros, o valor da sua consulta é: R$%f\n", price + 0.33);
-    }
-    else if (payday == 17)
-    {
-      printf("Por causa dos juros, o valor da sua consulta é: R$%f\n", price + 0.66);
-      fprintf(file, "Por causa dos juros, o valor da sua consulta é: R$%f\n", price + 0.66);
-    }
-    else if (payday == 18)
-    {
-      printf("Por causa dos juros, o valor da sua consulta é: R$%f\n", price + 0.99);
-      fprintf(file, "Por causa dos juros, o valor da sua consulta é: R$%f\n", price + 0.99);
-    }
-    else if (payday == 19)
-    {
-      printf("Por causa dos juros, o valor da sua consulta é: R$%f\n", price + 1.32);
-      fprintf(file, "Por causa dos juros, o valor da sua consulta é: R$%f\n", price + 1.32);
-    }
-    else if (payday == 20)
-    {
-      printf("Por causa dos juros, o valor da sua conta é: R$%f\n", price + 1.65);
-      fprintf(file, "Por causa dos juros, o valor da sua consulta é: R$%f\n", price + 1.65);
-    }
-    else if (payday <= 15 && payday != 0)
-    {
-      printf("O valor final da consulta é: R$%2.f\n", price);
-      fprintf(file, "O valor final da consulta é: R$%2.f\n", price);
-    }
-    else
-    {
-      printf("A data de pagamento está muito atrasada, por favor entre em contato conosco no número: (11)9123-4578\n");
-    }
+      switch (paymonth)
+      {
+      case '1':
+        printf("Por causa dos juros e do atraso, o valor da consulta é: R$%2.f\n", price + 1 * 5);
+        fprintf(file, "Por causa dos juro e do atrasos, o valor da sua consulta é: R$%2.f\n", price + 1 * 5);
+        break;
+      case '2':
+        printf("Por causa dos juros e do atraso, o valor da consulta é: R$%2.f\n", price + 1,20 * 6);
+        fprintf(file, "Por causa dos juros e do atraso, o valor da consulta é: R$%2.f\n", price + 1,20 * 6);
+        break;
+      case '3':
+        printf("Por causa dos juros e do atraso, o valor da consulta é: R$%2.f\n", price + 2,40 * 12);
+        fprintf(file, "Por causa dos juros e do atraso, o valor da consulta é: R$%2.f\n", price + 2,40 * 12);
+        break;
+      case '4':
+        printf("Por causa dos juros e do atraso, o valor da consulta é: R$2.%f\n", price + 4,80 * 24);
+        fprintf(file, "Por causa dos juros e do atraso, o valor da consulta é: R$2.%f\n", price + 4,80 * 24);
+        break;
+      case '5':
+        printf("Por causa dos juros e do atraso, o valor da sua conta é: R$%2.f\n", price + 9,60 * 48);
+        fprintf(file, "Por causa dos juros, o valor da sua consulta é: R$%2.f\n", price + 9, 60 * 48);
+        break;
+      case '6':
+        printf("Por causa dos juros e do atraso, o valor da conta é: R$%2.f\n", price + 19,20 * 96);
+        fprintf(file, "Por causa dos juros e do atraso, o valor da consulta é: R$%2.f\n", price + 19,20 * 96);
+        break;
+      case '0':
+        printf("PAGO NO MÊS ATUAL, SEM JUROS OU MULTA.");
+        printf("O valor final da consulta é: R$%2.f\n", price);
+        fprintf(file, "O valor final da consulta é: R$%2.f\n", price);
+        break;
+      }
+    } while (paymonth >= 0 & paymonth <= 6);
+    printf("A data de pagamento está muito atrasada, por favor entre em contato conosco no número: (11)9123-4578\n");
   }
   printf("Para confirmar o pagamento, digite (c)\n");
   scanf("\n%c", &c);
@@ -803,28 +809,33 @@ int posPagamentoConsultaOdontologica(void)
   char card[15];
   char name[100];
   char date[10];
-  int cv[3];
-  float price = 50;
-  int payday;
+  char cv[3];
+  float price = 60;
+  char paymonth = 0;
+  char payday[2];
   char *p;
   char s, c;
+
   printf("O valor da nossa consulta médica é de R$50,00\n");
   printf("Para a sua segurança só aceitamos cartões de crédito\n");
   printf("Bandeiras: Mastercard, Visa e AmericaExpress\n");
   printf("Número do cartão:\n");
-  scanf("%id", card);
+  scanf("%s", card);
   fprintf(file, card);
   printf("Nome no cartão:\n");
   scanf("\n%s", name);
   fprintf(file, name);
   printf("Data de validade:\n");
-  scanf("%id", date);
+  scanf("\n%s", date);
   fprintf(file, date);
   printf("Código de segurança:\n");
   scanf("\n%s", cv);
   fprintf(file, cv);
-  printf("Data do pagamento:\n");
-  scanf("\n%id", &payday);
+  printf("Mês do pagamento:\n");
+  scanf("\n%c", &paymonth);
+
+  printf("Dia do pagamento:\n");
+  scanf("\n%s", &payday);
   fprintf(file, payday);
   p = findLastDigits(card);
   printf("O ultimo digito do seu cpf é %s ?\n", p);
@@ -832,40 +843,42 @@ int posPagamentoConsultaOdontologica(void)
   scanf("\n%c", &s);
   if (s == 's' || s == 'S')
   {
-    if (payday == 16)
+    do
     {
-      printf("Por causa dos juros, o valor da sua consulta é: R$%f\n", price + 0.33);
-      fprintf(file, "Por causa dos juros, o valor da sua consulta é: R$%f\n", price + 0.33);
-    }
-    else if (payday == 17)
-    {
-      printf("Por causa dos juros, o valor da sua consulta é: R$%f\n", price + 0.66);
-      fprintf(file, "Por causa dos juros, o valor da sua consulta é: R$%f\n", price + 0.66);
-    }
-    else if (payday == 18)
-    {
-      printf("Por causa dos juros, o valor da sua consulta é: R$%f\n", price + 0.99);
-      fprintf(file, "Por causa dos juros, o valor da sua consulta é: R$%f\n", price + 0.99);
-    }
-    else if (payday == 19)
-    {
-      printf("Por causa dos juros, o valor da sua consulta é: R$%f\n", price + 1.32);
-      fprintf(file, "Por causa dos juros, o valor da sua consulta é: R$%f\n", price + 1.32);
-    }
-    else if (payday == 20)
-    {
-      printf("Por causa dos juros, o valor da sua conta é: R$%f\n", price + 1.65);
-      fprintf(file, "Por causa dos juros, o valor da sua consulta é: R$%f\n", price + 1.65);
-    }
-    else if (payday <= 15 && payday != 0)
-    {
-      printf("O valor final da consulta é: R$%2.f\n", price);
-      fprintf(file, "O valor final da consulta é: R$%2.f\n", price);
-    }
-    else
-    {
-      printf("A data de pagamento está muito atrasada, por favor entre em contato conosco no número: (11)9123-4578\n");
-    }
+      switch (paymonth)
+      {
+      case '1':
+        printf("Por causa dos juros e do atraso, o valor da consulta é: R$%2.f\n", price + 1 * 5);
+        fprintf(file, "Por causa dos juro e do atrasos, o valor da sua consulta é: R$%2.f\n", price + 1 * 5);
+        break;
+      case '2':
+        printf("Por causa dos juros e do atraso, o valor da consulta é: R$%2.f\n", price + 1,20 * 6);
+        fprintf(file, "Por causa dos juros e do atraso, o valor da consulta é: R$%2.f\n", price + 1,20 * 6);
+        break;
+      case '3':
+        printf("Por causa dos juros e do atraso, o valor da consulta é: R$%2.f\n", price + 2,40 * 12);
+        fprintf(file, "Por causa dos juros e do atraso, o valor da consulta é: R$%2.f\n", price + 2,40 * 12);
+        break;
+      case '4':
+        printf("Por causa dos juros e do atraso, o valor da consulta é: R$2.%f\n", price + 4,80 * 24);
+        fprintf(file, "Por causa dos juros e do atraso, o valor da consulta é: R$2.%f\n", price + 4,80 * 24);
+        break;
+      case '5':
+        printf("Por causa dos juros e do atraso, o valor da sua conta é: R$%2.f\n", price + 9,60 * 48);
+        fprintf(file, "Por causa dos juros, o valor da sua consulta é: R$%2.f\n", price + 9, 60 * 48);
+        break;
+      case '6':
+        printf("Por causa dos juros e do atraso, o valor da conta é: R$%2.f\n", price + 19,20 * 96);
+        fprintf(file, "Por causa dos juros e do atraso, o valor da consulta é: R$%2.f\n", price + 19,20 * 96);
+        break;
+      case '0':
+        printf("PAGO NO MÊS ATUAL, SEM JUROS OU MULTA.");
+        printf("O valor final da consulta é: R$%2.f\n", price);
+        fprintf(file, "O valor final da consulta é: R$%2.f\n", price);
+        break;
+      }
+    } while (paymonth >= 0 & paymonth <= 6);
+    printf("A data de pagamento está muito atrasada, por favor entre em contato conosco no número: (11)9123-4578\n");
   }
   printf("Para confirmar o pagamento, digite (c)\n");
   scanf("\n%c", &c);
@@ -936,7 +949,7 @@ int agendar(void)
   printf("Horário:\n");
   scanf("\n%s", horario);
   fprintf(file, horario);
-  printf("A consulta foi marcada para o dia: %s às %s\n",data, horario);
+  printf("A consulta foi marcada para o dia: %s às %s\n", data, horario);
   fprintf(file, "Sua consulta foi marcada para o dia: %s às %s\n", data, horario);
   printf("-----------------------------------\n");
   printf("Digite [1] para voltar ao menu\n");
@@ -1029,15 +1042,13 @@ int cancelamento_de_consultas(void)
   scanf("\n%s", email);
   fprintf(file, email);
   printf("Senha:\n");
-   __fpurge(stdin);
+  __fpurge(stdin);
   scanf("\n%s", senha);
   fprintf(file, senha);
   printf("Digite a data da consulta a ser cancelada:\n");
   scanf("\n%s", data);
   fprintf(file, data);
 
-
-  
   printf("Você tem certeza?\n");
   printf("Para confirmar digite [c]\n");
   scanf("\n%c", &control);
@@ -1086,7 +1097,7 @@ int reclamacao_elogio(void)
   printf("Deixe seu mensagem abaixo:\n");
   scanf("\n%s", mensagem);
   fprintf(file, mensagem);
-   printf("-----------------------------------\n");
+  printf("-----------------------------------\n");
   printf("Sua mensagem foi enviada.\n");
   printf("Nós da NuVida te agradecemos por isso!\n");
   printf("-----------------------------------\n");
@@ -1108,7 +1119,7 @@ int atestado(void)
   char data[10];
   char horario[10];
   printf("Nome do paciente:\n");
-   __fpurge(stdin);
+  __fpurge(stdin);
   scanf("%[^\n]", nome);
   fprintf(file, nome);
   printf("Data da consulta:\n");
@@ -1119,7 +1130,7 @@ int atestado(void)
   fprintf(file, horario);
   printf("-----------------------------------\n");
   printf("Verificando... \n");
-   printf("-----------------------------------\n");
+  printf("-----------------------------------\n");
   printf("O atestado do paciente: %s foi gerado!\n", nome);
   fprintf(file, "O atestado do paciente: %s foi gerado!\n", nome);
   printf("Por favor, acesse o link a seguir e o imprima: \n");
@@ -1130,7 +1141,7 @@ int atestado(void)
 }
 int receitaMedicamento(void)
 {
-char url[] = "receita.txt";
+  char url[] = "receita.txt";
 
   FILE *file;
   file = fopen(url, "w");
@@ -1138,24 +1149,23 @@ char url[] = "receita.txt";
   if (file == NULL)
     printf("Erro, nao foi possivel abrir o arquivo\n");
 
-   char medicamento[100];
-   char dias[2];
-   char vezes[15];
-   printf("Por favor, médico, receite os medicamentos com nome, dias e horários\n");
-   printf("-----------------------------------\n");
-   printf("Medicamento:\n");
-   scanf("%s",medicamento);
-   fprintf(file,medicamento);
-   printf("Quantidade de dias:\n");
-   scanf("%s",dias);
-   fprintf(file,dias);
-   printf("Vezes por dia:\n");
-   scanf("%s",vezes);
-   fprintf(file,vezes);
-   printf("-----------------------------------\n");
-   printf("Paciente, você deve tomar o %s durante %s dias, %s vezes por dia.\n",medicamento, dias, vezes);
-   printf("Siga a receita fielmente, passada sobre prescrição médica.\n");
-
+  char medicamento[100];
+  char dias[2];
+  char vezes[15];
+  printf("Por favor, médico, receite os medicamentos com nome, dias e horários\n");
+  printf("-----------------------------------\n");
+  printf("Medicamento:\n");
+  scanf("%s", medicamento);
+  fprintf(file, medicamento);
+  printf("Quantidade de dias:\n");
+  scanf("%s", dias);
+  fprintf(file, dias);
+  printf("Vezes por dia:\n");
+  scanf("%s", vezes);
+  fprintf(file, vezes);
+  printf("-----------------------------------\n");
+  printf("Paciente, você deve tomar o %s durante %s dias, %s vezes por dia.\n", medicamento, dias, vezes);
+  printf("Siga a receita fielmente, passada sobre prescrição médica.\n");
 
   fclose(file);
   return menuOrExit();
@@ -1549,22 +1559,22 @@ int numeroDePacientesParaisopolis(void)
 {
   printf("A unidade Paraisopólis tem 5050 pacientes\n");
   printf("Acesse o link a seguir para ver a lista de pacientes: \n");
-   printf("-----------------------------------\n");
-    return menuOrExit();
+  printf("-----------------------------------\n");
+  return menuOrExit();
 }
 int numeroDePacientesMorumbi(void)
 {
   printf("A unidade Morumbi tem 1115 pacientes\n");
   printf("Acesse o link a seguir para ver a lista de pacientes: \n");
-   printf("-----------------------------------\n");
-    return menuOrExit();
+  printf("-----------------------------------\n");
+  return menuOrExit();
 }
 int numeroDePacientesVilaSonia(void)
 {
   printf("A unidade Vila Sônia tem 956 pacientes\n");
   printf("Acesse o link a seguir para ver a lista de pacientes: \n");
-   printf("-----------------------------------\n");
-    return menuOrExit();
+  printf("-----------------------------------\n");
+  return menuOrExit();
 }
 int totalRede(void)
 {
