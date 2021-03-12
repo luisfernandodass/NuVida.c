@@ -4,12 +4,8 @@
 
 <p align="center">NuVida é um projeto desenvolvido na Universidade Paulista pelo meu grupo que visa a automatização e digitalização de processos dentro de uma clínica médica, assim como o gerenciamento de usuários e tarefas. Feito em linguagem C, modo console.</p>
 
-<p align="center">A aplicação consiste em uma tela inicial de bem vindo e de login para todos os usuários (clientes, funcionários e médicos). 
-Para o cliente/paciente é disponibilizada a tela de bem vindo, login, atestado médico, agendamento e cancelamento de consultas, pré-pagamento e pós-pagamento.
-Para o médico é disponibilizada a tela de bem vindo, login, atestado médico, internação, receita médica e cadastro.
-Para o funcionário é disponibilizada a tela de bem vindo, login, agendamento e cancelamento de consultas, relatórios, faturamento diário e mensal, quantidade de pacientes e cadastro.</p>
-
 <p align="center">
+ <a href="#features">Features</a> • 
  <a href="#tecnologias">Tecnologias</a> • 
  <a href="#licença">Licença</a> • 
  <a href="#autor">Autor</a>
