@@ -7,6 +7,7 @@
 <p align="center">
  <a href="#objetivo">Objetivo</a> • 
  <a href="#features">Features</a> • 
+ <a href="#images">Imagens</a> •	
  <a href="#tecnologias">Tecnologias</a> • 
  <a href="#licença">Licença</a> • 
  <a href="#autor">Autor</a>
@@ -41,6 +42,12 @@
 As seguintes ferramentas foram usadas na construção do projeto:
 
 - [Linguagem C]
+<br>
+
+### Imagens
+<img src="https://github.com/luisfernandodass/IMAGENS/blob/main/nuvida.c-imagens/paciente/1.paciente.png"> <img src="https://github.com/luisfernandodass/IMAGENS/blob/main/nuvida.c-imagens/paciente/2.paciente.png"> <img src="https://github.com/luisfernandodass/IMAGENS/blob/main/nuvida.c-imagens/paciente/3.paciente.png"> <img src="https://github.com/luisfernandodass/IMAGENS/blob/main/nuvida.c-imagens/paciente/4.paciente.png"> <img src="https://github.com/luisfernandodass/IMAGENS/blob/main/nuvida.c-imagens/paciente/5.paciente.png"> <br>
+<img src="https://github.com/luisfernandodass/IMAGENS/blob/main/nuvida.c-imagens/funcionario/1.funcionario.png"> <img src="https://github.com/luisfernandodass/IMAGENS/blob/main/nuvida.c-imagens/funcionario/2.funcionario.png"> <img src="https://github.com/luisfernandodass/IMAGENS/blob/main/nuvida.c-imagens/funcionario/3.funcionario.png"> <img src="https://github.com/luisfernandodass/IMAGENS/blob/main/nuvida.c-imagens/funcionario/4.funcionario.png"> <img src="https://github.com/luisfernandodass/IMAGENS/blob/main/nuvida.c-imagens/funcionario/5.funcionario.png"> <br>
+<img src="https://github.com/luisfernandodass/IMAGENS/blob/main/nuvida.c-imagens/medico/1.medico.png"> <img src="https://github.com/luisfernandodass/IMAGENS/blob/main/nuvida.c-imagens/medico/2.medico.png"> <img src="https://github.com/luisfernandodass/IMAGENS/blob/main/nuvida.c-imagens/medico/3.medico.png">
 
 ### Licença
 <img src="https://img.shields.io/github/license/luisfernandodass/NuVida.c"/>
