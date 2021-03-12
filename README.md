@@ -11,7 +11,7 @@ Para o funcionário é disponibilizada a tela de bem vindo, login, agendamento e
 
 <p align="center">
  <a href="#tecnologias">Tecnologias</a> • 
- <a href="#licenca">Licença</a> • 
+ <a href="#licenc-a">Licença</a> • 
  <a href="#autor">Autor</a>
 </p>
 
@@ -35,7 +35,7 @@ Para o funcionário é disponibilizada a tela de bem vindo, login, agendamento e
 - [x] Faturamento diário e mensal
 - [x] Quantidade de pacientes
 
-### 🛠 Tecnologias
+### Tecnologias
 
 As seguintes ferramentas foram usadas na construção do projeto:
 
