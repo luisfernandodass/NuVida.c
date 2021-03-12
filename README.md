@@ -5,6 +5,7 @@
 <p align="center">NuVida é um projeto desenvolvido na Universidade Paulista pelo meu grupo que visa a automatização e digitalização de processos dentro de uma clínica médica, assim como o gerenciamento de usuários e tarefas. Feito em linguagem C, modo console.</p>
 
 <p align="center">
+ <a href="#objetivo">Objetivo</a> • 
  <a href="#features">Features</a> • 
  <a href="#tecnologias">Tecnologias</a> • 
  <a href="#licença">Licença</a> • 
@@ -14,6 +15,10 @@
 <h4 align="center"> 
 	🚧  O projeto NuVida foi finalizado no segundo semestre de 2020.  🚧
 </h4>
+ 
+ 
+### Objetivo
+<p>O objetivo foi desenvolver um sistema para criar a área de tela inicial e de login e para automatizar áreas de cadastramento, geração de atestado e receita médica, protocolo de internação, agendamento e cancelamento de consulta, pagamento, análise de relatório e faturamento diário e mensal.</p>
 
 ### Features
 
