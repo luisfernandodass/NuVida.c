@@ -2,7 +2,7 @@
 
 <h3 align="center">Sobre o projeto</h3>
 
-<p align="center">NuVida é um projeto desenvolvido na faculdade que visa a automatização e digitalização de processos dentro de uma clínica médica, assim como o gerenciamento de usuários e tarefas. Feito em linguagem C, modo console.</p>
+<p align="center">NuVida é um projeto desenvolvido na Universidade Paulista pelo meu grupo que visa a automatização e digitalização de processos dentro de uma clínica médica, assim como o gerenciamento de usuários e tarefas. Feito em linguagem C, modo console.</p>
 
 <p align="center">A aplicação consiste em uma tela inicial de bem vindo e de login para todos os usuários (clientes, funcionários e médicos). 
 Para o cliente/paciente é disponibilizada a tela de bem vindo, login, atestado médico, agendamento e cancelamento de consultas, pré-pagamento e pós-pagamento.
@@ -10,16 +10,13 @@ Para o médico é disponibilizada a tela de bem vindo, login, atestado médico, 
 Para o funcionário é disponibilizada a tela de bem vindo, login, agendamento e cancelamento de consultas, relatórios, faturamento diário e mensal, quantidade de pacientes e cadastro.</p>
 
 <p align="center">
- <a href="#objetivo">Objetivo</a> •
- <a href="#roadmap">Roadmap</a> • 
  <a href="#tecnologias">Tecnologias</a> • 
- <a href="#contribuicao">Contribuição</a> • 
- <a href="#licenc-a">Licença</a> • 
+ <a href="#licenca">Licença</a> • 
  <a href="#autor">Autor</a>
 </p>
 
 <h4 align="center"> 
-	🚧  NuVida 🚀 Terminado...  🚧
+	🚧  O projeto NuVida foi finalizado no segundo semestre de 2020.  🚧
 </h4>
 
 ### Features
@@ -44,6 +41,7 @@ As seguintes ferramentas foram usadas na construção do projeto:
 
 - [Linguagem C]
 
+### Licença
 <img src="https://img.shields.io/github/license/luisfernandodass/NuVida.c"/>
 
 ### Autor
