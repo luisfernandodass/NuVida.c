@@ -45,9 +45,16 @@ As seguintes ferramentas foram usadas na construção do projeto:
 <br>
 
 ### Imagens
-<img src="https://github.com/luisfernandodass/IMAGENS/blob/main/nuvida.c-imagens/paciente/1.paciente.png"> <img src="https://github.com/luisfernandodass/IMAGENS/blob/main/nuvida.c-imagens/paciente/2.paciente.png"> <img src="https://github.com/luisfernandodass/IMAGENS/blob/main/nuvida.c-imagens/paciente/3.paciente.png"> <img src="https://github.com/luisfernandodass/IMAGENS/blob/main/nuvida.c-imagens/paciente/4.paciente.png"> <img src="https://github.com/luisfernandodass/IMAGENS/blob/main/nuvida.c-imagens/paciente/5.paciente.png"> <br>
-<img src="https://github.com/luisfernandodass/IMAGENS/blob/main/nuvida.c-imagens/funcionario/1.funcionario.png"> <img src="https://github.com/luisfernandodass/IMAGENS/blob/main/nuvida.c-imagens/funcionario/2.funcionario.png"> <img src="https://github.com/luisfernandodass/IMAGENS/blob/main/nuvida.c-imagens/funcionario/3.funcionario.png"> <img src="https://github.com/luisfernandodass/IMAGENS/blob/main/nuvida.c-imagens/funcionario/4.funcionario.png"> <img src="https://github.com/luisfernandodass/IMAGENS/blob/main/nuvida.c-imagens/funcionario/5.funcionario.png"> <br>
-<img src="https://github.com/luisfernandodass/IMAGENS/blob/main/nuvida.c-imagens/medico/1.medico.png"> <img src="https://github.com/luisfernandodass/IMAGENS/blob/main/nuvida.c-imagens/medico/2.medico.png"> <img src="https://github.com/luisfernandodass/IMAGENS/blob/main/nuvida.c-imagens/medico/3.medico.png">
+![image](https://user-images.githubusercontent.com/67171626/122771258-a3c05280-d27c-11eb-8b9c-c005e7cdf345.png)
+![image](https://user-images.githubusercontent.com/67171626/122771282-a753d980-d27c-11eb-8b38-abfb7001293b.png)
+![image](https://user-images.githubusercontent.com/67171626/122771296-ac188d80-d27c-11eb-9e36-668556b519d0.png)
+![image](https://user-images.githubusercontent.com/67171626/122771313-b175d800-d27c-11eb-8d03-be007bcc1069.png)
+![image](https://user-images.githubusercontent.com/67171626/122771333-b63a8c00-d27c-11eb-8753-dfc751c0b92c.png)
+![image](https://user-images.githubusercontent.com/67171626/122771354-baff4000-d27c-11eb-8d7c-067632c0873c.png)
+![image](https://user-images.githubusercontent.com/67171626/122771363-bd619a00-d27c-11eb-99ee-44f2dedbbcf0.png)
+![image](https://user-images.githubusercontent.com/67171626/122771384-c2264e00-d27c-11eb-8a28-7208934a9374.png)
+![image](https://user-images.githubusercontent.com/67171626/122771400-c6526b80-d27c-11eb-8f5e-a5b492d6b7c3.png)
+
 
 ### Licença
 <img src="https://img.shields.io/github/license/luisfernandodass/NuVida.c"/>
