@@ -54,6 +54,10 @@ As seguintes ferramentas foram usadas na construção do projeto:
 ![image](https://user-images.githubusercontent.com/67171626/122771363-bd619a00-d27c-11eb-99ee-44f2dedbbcf0.png)
 ![image](https://user-images.githubusercontent.com/67171626/122771384-c2264e00-d27c-11eb-8a28-7208934a9374.png)
 ![image](https://user-images.githubusercontent.com/67171626/122771400-c6526b80-d27c-11eb-8f5e-a5b492d6b7c3.png)
+![image](https://user-images.githubusercontent.com/67171626/122771520-e4b86700-d27c-11eb-88db-3541059e0e2a.png)
+![image](https://user-images.githubusercontent.com/67171626/122771538-e97d1b00-d27c-11eb-9ab0-0c9d39254b4b.png)
+![image](https://user-images.githubusercontent.com/67171626/122771550-ec780b80-d27c-11eb-879a-08eb54266183.png)
+![image](https://user-images.githubusercontent.com/67171626/122771565-f0a42900-d27c-11eb-8857-f4961c3c1211.png)
 
 
 ### Licença
