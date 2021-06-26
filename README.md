@@ -4,7 +4,7 @@
 
 <p>NuVida é um sistema desenvolvido na Universidade Paulista pelo meu grupo de PIM (Projeto Integrado Multidisciplinar) que visa a automatização e digitalização de processos dentro de uma clínica médica, assim como o gerenciamento de usuários e tarefas. Feito em linguagem C, modo console.</p>
 
-<p="center">
+<p>
  <a href="#objetivo">Objetivo</a> • 
  <a href="#features">Features</a> • 
  <a href="#images">Imagens</a> •	
