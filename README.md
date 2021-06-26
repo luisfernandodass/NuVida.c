@@ -1,10 +1,10 @@
-# <h1 align="center">NuVida</h1>
+# <h1>NuVida</h1>
 
-<h3 align="center">Sobre o projeto</h3>
+<h3>Sobre o projeto</h3>
 
-<p align="center">NuVida é um sistema desenvolvido na Universidade Paulista pelo meu grupo de PIM (Projeto Integrado Multidisciplinar) que visa a automatização e digitalização de processos dentro de uma clínica médica, assim como o gerenciamento de usuários e tarefas. Feito em linguagem C, modo console.</p>
+<p>NuVida é um sistema desenvolvido na Universidade Paulista pelo meu grupo de PIM (Projeto Integrado Multidisciplinar) que visa a automatização e digitalização de processos dentro de uma clínica médica, assim como o gerenciamento de usuários e tarefas. Feito em linguagem C, modo console.</p>
 
-<p align="center">
+<p="center">
  <a href="#objetivo">Objetivo</a> • 
  <a href="#features">Features</a> • 
  <a href="#images">Imagens</a> •	
@@ -13,7 +13,7 @@
  <a href="#autor">Autor</a>
 </p>
 
-<h4 align="center"> 
+<h4> 
 	🚧  O projeto NuVida foi finalizado no segundo semestre de 2020.  🚧
 </h4>
  
@@ -41,7 +41,7 @@
 
 As seguintes ferramentas foram usadas na construção do projeto:
 
-- [Linguagem C]
+- Linguagem C
 <br>
 
 ### Imagens
