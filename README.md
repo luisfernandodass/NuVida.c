@@ -4,7 +4,9 @@
 
 NuVida é um sistema desenvolvido na Universidade Paulista pelo meu grupo de PIM (Projeto Integrado Multidisciplinar) que visa a automatização e digitalização de processos dentro de uma clínica médica, assim como o gerenciamento de usuários e tarefas. Feito em linguagem C, modo console. O projeto conta com mais de 1500 linhas de código.
 
-🚧  O projeto NuVida foi finalizado no segundo semestre de 2020.  🚧
+## Resultado
+
+O projeto NuVida foi finalizado no segundo semestre de 2020 e o resultado foi a nota de 9.5 no PIM.
 
 ## Features
 
