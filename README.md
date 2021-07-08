@@ -1,27 +1,12 @@
-# <h1>NuVida</h1>
+# NuVida
 
-<h3>Sobre o projeto</h3>
+## Objetivo
 
-<p>NuVida é um sistema desenvolvido na Universidade Paulista pelo meu grupo de PIM (Projeto Integrado Multidisciplinar) que visa a automatização e digitalização de processos dentro de uma clínica médica, assim como o gerenciamento de usuários e tarefas. Feito em linguagem C, modo console.</p>
+NuVida é um sistema desenvolvido na Universidade Paulista pelo meu grupo de PIM (Projeto Integrado Multidisciplinar) que visa a automatização e digitalização de processos dentro de uma clínica médica, assim como o gerenciamento de usuários e tarefas. Feito em linguagem C, modo console. O projeto conta com mais de 1500 linhas de código.
 
-<p>
- <a href="#objetivo">Objetivo</a> • 
- <a href="#features">Features</a> • 
- <a href="#images">Imagens</a> •	
- <a href="#tecnologias">Tecnologias</a> • 
- <a href="#licença">Licença</a> • 
- <a href="#autor">Autor</a>
-</p>
+🚧  O projeto NuVida foi finalizado no segundo semestre de 2020.  🚧
 
-<h4> 
-	🚧  O projeto NuVida foi finalizado no segundo semestre de 2020.  🚧
-</h4>
- 
- 
-### Objetivo
-<p>O objetivo foi desenvolver um sistema para criar a área de tela inicial e de login e para automatizar áreas de cadastramento, geração de atestado e receita médica, protocolo de internação, agendamento e cancelamento de consulta, pagamento, análise de relatório e faturamento diário e mensal.</p>
-
-### Features
+## Features
 
 - [x] Tela de bem vindo
 - [x] Login
@@ -37,14 +22,15 @@
 - [x] Faturamento diário e mensal
 - [x] Quantidade de pacientes
 
-### Tecnologias
+## Tecnologias
 
 As seguintes ferramentas foram usadas na construção do projeto:
 
 - Linguagem C
-<br>
 
-### Imagens
+
+## Imagens
+
 ![image](https://user-images.githubusercontent.com/67171626/122771258-a3c05280-d27c-11eb-8b9c-c005e7cdf345.png)
 ![image](https://user-images.githubusercontent.com/67171626/122771282-a753d980-d27c-11eb-8b38-abfb7001293b.png)
 ![image](https://user-images.githubusercontent.com/67171626/122771296-ac188d80-d27c-11eb-9e36-668556b519d0.png)
@@ -60,18 +46,17 @@ As seguintes ferramentas foram usadas na construção do projeto:
 ![image](https://user-images.githubusercontent.com/67171626/122771565-f0a42900-d27c-11eb-8857-f4961c3c1211.png)
 
 
-### Licença
+## Licença
+
 <img src="https://img.shields.io/github/license/luisfernandodass/NuVida.c"/>
 
-### Autor
----
-
+## Autor
 
  <img style="border-radius: 50%;" src="https://avatars.githubusercontent.com/u/67171626?s=460&u=609fc063322b859752a5675bd4e17657e650a389&v=4" width="100px;" alt=""/>
  
  <b>Luis Fernando</b>
  
-Feito por Luis Fernando 👋🏽 Entre em contato!
+👋🏽 Entre em contato!
 
 [![Linkedin Badge](https://img.shields.io/badge/-Luis-blue?style=flat-square&logo=Linkedin&logoColor=white&link=https://www.linkedin.com/in/luisfernando/)](https://www.linkedin.com/in/luisfernando/) 
 [![Gmail Badge](https://img.shields.io/badge/-luisfernandodass@gmail.com-c14438?style=flat-square&logo=Gmail&logoColor=white&link=mailto:luisfernandodass@gmail.com)](mailto:luisfernandodass@gmail.com)
