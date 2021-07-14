@@ -1,6 +1,6 @@
 # NuVida
 
-## Objetivo
+## Objective
 
 NuVida is a system developed at Universidade Paulista by my PIM group (Multidisciplinary Integrated Project) which aims to automate and digitize processes within a medical clinic, as well as managing users and tasks. Made in C language, console mode. The project has over 1500 lines of code.
 
