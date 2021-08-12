@@ -49,7 +49,7 @@ The following tools were used to build the project:
 
 ## License
 
-<img src="https://img.shields.io/github/license/luisfernandodass/NuVida.c"/>
+<img src="https://img.shields.io/github/license/luisfernandodass/nuvida.c"/>
 
 ## Author
 
